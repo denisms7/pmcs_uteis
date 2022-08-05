@@ -36,6 +36,11 @@ def curso_excel():
 def video(file):
     return render_template('stream.html',file=file)
 
+@app.route("/sim")
+def sim_am():
+    title = 'SIM-AM'
+    return render_template('sim.html', title=title)
+
 @app.route("/<string:variavel>")
 def erro_pag(variavel):
     return render_template('erro.html', variavel=variavel)
