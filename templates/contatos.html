@@ -7,8 +7,8 @@
 
     {% for x in categoria %}
 
-    <hr class="mt-5 mb-5">
-    <h2>{{ x }}</h2>
+    <hr class="pesquisa mt-5 mb-5">
+    <h2 class="pesquisa">{{ x }}</h2>
 
     <table class="realceLinha comBordas">
 
@@ -22,7 +22,7 @@
         {% for item in contatos[0:] %}
 
         {% if item[2] == x %}
-        <tr>
+        <tr class="pesquisa">
             <td>{{ item[1] }}</td>
             <td class="texto_centro realce">{{ item[0] }}</td>
             <td></td>
