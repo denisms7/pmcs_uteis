@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<head>
+
+	<title>Hino Municipal</title>
+	<meta name="author" content="Denis Muniz Silva">
+    <meta http-equiv="content-language" content="pt-br" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='estilo.css')}}"/>
+    <link rel="sortcut icon" href="{{url_for('static', filename='/pmcs.ico')}}" type="image/x-icon" />
+    <meta charset="UTF-8"/>
+
+</head>
+
+<body>
+{% block body %}
+
+<h2>CONTATOS</h2>
+
+<div class="pagina">
+
+    {% for x in categoria %}
+
+    <h2>{{ x }}</h2>
+
+    <table class="realceLinha comBordas">
+
+        <thead>
+            <tr>
+                <td style="width: 20em">SETOR:</td>
+                <td class="texto_centro" style="width: 10em">CONTATO:</td>
+                <td style="width: 20em">E-MAIL</td>
+            <tr>
+        </thead>
+        {% for item in contatos[0:] %}
+
+            {% if item[2] == x %}
+                <tr>
+                    <td>{{ item[1] }}</td>
+                    <td class="texto_centro realce">{{ item[0] }}</td>
+                    <td></td>
+                </tr>
+            {% endif %}
+
+        {% endfor %}
+
+
+    </table>
+    <br>
+    <br>
+    {% endfor %}
+
+
+
+
+</div>
+
+    <footer>
+
+        <br>
+        <hr>
+		<p>Atualização 04/07/2022<br>
+        Prefeitura Municipal de Centenário do Sul<br>
+        Setor de Informática<p>
+    </footer>
+
+{% endblock %}
+</body>
+
