@@ -1,19 +1,7 @@
-﻿<html>
-<head>
-	<title>ERRO</title>
-	<meta name="author" content="Denis Muniz Silva">
-    <meta http-equiv="content-language" content="pt-br" />
-	<link rel="stylesheet" href="{{ url_for('static', filename='estilo.css')}}"/>
-	<link rel="sortcut icon" href="{{url_for('static', filename='/pmcs.ico')}}" type="image/x-icon" />
-	<meta charset="UTF-8"/>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-</head>
-<body>
-	<div class="pagina">
+﻿{% extends "base.html" %}
+{% block conteudo %}
 
-		<h1>PÁGINA NÃO ENCONTRADA</h1>
-		<p>error 404, a página {{ variavel }} não existe.</p>
+	<h1>PÁGINA NÃO ENCONTRADA</h1>
+	<p>Erro 404, a página {{ variavel }} não existe.</p>
 
-	</div>
-</body>
-</html>
+{% endblock %}
