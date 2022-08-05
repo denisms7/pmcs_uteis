@@ -40,7 +40,8 @@ def sim_am():
 
 @app.route("/<string:variavel>")
 def erro_pag(variavel):
-    return render_template('erro.html', variavel=variavel)
+    title = '#ERRO'
+    return render_template('erro.html', variavel=variavel, title=title)
 
 
 if __name__ == "__main__":
