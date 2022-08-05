@@ -21,13 +21,13 @@
         </thead>
         {% for item in contatos[0:] %}
 
-            {% if item[2] == x %}
-                <tr>
-                    <td>{{ item[1] }}</td>
-                    <td class="texto_centro realce">{{ item[0] }}</td>
-                    <td></td>
-                </tr>
-            {% endif %}
+        {% if item[2] == x %}
+        <tr>
+            <td>{{ item[1] }}</td>
+            <td class="texto_centro realce">{{ item[0] }}</td>
+            <td></td>
+        </tr>
+        {% endif %}
 
         {% endfor %}
 
@@ -39,4 +39,4 @@
 
 </div>
 
- {% endblock %}
+{% endblock %}

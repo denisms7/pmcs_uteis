@@ -1,296 +1,316 @@
 ﻿{% extends "base.html" %}
 
-
-
-
 {% block conteudo %}
 
-    <h2 class="mt-3 mb-5">UTILIDADES</h2>
+<h2 class="mt-3 mb-5">UTILIDADES</h2>
 
-            <div class="">
-                <h3 class="pesquisa">SISTEMAS</h3>
+<div class="">
+    <h3 class="pesquisa">SISTEMAS</h3>
 
-                <a href="http://serverwebapp.sysmar.com.br:8135/frota/servlet/hindex" target="_blank" class="pesquisa btn btn-primary m-1">
-                    Sys Frotas
-                </a>
-                <a href="http://serverwebapp.sysmar.com.br:8090/saude/servlet/hindex" target="_blank" class="pesquisa btn btn-primary m-1">
-                    Sys Saúde
-                </a>
+    <a href="http://serverwebapp.sysmar.com.br:8135/frota/servlet/hindex" target="_blank"
+        class="pesquisa btn btn-primary m-1">
+        Sys Frotas
+    </a>
+    <a href="http://serverwebapp.sysmar.com.br:8090/saude/servlet/hindex" target="_blank"
+        class="pesquisa btn btn-primary m-1">
+        Sys Saúde
+    </a>
 
-                <a href="https://www.sefanet.pr.gov.br/sefanetv2/segSefanet/segLogin.asp" target="_blank" class="pesquisa btn btn-primary m-1">
-                    SEFANET
-                </a>
+    <a href="https://www.sefanet.pr.gov.br/sefanetv2/segSefanet/segLogin.asp" target="_blank"
+        class="pesquisa btn btn-primary m-1">
+        SEFANET
+    </a>
 
-                <a href="https://gestor.showtecnologia.com/gestor/index.php/login" target="_blank" class="pesquisa btn btn-primary m-1">
-                    Rastreio Veicular
-                </a>
+    <a href="https://gestor.showtecnologia.com/gestor/index.php/login" target="_blank"
+        class="pesquisa btn btn-primary m-1">
+        Rastreio Veicular
+    </a>
 
-                <a href="{{url_for('sim_am')}}" class="pesquisa btn btn-primary m-1">
-                    SIM AM
-                </a>
+    <a href="{{url_for('sim_am')}}" class="pesquisa btn btn-primary m-1">
+        SIM AM
+    </a>
 
 
-            </div>
-
-            <hr class="pesquisa mt-5 mb-5">
-
-            <div class="">
-                <h3 class="pesquisa">DADOS MUNICIPAIS</h3>
-
-                <a href="{{url_for('contatos')}}" class="pesquisa btn btn-info m-1">
-                    Contatos
-                </a>
-
-                <a href="http://192.168.1.2:7474/transparencia/" target="_blank" class="pesquisa btn btn-info m-1">
-                    Transparência Municipal
-                </a>
-
-                <a href="https://www.centenariodosul.pr.leg.br/" target="_blank" class="pesquisa btn btn-info m-1">
-                    Câmara Municipal
-                </a>
-
-                <a href="https://www.diariomunicipal.com.br/amp/pesquisar" target="_blank" class="pesquisa btn btn-info m-1">
-                    Diário Oficial
-                </a>
-
-                <a href="http://www.ipardes.pr.gov.br/Pagina/Cadernos-municipais" target="_blank" class="pesquisa btn btn-info m-1">
-                    IPARDES
-                </a>
-
-                <a href="https://apmifcentenariodosul.com.br/" target="_blank" class="pesquisa btn btn-info m-1">
-                    APMIF
-                </a>
-
-                <a href="https://www.centenariodosul.pr.gov.br/index.php?meio=16562" target="_blank" class="pesquisa btn btn-info m-1">
-                    Licitações
-                </a>
-
-                <a href="{{url_for('organograma')}}" class="pesquisa btn btn-info m-1">
-                    Organograma
-                </a>
-            </div>
-
-            <hr class="pesquisa mt-5 mb-5">
-
-            <div class="">
-                <h3 class="pesquisa">INSTITUCIONAL E GOVERNO</h3>
-
-                <a href="https://email.centenariodosul.pr.gov.br:2096/" target="_blank" class="pesquisa btn btn-success m-1">
-                    E-mail Corporativo
-                </a>
-
-                <a href="http://serverwebapp.sysmar.com.br:8163/holerite/servlet/hindex" target="_blank" class="pesquisa btn btn-success m-1">
-                    Holerite
-                </a>
-
-                <a href="https://www.portaldecompraspublicas.com.br/" target="_blank" class="pesquisa btn btn-success m-1">
-                    Portal Compras Públicas
-                </a>
-
-                <a href="http://192.168.1.2:7476/SysPortal/Painel" target="_blank" class="pesquisa btn btn-success m-1">
-                        Painel de Controle Transparência
-                </a>
-
-                <a href="https://www.gov.br/pt-br" target="_blank" class="pesquisa btn btn-success m-1">
-                    Gov.br
-                </a>
-
-                <a href="http://192.168.1.2:7474/esadmin/sistemas.index.logic" target="_blank" class="pesquisa btn btn-success m-1">
-                    EsAdmin Equiplano
-                </a>
-
-                <a href="https://centenariodosul.pr.gov.br:2083/" target="_blank" class="pesquisa btn btn-success m-1">
-                    cPanel Vale Soluções
-                </a>
-
-                <a href="https://www.sbk.net.br/sanepar" target="_blank" class="pesquisa btn btn-success m-1">
-                    Taxa de Coleta de Lixo
-                </a>
-
-                <a href="https://autenticacao.voxtecnologia.com.br/" target="_blank" class="pesquisa btn btn-success m-1">
-                    Empresa Fácil
-                </a>
-
-                <a href="https://centenariodosul.simplissweb.com.br/prefeitura/202110/Account/Login" target="_blank" class="pesquisa btn btn-success m-1">
-                    Simpliss Admin
-                </a>
-
-                <a href="https://edi7.itau.com.br/index_login.htm" target="_blank" class="pesquisa btn btn-success m-1">
-                    ITAU EDI7
-                </a>
-
-                <a href="https://portaloisolucoes.oi.com.br/login" target="_blank" class="pesquisa btn btn-success m-1">
-                    Oi Solucoes
-                </a>
-
-                <a href="https://www.caixa.gov.br/empresa/conectividade-social/Paginas/default.aspx" target="_blank" class="pesquisa btn btn-success m-1">
-                    Conectividade Social
-                </a>
-
-                <a href="https://cav.receita.fazenda.gov.br/autenticacao/login/index" target="_blank" class="pesquisa btn btn-success m-1">
-                    eCac
-                </a>
-
-                <a href="http://www8.receita.fazenda.gov.br/SimplesNacional/aplicacoes.aspx?id=21" target="_blank" class="pesquisa btn btn-success m-1">
-                    Simples Nacional Optantes
-                </a>
-            </div>
-
-            <hr class="pesquisa mt-5 mb-5">
-
-            <div class="">
-                <h3 class="pesquisa">CONSULTAS E CERTIDÕES NEGATIVAS</h3>
-
-                <a href="http://servicos.receita.fazenda.gov.br/Servicos/certidao/CNDConjuntaInter/InformaNICertidao.asp?tipo=1"
-                    target="_blank" class="pesquisa btn btn-secondary m-1">
-                    Certidão Conjunta de Tributos Federais
-                </a>
-
-                <a href="http://www.cdw.fazenda.pr.gov.br/cdw/emissao/certidaoAutomatica" target="_blank" class="pesquisa btn btn-secondary m-1">
-                    Certidão Negativa de Débitos de Tributos Estaduais
-                </a>
-
-                <a href="https://sti.tesouro.gov.br/cauc/index.jsf" target="_blank" class="pesquisa btn btn-secondary m-1">
-                    CAUC
-                </a>
-
-                <a href="http://www.fazenda.pr.gov.br/servicos/consultar-emitir-certidao-transferencia-voluntaria"
-                    target="_blank" class="pesquisa btn btn-secondary m-1">
-                    Certidão Negativa de transferências voluntarias do Paraná
-                </a>
-
-                <a href="https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf" target="_blank" class="pesquisa btn btn-secondary m-1">
-                    FGTS
-                </a>
-
-                <a href="http://www.tst.jus.br/certidao/" target="_blank" class="pesquisa btn btn-secondary m-1">
-                    Certidão Negativa de Débitos Trabalhistas
-                </a>
-
-                <a href="http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/cnpjreva_solicitacao.asp"
-                    target="_blank" class="pesquisa btn btn-secondary m-1">
-                    CNPJ
-                </a>
-
-                <a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp"
-                    target="_blank" class="pesquisa btn btn-secondary m-1">
-                        CPF
-                </a>
-
-                <a href="https://menorpreco.notaparana.pr.gov.br/index" target="_blank" class="pesquisa btn btn-secondary m-1">
-                    Menor Preço PR
-                </a>
-
-                <a href="https://cadin.pr.gov.br/cadin/publico/pendencia/consultar" target="_blank" class="pesquisa btn btn-secondary m-1">
-                    CADIN
-                </a>
-            </div>
-
-            <hr class="pesquisa mt-5 mb-5">
-
-            <div class="">
-                <h3 class="pesquisa">TRANSFERÊNCIAS DE RECURSOS</h3>
-
-                <a href="http://sisweb.tesouro.gov.br/apex/f?p=2600:1::::::" target="_blank" class="pesquisa btn btn-warning m-1">
-                    Transferências Federais
-                </a>
-
-                <a href="http://www.transparencia.pr.gov.br/pte/assunto/4/100?origem=2" target="_blank" class="pesquisa btn btn-warning m-1">
-                    Transferências Estaduais
-                </a>
-
-                <a href="https://consultafns.saude.gov.br/#/repasse-dia" target="_blank" class="pesquisa btn btn-warning m-1">
-                    Transferências dos Programas de Saúde
-                </a>
-
-                <a href="https://www.fnde.gov.br/pls/simad/internet_fnde.liberacoes_01_pc" target="_blank" class="pesquisa btn btn-warning m-1">
-                    Transferências dos Programas do FNDE
-                </a>
-            </div>
-
-            <hr class="pesquisa mt-5 mb-5">
-
-            <div class="">
-                <h3 class="pesquisa">MODELOS</h3>
-
-                <a href="{{ url_for('static', filename='/documentos/Solicitacao-de-Compras.docx')}}" class="pesquisa btn btn-primary m-1">
-                    Solicitação de Compras
-                </a>
-
-                <a href="{{ url_for('static', filename='/documentos/Termo-de-Responsabilidade.docx')}}/" class="pesquisa btn btn-primary m-1">
-                    Termo de Responsabilidade
-                </a>
-
-                <a href="{{ url_for('static', filename='/documentos/Oficio.docx')}}/" class="pesquisa btn btn-primary m-1">
-                    Ofício
-                </a>
-
-                <a href="{{ url_for('static', filename='/documentos/Timbre.docx')}}/" class="pesquisa btn btn-primary m-1">
-                    Timbrado Word
-                </a>
-
-                <a href="{{ url_for('static', filename='/documentos/Requerimento.docx')}}/" class="pesquisa btn btn-primary m-1">
-                    Requerimento
-                </a>
-            </div>
+</div>
 
 <hr class="pesquisa mt-5 mb-5">
 
-    <div class="">
-        <h3 class="pesquisa">ÁUDIO</h3>
-        <a href="{{url_for('hino')}}"  class="pesquisa btn btn-info m-1">
-            Hino Municipal
-        </a>
-    </div>
+<div class="">
+    <h3 class="pesquisa">DADOS MUNICIPAIS</h3>
+
+    <a href="{{url_for('contatos')}}" class="pesquisa btn btn-info m-1">
+        Contatos
+    </a>
+
+    <a href="http://192.168.1.2:7474/transparencia/" target="_blank" class="pesquisa btn btn-info m-1">
+        Transparência Municipal
+    </a>
+
+    <a href="https://www.centenariodosul.pr.leg.br/" target="_blank" class="pesquisa btn btn-info m-1">
+        Câmara Municipal
+    </a>
+
+    <a href="https://www.diariomunicipal.com.br/amp/pesquisar" target="_blank" class="pesquisa btn btn-info m-1">
+        Diário Oficial
+    </a>
+
+    <a href="http://www.ipardes.pr.gov.br/Pagina/Cadernos-municipais" target="_blank" class="pesquisa btn btn-info m-1">
+        IPARDES
+    </a>
+
+    <a href="https://apmifcentenariodosul.com.br/" target="_blank" class="pesquisa btn btn-info m-1">
+        APMIF
+    </a>
+
+    <a href="https://www.centenariodosul.pr.gov.br/index.php?meio=16562" target="_blank"
+        class="pesquisa btn btn-info m-1">
+        Licitações
+    </a>
+
+    <a href="{{url_for('organograma')}}" class="pesquisa btn btn-info m-1">
+        Organograma
+    </a>
+</div>
 
 <hr class="pesquisa mt-5 mb-5">
 
-    <div class="">
-        <h3 class="pesquisa">IMAGENS</h3>
+<div class="">
+    <h3 class="pesquisa">INSTITUCIONAL E GOVERNO</h3>
 
-        <a href="{{ url_for('static', filename='/imagens/Brasao-Colorido.png')}}" target="_blank" class="pesquisa btn m-1">
-            <img class="img-thumbnail border border-0" height="100" width="100" src="{{ url_for('static', filename='/imagens/Brasao-Colorido.png')}}"
-                alt="Brasão Colorido">
-        </a>
+    <a href="https://email.centenariodosul.pr.gov.br:2096/" target="_blank" class="pesquisa btn btn-success m-1">
+        E-mail Corporativo
+    </a>
 
-        <a href="{{ url_for('static', filename='/imagens/brasao_bw.png')}}" target="_blank" class="pesquisa btn m-1">
-            <img class="img-thumbnail border border-0" height="100" width="100" src="{{ url_for('static', filename='/imagens/brasao_bw.png')}}"
-                alt="Brasão Preto e Branco">
-        </a>
+    <a href="http://serverwebapp.sysmar.com.br:8163/holerite/servlet/hindex" target="_blank"
+        class="pesquisa btn btn-success m-1">
+        Holerite
+    </a>
 
-        <a href="{{ url_for('static', filename='/imagens/Brasao-Sem-Fundo.png')}}" target="_blank" class="pesquisa btn m-1">
-            <img class="img-thumbnail border border-0" height="100" width="100" src="{{ url_for('static', filename='/imagens/Brasao-Sem-Fundo.png')}}"
-                alt="Brasão Sem Fundo">
-        </a>
+    <a href="https://www.portaldecompraspublicas.com.br/" target="_blank" class="pesquisa btn btn-success m-1">
+        Portal Compras Públicas
+    </a>
 
-        <a href="{{ url_for('static', filename='/imagens/Logo-Governo.png')}}" target="_blank" class="pesquisa btn m-1">
-            <img class="img-thumbnail border border-0" height="100" width="100" src="{{ url_for('static', filename='/imagens/Logo-Governo.png')}}" alt="Logo Governo">
-        </a>
+    <a href="http://192.168.1.2:7476/SysPortal/Painel" target="_blank" class="pesquisa btn btn-success m-1">
+        Painel de Controle Transparência
+    </a>
 
-        <a href="{{ url_for('static', filename='/imagens/Logo-Governo-bw.png')}}" target="_blank" class="pesquisa btn m-1">
-            <img class="img-thumbnail border border-0" height="100" width="100" src="{{ url_for('static', filename='/imagens/Logo-Governo-bw.png')}}" alt="Logo Governo">
-        </a>
+    <a href="https://www.gov.br/pt-br" target="_blank" class="pesquisa btn btn-success m-1">
+        Gov.br
+    </a>
 
-        <a href="{{ url_for('static', filename='/imagens/simbolo_centenariosul.png')}}" target="_blank" class="pesquisa btn m-1">
-            <img class="img-thumbnail border border-0" height="100" width="100" src="{{ url_for('static', filename='/imagens/simbolo_centenariosul.png')}}"
-                alt="Simbolo Governo">
-        </a>
+    <a href="http://192.168.1.2:7474/esadmin/sistemas.index.logic" target="_blank" class="pesquisa btn btn-success m-1">
+        EsAdmin Equiplano
+    </a>
 
-        <a href="{{ url_for('static', filename='/imagens/infos_cores.jpg')}}" target="_blank" class="pesquisa btn m-1">
-            <img class="img-thumbnail border border-0" height="100" width="100" src="{{ url_for('static', filename='/imagens/infos_cores.jpg')}}" alt="Informacao Logo">
-        </a>
+    <a href="https://centenariodosul.pr.gov.br:2083/" target="_blank" class="pesquisa btn btn-success m-1">
+        cPanel Vale Soluções
+    </a>
 
-        <a href="{{ url_for('static', filename='/imagens/Bandeira_Municipal.png')}}" target="_blank" class="pesquisa btn m-1">
-            <img class="img-thumbnail border border-0" height="100" width="100" src="{{ url_for('static', filename='/imagens/Bandeira_Municipal.png')}}" alt="Bandeira">
-        </a>
-    </div>
+    <a href="https://www.sbk.net.br/sanepar" target="_blank" class="pesquisa btn btn-success m-1">
+        Taxa de Coleta de Lixo
+    </a>
+
+    <a href="https://autenticacao.voxtecnologia.com.br/" target="_blank" class="pesquisa btn btn-success m-1">
+        Empresa Fácil
+    </a>
+
+    <a href="https://centenariodosul.simplissweb.com.br/prefeitura/202110/Account/Login" target="_blank"
+        class="pesquisa btn btn-success m-1">
+        Simpliss Admin
+    </a>
+
+    <a href="https://edi7.itau.com.br/index_login.htm" target="_blank" class="pesquisa btn btn-success m-1">
+        ITAU EDI7
+    </a>
+
+    <a href="https://portaloisolucoes.oi.com.br/login" target="_blank" class="pesquisa btn btn-success m-1">
+        Oi Solucoes
+    </a>
+
+    <a href="https://www.caixa.gov.br/empresa/conectividade-social/Paginas/default.aspx" target="_blank"
+        class="pesquisa btn btn-success m-1">
+        Conectividade Social
+    </a>
+
+    <a href="https://cav.receita.fazenda.gov.br/autenticacao/login/index" target="_blank"
+        class="pesquisa btn btn-success m-1">
+        eCac
+    </a>
+
+    <a href="http://www8.receita.fazenda.gov.br/SimplesNacional/aplicacoes.aspx?id=21" target="_blank"
+        class="pesquisa btn btn-success m-1">
+        Simples Nacional Optantes
+    </a>
+</div>
 
 <hr class="pesquisa mt-5 mb-5">
 
-    <h3 class="pesquisa">SUPORTE</h3>
-        <a href="{{url_for('suporte')}}" class="pesquisa btn btn-warning m-1">
-            Suporte
-        </a>
+<div class="">
+    <h3 class="pesquisa">CONSULTAS E CERTIDÕES NEGATIVAS</h3>
+
+    <a href="http://servicos.receita.fazenda.gov.br/Servicos/certidao/CNDConjuntaInter/InformaNICertidao.asp?tipo=1"
+        target="_blank" class="pesquisa btn btn-secondary m-1">
+        Certidão Conjunta de Tributos Federais
+    </a>
+
+    <a href="http://www.cdw.fazenda.pr.gov.br/cdw/emissao/certidaoAutomatica" target="_blank"
+        class="pesquisa btn btn-secondary m-1">
+        Certidão Negativa de Débitos de Tributos Estaduais
+    </a>
+
+    <a href="https://sti.tesouro.gov.br/cauc/index.jsf" target="_blank" class="pesquisa btn btn-secondary m-1">
+        CAUC
+    </a>
+
+    <a href="http://www.fazenda.pr.gov.br/servicos/consultar-emitir-certidao-transferencia-voluntaria" target="_blank"
+        class="pesquisa btn btn-secondary m-1">
+        Certidão Negativa de transferências voluntarias do Paraná
+    </a>
+
+    <a href="https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf" target="_blank"
+        class="pesquisa btn btn-secondary m-1">
+        FGTS
+    </a>
+
+    <a href="http://www.tst.jus.br/certidao/" target="_blank" class="pesquisa btn btn-secondary m-1">
+        Certidão Negativa de Débitos Trabalhistas
+    </a>
+
+    <a href="http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/cnpjreva_solicitacao.asp" target="_blank"
+        class="pesquisa btn btn-secondary m-1">
+        CNPJ
+    </a>
+
+    <a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp" target="_blank"
+        class="pesquisa btn btn-secondary m-1">
+        CPF
+    </a>
+
+    <a href="https://menorpreco.notaparana.pr.gov.br/index" target="_blank" class="pesquisa btn btn-secondary m-1">
+        Menor Preço PR
+    </a>
+
+    <a href="https://cadin.pr.gov.br/cadin/publico/pendencia/consultar" target="_blank"
+        class="pesquisa btn btn-secondary m-1">
+        CADIN
+    </a>
+</div>
+
+<hr class="pesquisa mt-5 mb-5">
+
+<div class="">
+    <h3 class="pesquisa">TRANSFERÊNCIAS DE RECURSOS</h3>
+
+    <a href="http://sisweb.tesouro.gov.br/apex/f?p=2600:1::::::" target="_blank" class="pesquisa btn btn-warning m-1">
+        Transferências Federais
+    </a>
+
+    <a href="http://www.transparencia.pr.gov.br/pte/assunto/4/100?origem=2" target="_blank"
+        class="pesquisa btn btn-warning m-1">
+        Transferências Estaduais
+    </a>
+
+    <a href="https://consultafns.saude.gov.br/#/repasse-dia" target="_blank" class="pesquisa btn btn-warning m-1">
+        Transferências dos Programas de Saúde
+    </a>
+
+    <a href="https://www.fnde.gov.br/pls/simad/internet_fnde.liberacoes_01_pc" target="_blank"
+        class="pesquisa btn btn-warning m-1">
+        Transferências dos Programas do FNDE
+    </a>
+</div>
+
+<hr class="pesquisa mt-5 mb-5">
+
+<div class="">
+    <h3 class="pesquisa">MODELOS</h3>
+
+    <a href="{{ url_for('static', filename='/documentos/Solicitacao-de-Compras.docx')}}"
+        class="pesquisa btn btn-primary m-1">
+        Solicitação de Compras
+    </a>
+
+    <a href="{{ url_for('static', filename='/documentos/Termo-de-Responsabilidade.docx')}}/"
+        class="pesquisa btn btn-primary m-1">
+        Termo de Responsabilidade
+    </a>
+
+    <a href="{{ url_for('static', filename='/documentos/Oficio.docx')}}/" class="pesquisa btn btn-primary m-1">
+        Ofício
+    </a>
+
+    <a href="{{ url_for('static', filename='/documentos/Timbre.docx')}}/" class="pesquisa btn btn-primary m-1">
+        Timbrado Word
+    </a>
+
+    <a href="{{ url_for('static', filename='/documentos/Requerimento.docx')}}/" class="pesquisa btn btn-primary m-1">
+        Requerimento
+    </a>
+</div>
+
+<hr class="pesquisa mt-5 mb-5">
+
+<div class="">
+    <h3 class="pesquisa">ÁUDIO</h3>
+    <a href="{{url_for('hino')}}" class="pesquisa btn btn-info m-1">
+        Hino Municipal
+    </a>
+</div>
+
+<hr class="pesquisa mt-5 mb-5">
+
+<div class="">
+    <h3 class="pesquisa">IMAGENS</h3>
+
+    <a href="{{ url_for('static', filename='/imagens/Brasao-Colorido.png')}}" target="_blank" class="pesquisa btn m-1">
+        <img class="img-thumbnail border border-0" height="100" width="100"
+            src="{{ url_for('static', filename='/imagens/Brasao-Colorido.png')}}" alt="Brasão Colorido">
+    </a>
+
+    <a href="{{ url_for('static', filename='/imagens/brasao_bw.png')}}" target="_blank" class="pesquisa btn m-1">
+        <img class="img-thumbnail border border-0" height="100" width="100"
+            src="{{ url_for('static', filename='/imagens/brasao_bw.png')}}" alt="Brasão Preto e Branco">
+    </a>
+
+    <a href="{{ url_for('static', filename='/imagens/Brasao-Sem-Fundo.png')}}" target="_blank" class="pesquisa btn m-1">
+        <img class="img-thumbnail border border-0" height="100" width="100"
+            src="{{ url_for('static', filename='/imagens/Brasao-Sem-Fundo.png')}}" alt="Brasão Sem Fundo">
+    </a>
+
+    <a href="{{ url_for('static', filename='/imagens/Logo-Governo.png')}}" target="_blank" class="pesquisa btn m-1">
+        <img class="img-thumbnail border border-0" height="100" width="100"
+            src="{{ url_for('static', filename='/imagens/Logo-Governo.png')}}" alt="Logo Governo">
+    </a>
+
+    <a href="{{ url_for('static', filename='/imagens/Logo-Governo-bw.png')}}" target="_blank" class="pesquisa btn m-1">
+        <img class="img-thumbnail border border-0" height="100" width="100"
+            src="{{ url_for('static', filename='/imagens/Logo-Governo-bw.png')}}" alt="Logo Governo">
+    </a>
+
+    <a href="{{ url_for('static', filename='/imagens/simbolo_centenariosul.png')}}" target="_blank"
+        class="pesquisa btn m-1">
+        <img class="img-thumbnail border border-0" height="100" width="100"
+            src="{{ url_for('static', filename='/imagens/simbolo_centenariosul.png')}}" alt="Simbolo Governo">
+    </a>
+
+    <a href="{{ url_for('static', filename='/imagens/infos_cores.jpg')}}" target="_blank" class="pesquisa btn m-1">
+        <img class="img-thumbnail border border-0" height="100" width="100"
+            src="{{ url_for('static', filename='/imagens/infos_cores.jpg')}}" alt="Informacao Logo">
+    </a>
+
+    <a href="{{ url_for('static', filename='/imagens/Bandeira_Municipal.png')}}" target="_blank"
+        class="pesquisa btn m-1">
+        <img class="img-thumbnail border border-0" height="100" width="100"
+            src="{{ url_for('static', filename='/imagens/Bandeira_Municipal.png')}}" alt="Bandeira">
+    </a>
+</div>
+
+<hr class="pesquisa mt-5 mb-5">
+
+<h3 class="pesquisa">SUPORTE</h3>
+<a href="{{url_for('suporte')}}" class="pesquisa btn btn-warning m-1">
+    Suporte
+</a>
 
 
 {% endblock %}
