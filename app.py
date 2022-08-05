@@ -41,8 +41,8 @@ def erro_pag(variavel):
     return render_template('erro.html', variavel=variavel, title=title)
 
 
-if __name__ == "__main__":
-    app.run(debug=True, port=80)
-
 #if __name__ == "__main__":
-#    app.run(host='0.0.0.0', debug=False)
+#    app.run(debug=True, port=80)
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=False, port=80)
