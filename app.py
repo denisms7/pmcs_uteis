@@ -1,40 +1,37 @@
 from flask import Flask, render_template, Response, request
 from contatos import df, categoria
-from excel_30_formulas import dados_video
+
 app = Flask(__name__)
 app.config['TITLE'] = 'Uteis'
 
 
 @app.route("/")
 def homepage():
-    return render_template('index.html')
+    title= 'INICIO'
+    return render_template('index.html', title=title)
 
 
 @app.route("/hino")
 def hino():
-    return render_template('hino.html')
+    title= 'Hino Municipal'
+    return render_template('hino.html', title=title)
 
 
 @app.route("/estrutura-organizacional")
 def organograma():
-    return render_template('organograma.html')
+    title = 'Organograma'
+    return render_template('organograma.html', title=title)
 
 
 @app.route("/contatos")
 def contatos():
-    return render_template('contatos.html', contatos=df, categoria=categoria)
+    title = 'Contatos'
+    return render_template('contatos.html', contatos=df, categoria=categoria, title=title)
 
 @app.route("/suporte")
 def suporte():
-    return render_template('suporte.html')
-
-@app.route("/excel")
-def curso_excel():
-    return render_template('excel.html', dados_video=dados_video)
-
-@app.route('/video/<file>')
-def video(file):
-    return render_template('stream.html',file=file)
+    title = 'Suporte'
+    return render_template('suporte.html', title=title)
 
 @app.route("/sim")
 def sim_am():
