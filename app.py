@@ -10,18 +10,15 @@ def homepage():
     title= 'INICIO'
     return render_template('index.html', title=title)
 
-
 @app.route("/hino")
 def hino():
     title= 'Hino Municipal'
     return render_template('hino.html', title=title)
 
-
 @app.route("/estrutura-organizacional")
 def organograma():
     title = 'Organograma'
     return render_template('organograma.html', title=title)
-
 
 @app.route("/contatos")
 def contatos():
@@ -45,8 +42,7 @@ def erro_pag(variavel):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8080)
-
+    app.run(debug=True, port=80)
 
 #if __name__ == "__main__":
-#    app.run(host='0.0.0.0', debug=False, port=80)
+#    app.run(host='0.0.0.0', debug=False)
