@@ -258,10 +258,22 @@
 
 <div class="">
     <h3 class="pesquisa">ÁUDIO</h3>
-    <a href="{{url_for('hino')}}" class="pesquisa btn btn-info m-1">
+
+    <a href="{{url_for('hino_nacional')}}" class="pesquisa btn btn-info m-1">
+        Hino Nacional
+        <span class="position-absolute invisible">audio musica</span>
+    </a>
+
+    <a href="{{url_for('hino_estadual')}}" class="pesquisa btn btn-info m-1">
+        Hino Estadual
+        <span class="position-absolute invisible">audio musica</span>
+    </a>
+
+    <a href="{{url_for('hino_municipal')}}" class="pesquisa btn btn-info m-1">
         Hino Municipal
         <span class="position-absolute invisible">audio musica</span>
     </a>
+
 </div>
 
 <hr class="pesquisa mt-5 mb-5">

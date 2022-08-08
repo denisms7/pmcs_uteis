@@ -7,22 +7,22 @@ app.config['TITLE'] = 'Uteis'
 
 @app.route("/")
 def homepage():
-    title= 'INICIO'
+    title = 'INICIO'
     return render_template('index.html', title=title)
 
 @app.route("/hino-municipal")
 def hino_municipal():
-    title= 'Hino Municipal'
+    title = 'Hino Municipal'
     return render_template('hino_municipal.html', title=title)
 
 @app.route("/hino-estadual")
 def hino_estadual():
-    title= 'Hino Estadual'
+    title = 'Hino Estadual'
     return render_template('hino_estadual.html', title=title)
 
 @app.route("/hino-nacional")
 def hino_nacional():
-    title= 'Hino Nacional'
+    title = 'Hino Nacional'
     return render_template('hino_nacional.html', title=title)
 
 @app.route("/estrutura-organizacional")
@@ -51,8 +51,8 @@ def erro_pag(variavel):
     return render_template('erro.html', variavel=variavel, title=title)
 
 
-#if __name__ == "__main__":
-#    app.run(debug=True, port=80)
-
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=False, port=80)
+    app.run(debug=True, port=80)
+
+#if __name__ == "__main__":
+#    app.run(host='0.0.0.0', debug=False, port=80)
