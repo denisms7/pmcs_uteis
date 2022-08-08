@@ -42,9 +42,33 @@
         Contatos
     </a>
 
-    <a href="http://192.168.1.2:7474/transparencia/" target="_blank" class="pesquisa btn btn-info m-1">
+    <a type="button" data-bs-toggle="modal" data-bs-target="#modal_transparencia" class="pesquisa btn btn-info m-1">
         Transparência Municipal
     </a>
+
+    <!-- Modal Transparencia Municipal -->
+    <div class="modal fade" id="modal_transparencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Transparência Municipal</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              Link Interno - Dentro da rede da sede Municipal<br>
+              Link Externo - Fora da rede da sede Municipal
+          </div>
+          <div class="modal-footer">
+              <a href="http://192.168.1.2:7474/transparencia" target="_blank" class="pesquisa btn btn-info m-1">
+                    Link Interno
+                </a>
+              <a href="http://177.220.139.100:7476/transparencia/" target="_blank" class="pesquisa btn btn-info m-1">
+                Link Externo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <a href="https://www.centenariodosul.pr.leg.br/" target="_blank" class="pesquisa btn btn-info m-1">
         Câmara Municipal
