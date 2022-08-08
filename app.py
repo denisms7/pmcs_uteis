@@ -10,10 +10,20 @@ def homepage():
     title= 'INICIO'
     return render_template('index.html', title=title)
 
-@app.route("/hino")
-def hino():
+@app.route("/hino-municipal")
+def hino_municipal():
     title= 'Hino Municipal'
-    return render_template('hino.html', title=title)
+    return render_template('hino_municipal.html', title=title)
+
+@app.route("/hino-estadual")
+def hino_estadual():
+    title= 'Hino Estadual'
+    return render_template('hino_estadual.html', title=title)
+
+@app.route("/hino-nacional")
+def hino_nacional():
+    title= 'Hino Nacional'
+    return render_template('hino_nacional.html', title=title)
 
 @app.route("/estrutura-organizacional")
 def organograma():
