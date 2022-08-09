@@ -10,24 +10,26 @@
     <hr class="pesquisa mt-5 mb-5">
     <h2 class="pesquisa">{{ x }}</h2>
 
-    <table class="realceLinha comBordas">
+    <table class="table table-hover">
 
         <thead>
             <tr>
                 <td style="width: 20em">SETOR:</td>
-                <td class="texto_centro" style="width: 10em">CONTATO:</td>
-                <td style="width: 20em">E-MAIL</td>
+                <td class="text-center" style="width: 10em">CONTATO:</td>
+                <td style="width: 20em">E-MAIL:</td>
             <tr>
         </thead>
-        {% for item in contatos[0:] %}
+        {% for item in df_contato.index %}
 
-        {% if item[2] == x %}
+        <!-- {% if item[2] == x %} -->
+
         <tr class="pesquisa">
-            <td>{{ item[1] }}</td>
-            <td class="texto_centro realce">{{ item[0] }}</td>
-            <td></td>
+            <td>{{ df_contato["setor"][item] }}</td>
+            <td class="text-center">{{ df_contato["setor"][item] }}</td>
+            <td>{{ df_contato["setor"][email] }}</td>
         </tr>
-        {% endif %}
+
+        <!-- {% endif %} -->
 
         {% endfor %}
 
