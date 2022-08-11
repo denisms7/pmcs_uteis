@@ -25,10 +25,15 @@ def hino_nacional():
     title = 'Hino Nacional'
     return render_template('hino_nacional.html', title=title)
 
-@app.route("/estrutura-organizacional")
+@app.route("/organograma-estrutura")
 def organograma():
     title = 'Organograma'
     return render_template('organograma.html', title=title)
+
+@app.route("/organograma-lei")
+def organograma_lei():
+    title = 'Organograma Lei'
+    return render_template('lei_3090.html', title=title)
 
 @app.route("/contatos")
 def contatos():
