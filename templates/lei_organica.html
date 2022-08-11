@@ -1,29 +1,8 @@
-<!doctype html>
-<html lang="pt-br">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Utilidades">
-    <meta name="author" content="Denis Muniz Silva">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block conteudo %}
 
-    <title>Lei Organica</title>
-
-    <link rel="sortcut icon" href="{{url_for('static', filename='/pmcs.ico')}}" type="image/x-icon" />
-
-    <!-- Bootstrap 5.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
-    <!-- Icones - Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-
-    <script type="text/javascript"
-        src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=KB7zrtjhiwJHf3XLb-UDDdjKyAc73cutG6XEkJ5O3kx5fW2E9oj8R20l3pZN3k-qZU0HrYDNbsswgAVILqr87Pdhy95O9H8CUFtx9UvyD36t5OSpk0Qt8FEz-0k04qthW1Gf8iFQtqG2BVqZsbjAE_zIcrUMNbI0fiitlSTikcrAOjij4rdyfdHea0Qe0Opa1RObKYetTmu1u3_ug6sJ_qXvC-yLpBrVs2oqmTNMksG-yF77qEYBMfeLYDsqKV2ovEk5wIrkihStqa4CoeK6t-_x2JW_UikpFQF5s32I4pDLpVyJU8PRTggDks-3sAWhJp436rYODsIz4kvL2pS6Fcbn8euQ9oouhhSYw5YEazhFeglcl4UcYqBt2IR3JwLxmGL6VQFXMKMV829J3lvvMA"
-        charset="UTF-8"></script>
-    <link rel="stylesheet" crossorigin="anonymous"
-        href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9wdWJsaWMuZG0uZmlsZXMuMWRydi5jb20veTRtbzJHWmFlejZkM3h2Nm8zSlNQa3E1WExxbUREX2k1UWlfZGk4aUhEWVhrUHhlejZUSTQ4WGZ1ZE40d0RUSkduME5jLTVEVzYwRXBtbm9ER0tBQmFBY2RXdTBBNzVscU9tRGI3SFM3OXBJMFJvOFgzZ2tiTFJLaGFtazRScUk3TFlUbENIY0dyQmVaWmxsSWk4VGZRbDZaTE00ZlFMZExsaFBzVktpb1VGazJNYVV4T0dBMWJKalRIV3V0eTJPbTVkNk0zUHpQWjVMZHp0MXFya01fQUU2dy1kUV9iUE9vSDQtYVhleF92S1JGOA" />
-    <style>
+<style>
         p {
             text-indent: 40px;
 
@@ -33,17 +12,16 @@
             text-indent: 40px;
 
         }
-    </style>
+</style>
 
 
 
-</head>
-
-<body class="container">
-<div class="alert alert-info" role="alert">
-  A simple info alert—check it out!
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>ALERTA</strong> Esta página está em desenvolvimento, portanto alguns textos podem estar sem formatação/layout.<br>Att Denis
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
+<h2 class="mt-3 mb-5">LEI ORGÂNICA</h2>
 
     <h2 class="text-center">Assembléia Constituinte Municipal</h2>
 
@@ -2629,7 +2607,4 @@
                 Com aprovação da emenda à Lei Orgânica do Município N.º 002 de 01/07/94
                 e N.º 003/2002 de 20/09/2002 (Já incorporadas ao texto).
 
-
-</body>
-
-</html>
+{% endblock %}
