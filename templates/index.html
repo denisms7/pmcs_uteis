@@ -109,19 +109,18 @@
 <div class="">
     <h3 class="pesquisa">LEGISLAÇÃO</h3>
 
-    <a href="{{url_for('organograma')}}" class="pesquisa btn btn-warning m-1">
-        Organograma
-        <span class="position-absolute invisible">3090 LEGISLAÇÃO</span>
+    <a href="{{url_for('organica')}}" class="pesquisa btn btn-warning m-1" target="_blank">
+        Lei Orgânica
     </a>
-
 
     <a type="button" data-bs-toggle="modal" data-bs-target="#modal_pdm" class="pesquisa btn btn-warning m-1">
         Plano Diretor Municipal
         <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
     </a>
 
-    <a href="{{url_for('organica')}}" class="pesquisa btn btn-warning m-1" target="_blank">
-        Lei Orgânica
+    <a type="button" data-bs-toggle="modal" data-bs-target="#modal_organograma" class="pesquisa btn btn-warning m-1">
+        Organograma
+        <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
     </a>
 
     <!-- Modal Transparencia Municipal -->
@@ -129,7 +128,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Plano Diretor Municipal (PDM)</h5>
+                    <h5 class="modal-title">Plano Diretor Municipal (PDM)</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -140,24 +139,50 @@
                 </div>
                 <div class="modal-footer">
 
-                <a href="{{ url_for('static', filename='/PDF/PDM.pdf')}}" download="Hino_Municipal"
+                <a href="{{url_for('pdm')}}" download="PDM.pdf"
                     class="pesquisa btn btn-warning m-1">
-                    Download
+                    Leis Publicadas
                     <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
                 </a>
 
                 <a href="{{url_for('pdm')}}" class="pesquisa btn btn-warning m-1" target="_blank">
-                    Abrir no Navegador
+                    PDM
                     <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
                 </a>
 
                 </div>
             </div>
         </div>
-
-
-
     </div>
+
+    <!-- Modal Organograma -->
+    <div class="modal fade" id="modal_organograma" tabindex="-1" aria-labelledby="Organograma" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Organograma</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Estrutura organizacional de cargos em comissão
+                </div>
+                <div class="modal-footer">
+
+                <a href="{{ url_for('static', filename='/PDF/le.pdf')}}" class="pesquisa btn btn-warning m-1" target="_blank">
+                    Lei 3090/2021
+                    <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
+                </a>
+
+                <a href="{{url_for('pdm')}}" class="pesquisa btn btn-warning m-1" target="_blank">
+                    Organograma
+                    <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
+                </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
