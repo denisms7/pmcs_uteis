@@ -50,6 +50,11 @@ def pdm():
     title = 'PDM'
     return render_template('pdm.html', title=title)
 
+@app.route("/organica")
+def pdm():
+    title = 'Lei 0001/1990'
+    return render_template('lei_organica.html', title=title)
+
 @app.route("/<string:variavel>")
 def erro_pag(variavel):
     title = '#ERRO'
