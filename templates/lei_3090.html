@@ -9,14 +9,14 @@
 
     <title>Lei 3090/2021</title>
 
-    <link rel="sortcut icon" href="{{ url_for('static', filename='PDF/Lei-3090-2021.pdf')}}" type="image/x-icon" />
+    <link rel="sortcut icon" href="{{url_for('static', filename='/pmcs.ico')}}" type="image/x-icon" />
 
 </head>
 
   <body style="margin: 0">
     <div style="width: 100%, height: auto">
-        <embed src="{{ url_for('static', filename='PDF/PDM.pdf')}}" type="application/pdf" width="100%"
-            height="100%" />
+        <embed src="{{ url_for('static', filename='PDF/Lei-3090-2021.pdf')}}" type="application/pdf" width="100%" height="1000px"
+             />
     </div>
   </body>
 </html>
