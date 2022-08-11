@@ -29,7 +29,7 @@
     <a href="{{url_for('sim_am')}}" class="pesquisa btn btn-primary m-1">
         SIM AM
     </a>
-	
+
     <a href="https://www.centenariodosul.pr.gov.br/?meio=16652" target="_blank" class="pesquisa btn btn-primary m-1">
         Iluminação Pública
     </a>
@@ -51,29 +51,31 @@
     </a>
 
     <!-- Modal Transparencia Municipal -->
-    <div class="modal fade" id="modal_transparencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Transparência Municipal</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              Link Interno - Dentro da rede da sede Municipal<br>
-              Link Externo - Fora da rede da sede Municipal
-          </div>
-          <div class="modal-footer">
-              <a href="http://192.168.1.2:7474/transparencia" target="_blank" class="pesquisa btn btn-info m-1">
-                    Link Interno
-                    <span class="position-absolute invisible">Transparência Municipal</span>
-                </a>
-              <a href="http://177.220.139.100:7476/transparencia/" target="_blank" class="pesquisa btn btn-info m-1">
-                Link Externo
-                <span class="position-absolute invisible">Transparência Municipal</span>
-            </a>
-          </div>
+    <div class="modal fade" id="modal_transparencia" tabindex="-1" aria-labelledby="Transparencia"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transparência Municipal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Link Interno - Dentro da rede da sede Municipal<br>
+                    Link Externo - Fora da rede da sede Municipal
+                </div>
+                <div class="modal-footer">
+                    <a href="http://192.168.1.2:7474/transparencia" target="_blank" class="pesquisa btn btn-info m-1">
+                        Link Interno
+                        <span class="position-absolute invisible">Transparência Municipal</span>
+                    </a>
+                    <a href="http://177.220.139.100:7476/transparencia/" target="_blank"
+                        class="pesquisa btn btn-info m-1">
+                        Link Externo
+                        <span class="position-absolute invisible">Transparência Municipal</span>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <a href="https://www.centenariodosul.pr.leg.br/" target="_blank" class="pesquisa btn btn-info m-1">
@@ -110,6 +112,45 @@
     <a href="{{url_for('organograma')}}" class="pesquisa btn btn-warning m-1">
         Organograma
     </a>
+
+
+    <a type="button" data-bs-toggle="modal" data-bs-target="#modal_pdm" class="pesquisa btn btn-info m-1">
+        Plano Diretor Municipal
+        <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
+    </a>
+
+    <!-- Modal Transparencia Municipal -->
+    <div class="modal fade" id="modal_pdm" tabindex="-1" aria-labelledby="PDM" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transparência Municipal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Plano Diretor Municipal (PDM) é o mecanismo legal que visa orientar a ocupação do solo urbano,
+                    tomando por base um lado de interesses coletivos e difusos tais como a preservação da natureza e da
+                    memória, e de outro os interesses particulares de seus moradores.<br>
+                    Disponibilizamos o Plano Diretor de Centenário do Sul nos Links abaixo:
+                </div>
+                <div class="modal-footer">
+
+                <a href="{{ url_for('static', filename='/PDF/PDM.pdf')}}" download="Hino_Municipal"
+                    class="pesquisa btn btn-success m-1">
+                    Download
+                    <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
+                </a>
+
+                <a href="{{url_for('organograma')}}" class="pesquisa btn btn-warning m-1"  target="_blank">
+                    Abrir
+                    <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
+                </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 </div>
