@@ -51,7 +51,7 @@ def pdm():
     return render_template('pdm.html', title=title)
 
 @app.route("/organica")
-def pdm():
+def organica():
     title = 'Lei 0001/1990'
     return render_template('lei_organica.html', title=title)
 
