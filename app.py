@@ -45,6 +45,11 @@ def sim_am():
     title = 'SIM-AM'
     return render_template('sim.html', title=title)
 
+@app.route("/pdm")
+def pdm():
+    title = 'PDM'
+    return render_template('pdm.html', title=title)
+
 @app.route("/<string:variavel>")
 def erro_pag(variavel):
     title = '#ERRO'

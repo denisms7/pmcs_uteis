@@ -114,7 +114,7 @@
     </a>
 
 
-    <a type="button" data-bs-toggle="modal" data-bs-target="#modal_pdm" class="pesquisa btn btn-info m-1">
+    <a type="button" data-bs-toggle="modal" data-bs-target="#modal_pdm" class="pesquisa btn btn-warning m-1">
         Plano Diretor Municipal
         <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
     </a>
@@ -124,7 +124,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Transparência Municipal</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Plano Diretor Municipal (PDM)</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -136,13 +136,13 @@
                 <div class="modal-footer">
 
                 <a href="{{ url_for('static', filename='/PDF/PDM.pdf')}}" download="Hino_Municipal"
-                    class="pesquisa btn btn-success m-1">
+                    class="pesquisa btn btn-warning m-1">
                     Download
                     <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
                 </a>
 
-                <a href="{{url_for('organograma')}}" class="pesquisa btn btn-warning m-1"  target="_blank">
-                    Abrir
+                <a href="{{url_for('pdm')}}" class="pesquisa btn btn-warning m-1">
+                    Abrir no Navegador
                     <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
                 </a>
 
