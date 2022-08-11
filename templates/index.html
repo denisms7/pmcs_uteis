@@ -111,12 +111,17 @@
 
     <a href="{{url_for('organograma')}}" class="pesquisa btn btn-warning m-1">
         Organograma
+        <span class="position-absolute invisible">3090 LEGISLAÇÃO</span>
     </a>
 
 
     <a type="button" data-bs-toggle="modal" data-bs-target="#modal_pdm" class="pesquisa btn btn-warning m-1">
         Plano Diretor Municipal
         <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
+    </a>
+
+            <a href="{{url_for('organograma')}}" class="pesquisa btn btn-warning m-1 disabled">
+        Lei Orgânica
     </a>
 
     <!-- Modal Transparencia Municipal -->
@@ -149,6 +154,9 @@
                 </div>
             </div>
         </div>
+
+
+
     </div>
 
 
