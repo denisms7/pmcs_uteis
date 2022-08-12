@@ -113,47 +113,18 @@
         Lei Orgânica
     </a>
 
-    <a type="button" data-bs-toggle="modal" data-bs-target="#modal_pdm" class="pesquisa btn btn-warning m-1">
+    <a href="{{url_for('leis_pdm')}}" class="pesquisa btn btn-warning m-1">
         Plano Diretor Municipal
         <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
     </a>
+
 
     <a type="button" data-bs-toggle="modal" data-bs-target="#modal_organograma" class="pesquisa btn btn-warning m-1">
         Organograma
         <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
     </a>
 
-    <!-- Modal Transparencia Municipal -->
-    <div class="modal fade" id="modal_pdm" tabindex="-1" aria-labelledby="PDM" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Plano Diretor Municipal (PDM)</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Plano Diretor Municipal (PDM) é o mecanismo legal que visa orientar a ocupação do solo urbano,
-                    tomando por base um lado de interesses coletivos e difusos tais como a preservação da natureza e da
-                    memória, e de outro os interesses particulares de seus moradores.<br>
-                    Disponibilizamos o Plano Diretor de Centenário do Sul nos Links abaixo:
-                </div>
-                <div class="modal-footer">
 
-                <a href="{{url_for('pdm')}}" download="PDM.pdf"
-                    class="pesquisa btn btn-warning m-1">
-                    Leis Publicadas
-                    <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
-                </a>
-
-                <a href="{{url_for('pdm')}}" class="pesquisa btn btn-warning m-1" target="_blank">
-                    PDM
-                    <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
-                </a>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Modal Organograma -->
     <div class="modal fade" id="modal_organograma" tabindex="-1" aria-labelledby="Organograma" aria-hidden="true">

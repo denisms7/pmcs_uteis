@@ -50,6 +50,11 @@ def sim_am():
     title = 'SIM-AM'
     return render_template('sim.html', title=title)
 
+@app.route("/leis-pdm")
+def leis_pdm():
+    title = 'PDM'
+    return render_template('leis_pdm.html', title=title)
+
 @app.route("/pdm")
 def pdm():
     title = 'PDM'
