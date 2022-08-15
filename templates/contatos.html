@@ -5,7 +5,7 @@
 <div class="">
     <h2 class="mt-3 mb-5">CONTATOS</h2>
 
-    {% for x in categoria %}
+    {% for x in df_categoria %}
 
     <hr class="pesquisa mt-5 mb-5">
     <h2 class="pesquisa">{{ x }}</h2>
@@ -13,23 +13,23 @@
     <table class="table table-hover">
 
         <thead>
-            <tr>
-                <td style="width: 20em">SETOR:</td>
-                <td class="text-center" style="width: 10em">CONTATO:</td>
-                <td style="width: 20em">E-MAIL:</td>
+            <tr  class="fw-bold">
+                <td scope="col" style="width: 20em">SETOR:</td>
+                <td scope="col" class="text-center" style="width: 10em">CONTATO:</td>
+                <td scope="col" style="width: 20em">E-MAIL:</td>
             <tr>
         </thead>
-        {% for item in df_contato.index %}
+        {% for item in df_contato %}
 
-        <!-- {% if item[2] == x %} -->
+        {% if item[3] == x %}
 
         <tr class="pesquisa">
-            <td>{{ df_contato["setor"][item] }}</td>
-            <td class="text-center">{{ df_contato["setor"][item] }}</td>
-            <td>{{ df_contato["setor"][email] }}</td>
+            <td>{{ item[2] }}</td>
+            <td class="text-center">{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
         </tr>
 
-        <!-- {% endif %} -->
+        {% endif %}
 
         {% endfor %}
 

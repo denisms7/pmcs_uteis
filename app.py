@@ -1,5 +1,5 @@
 from flask import Flask, render_template, Response, request
-from contatos import df_contato, categoria
+from contatos import df_contato, df_categoria
 
 app = Flask(__name__)
 app.config['TITLE'] = 'Uteis'
@@ -38,7 +38,7 @@ def organograma_lei():
 @app.route("/contatos")
 def contatos():
     title = 'Contatos'
-    return render_template('contatos.html', df_contato=df_contato, categoria=categoria, title=title)
+    return render_template('contatos.html', df_contato=df_contato, df_categoria=df_categoria, title=title)
 
 @app.route("/suporte")
 def suporte():
