@@ -51,8 +51,7 @@
     </a>
 
     <!-- Modal Transparencia Municipal -->
-    <div class="modal fade" id="modal_transparencia" tabindex="-1" aria-labelledby="Transparencia"
-        aria-hidden="true">
+    <div class="modal fade" id="modal_transparencia" tabindex="-1" aria-labelledby="Transparencia" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -118,13 +117,10 @@
         <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
     </a>
 
-
     <a type="button" data-bs-toggle="modal" data-bs-target="#modal_organograma" class="pesquisa btn btn-warning m-1">
         Organograma
         <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
     </a>
-
-
 
     <!-- Modal Organograma -->
     <div class="modal fade" id="modal_organograma" tabindex="-1" aria-labelledby="Organograma" aria-hidden="true">
@@ -139,21 +135,22 @@
                 </div>
                 <div class="modal-footer">
 
-                <a href="{{url_for('organograma_lei')}}" class="pesquisa btn btn-warning m-1" target="_blank">
-                    Lei 3090/2021
-                    <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
-                </a>
+                    <a href="{{url_for('organograma_lei')}}" class="pesquisa btn btn-warning m-1" target="_blank">
+                        Lei 3090/2021
+                        <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
+                    </a>
 
-                <a href="{{ url_for('static', filename='/static/documentos/Organograma_visio.vsdx')}}" class="pesquisa btn btn-warning m-1">
-                    Arquivo original Visio
-                    <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
-                </a>
+                    <a href="{{ url_for('static', filename='/static/documentos/Organograma_visio.rar')}}"
+                        class="pesquisa btn btn-warning m-1">
+                        Arquivo original Visio
+                        <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
+                    </a>
 
 
-                <a href="{{url_for('organograma')}}" class="pesquisa btn btn-warning m-1" target="_blank">
-                    Organograma
-                    <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
-                </a>
+                    <a href="{{url_for('organograma')}}" class="pesquisa btn btn-warning m-1" target="_blank">
+                        Organograma
+                        <span class="position-absolute invisible">Organograma LEGISLAÇÃO lei 3090</span>
+                    </a>
 
                 </div>
             </div>
