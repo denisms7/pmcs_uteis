@@ -1,0 +1,15 @@
+@media (max-width: 820px) {
+  #navbarSupportedContent {
+    margin-top: 8px;
+  }
+}
+
+
+.botao-hover a:hover {
+    transform: scale(1.1);
+    border: black solid 1px;
+
+		box-shadow: 3px 3px 1px black;
+		-moz-box-shadow: 1px 1px 0px black;
+		-webkit-box-shadow: 3px 3px 1px black;
+}
