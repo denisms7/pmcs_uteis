@@ -65,6 +65,11 @@ def organica():
     title = 'Lei 0001/1990'
     return render_template('lei_organica.html', title=title)
 
+@app.route("/planodecargos")
+def plano_de_cargos():
+    title = 'Lei C. 0008/2020'
+    return render_template('plano.de.carreira.html', title=title)
+
 @app.route("/<string:variavel>")
 def erro_pag(variavel):
     title = '#ERRO'
