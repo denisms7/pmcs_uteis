@@ -134,6 +134,46 @@
         </div>
     </div>
 
+    <a href="{{url_for('organica')}}" data-bs-toggle="modal" data-bs-target="#modal_adiantamento" class="pesquisa btn btn-warning m-1" target="_blank">
+        Manual de Adiantamento
+    </a>
+
+
+
+      <!-- Modal Adiantamento -->
+    <div class="modal fade" id="modal_adiantamento" tabindex="-1" aria-labelledby="Organograma" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Organograma</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Fundamentação:</p>
+                    <p>
+                        <a class="btn-link" href="{{ url_for('static', filename='/documentos/adiantamentos/Lei_de_Responsabilidade Fiscal.pdf')}}" target="_blank">Lei de Responsabilidade Fiscal<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
+                        <a class="btn-link" href="{{ url_for('static', filename='/documentos/adiantamentos/Lei_4320_64.pdf')}}" target="_blank">Lei Federal 4320/1964<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
+                        <a class="btn-link" href="{{ url_for('static', filename='/documentos/adiantamentos/Lei_Municipal_1189_93.pdf')}}" target="_blank">Lei Municipal 1189/1993<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
+                        <a class="btn-link" href="{{ url_for('static', filename='/documentos/adiantamentos/Decreto_Municipal_119_93.pdf')}}" target="_blank">Decreto Municipal 0119/1993.pdf<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+
+                    <a href="{{ url_for('static', filename='/documentos/adiantamentos/manual_de_adiantamento.pdf')}}" class="pesquisa btn btn-warning m-1" target="_blank">
+                        Manual de Adiantamento
+                        <span class="position-absolute invisible">Manual de Adiantamento</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 </div>
 
 <hr class="pesquisa mt-5 mb-5">
