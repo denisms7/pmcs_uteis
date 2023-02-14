@@ -1,6 +1,8 @@
 from flask import Flask, render_template, Response, request
 from contatos import df_contato, df_categoria
 
+from config import AMBIENTE, HOST, PORT
+
 app = Flask(__name__)
 app.config['TITLE'] = 'Uteis'
 
@@ -76,8 +78,11 @@ def erro_pag(variavel):
     return render_template('erro.html', variavel=variavel, title=title)
 
 
-if __name__ == "__main__":
-    app.run(debug=True, port=80)
 
-#if __name__ == "__main__":
-#    app.run(host='0.0.0.0', debug=False, port=80)
+
+if AMBIENTE == 1:
+    if __name__ == "__main__":
+        app.run(debug=True, port=80)
+else:
+    if __name__ == "__main__":
+        app.run(host=HOST, debug=False, port=PORT)
