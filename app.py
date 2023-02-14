@@ -7,7 +7,7 @@ app.config['TITLE'] = 'Uteis'
 
 @app.route("/")
 def homepage():
-    title = 'INICIO'
+    title = 'Início'
     return render_template('index.html', title=title)
 
 @app.route("/hino-municipal")
