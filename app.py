@@ -1,6 +1,8 @@
 from flask import Flask, render_template, Response, request
 from contatos import df_contato, df_categoria
 
+import pandas as pd
+
 from config import AMBIENTE, HOST, PORT
 
 app = Flask(__name__)
@@ -9,8 +11,22 @@ app.config['TITLE'] = 'Uteis'
 
 @app.route("/")
 def homepage():
+    caminho = 'aniversarios.csv'
+    df = pd.read_csv(caminho, encoding='ANSI', delimiter=";")
+    df['data'] = pd.to_datetime(df['data'])
+
+    filtro = (df['data'].dt.day == pd.Timestamp.today().day) & (df['data'].dt.month == pd.Timestamp.today().month)
+    aniversariantes_do_dia = df[filtro]
+    data = aniversariantes_do_dia.values.tolist()
+
+
+    # Saida:
+    df = df.values.tolist()
+
+
+
     title = 'Início'
-    return render_template('index.html', title=title)
+    return render_template('index.html', title=title, data=data)
 
 @app.route("/hino-municipal")
 def hino_municipal():
