@@ -14,17 +14,11 @@ def homepage():
     caminho = 'aniversarios.csv'
     df = pd.read_csv(caminho, encoding='ANSI', delimiter=";")
     df['data'] = pd.to_datetime(df['data'])
-
     filtro = (df['data'].dt.day == pd.Timestamp.today().day) & (df['data'].dt.month == pd.Timestamp.today().month)
     aniversariantes_do_dia = df[filtro]
     data = aniversariantes_do_dia.values.tolist()
-
-
-    # Saida:
     df = df.values.tolist()
-
-
-
+    
     title = 'Início'
     return render_template('index.html', title=title, data=data)
 
@@ -57,11 +51,6 @@ def organograma_lei():
 def contatos():
     title = 'Contatos'
     return render_template('contatos.html', df_contato=df_contato, df_categoria=df_categoria, title=title)
-
-@app.route("/suporte")
-def suporte():
-    title = 'Suporte'
-    return render_template('suporte.html', title=title)
 
 @app.route("/sim")
 def sim_am():
