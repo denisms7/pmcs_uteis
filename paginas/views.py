@@ -9,4 +9,5 @@ class PaginaInicial(TemplateView):
 class InteligenciaA(TemplateView):
     template_name = 'paginas\inteligencia_a.html'
 
-    
+class PDM(TemplateView):
+    template_name = 'paginas\leis_pdm.html'
