@@ -4,5 +4,9 @@ from django.urls import reverse_lazy
 
 
 class PaginaInicial(TemplateView):
-    login_url = reverse_lazy('login')
     template_name = 'paginas\index.html'
+
+class InteligenciaA(TemplateView):
+    template_name = 'paginas\inteligencia_a.html'
+
+    
