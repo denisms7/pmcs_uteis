@@ -6,9 +6,6 @@
 
 {% block pagina %}
 
-
-
-
 <h2 class="mt-3 mb-5">UTILIDADES</h2>
 
 <div class="">
@@ -145,14 +142,14 @@
                 <div class="modal-body">
                     <p>Fundamentação:</p>
                     <p>
-                        <a class="btn-link p-1 rounded" href="{{ url_for('static', filename='/documentos/adiantamentos/Lei_de_Responsabilidade Fiscal.pdf')}}" target="_blank">Lei de Responsabilidade Fiscal<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
-                        <a class="btn-link p-1 rounded" href="{{ url_for('static', filename='/documentos/adiantamentos/Lei_4320_64.pdf')}}" target="_blank">Lei Federal 4320/1964<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
-                        <a class="btn-link p-1 rounded" href="{{ url_for('static', filename='/documentos/adiantamentos/Lei_Municipal_1189_93.pdf')}}" target="_blank">Lei Municipal 1189/1993<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
-                        <a class="btn-link p-1 rounded" href="{{ url_for('static', filename='/documentos/adiantamentos/Decreto_Municipal_119_93.pdf')}}" target="_blank">Decreto Municipal 0119/1993.pdf<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
+                        <a class="btn-link p-1 rounded" href="{% static 'PDF/documentos/adiantamentos/Lei_de_Responsabilidade Fiscal.pdf' %}" target="_blank">Lei de Responsabilidade Fiscal<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
+                        <a class="btn-link p-1 rounded" href="{% static 'PDF/documentos/adiantamentos/Lei_4320_64.pdf' %}" target="_blank">Lei Federal 4320/1964<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
+                        <a class="btn-link p-1 rounded" href="{% static 'PDF/documentos/adiantamentos/Lei_Municipal_1189_93.pdf' %}" target="_blank">Lei Municipal 1189/1993<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
+                        <a class="btn-link p-1 rounded" href="{% static 'PDF/documentos/adiantamentos/Decreto_Municipal_119_93.pdf' %}" target="_blank">Decreto Municipal 0119/1993.pdf<span class="position-absolute invisible">Manual de Adiantamento</span></a><br>
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <a href="{{ url_for('static', filename='/documentos/adiantamentos/manual_de_adiantamento.pdf')}}" class="pesquisa btn btn-warning m-1" target="_blank">
+                    <a href="{% static 'PDF/documentos/adiantamentos/manual_de_adiantamento.pdf' %}" class="pesquisa btn btn-warning m-1" target="_blank">
                         Manual de Adiantamento
                         <span class="position-absolute invisible">Manual de Adiantamento</span>
                     </a>
@@ -335,29 +332,29 @@
 <div class="">
     <h3 class="pesquisa">MODELOS</h3>
 
-    <a href="{{ url_for('static', filename='/documentos/Solicitacao-de-Compras.docx')}}"
+    <a href="{% static '/documentos/Solicitacao-de-Compras.docx' %}"
         class="pesquisa btn btn-primary m-1">
         Solicitação de Compras
         <span class="position-absolute invisible">modelo</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/documentos/Termo-de-Responsabilidade.docx')}}/"
+    <a href="{% static 'Termo-de-Responsabilidade.docx' %}"
         class="pesquisa btn btn-primary m-1">
         Termo de Responsabilidade
         <span class="position-absolute invisible">modelo</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/documentos/Oficio.docx')}}/" class="pesquisa btn btn-primary m-1">
+    <a href="{% static '/documentos/Oficio.docx' %}" class="pesquisa btn btn-primary m-1">
         Modelo de Ofício
         <span class="position-absolute invisible">modelo</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/documentos/Timbre.docx')}}/" class="pesquisa btn btn-primary m-1">
+    <a href="{% static '/documentos/Timbre.docx' %}" class="pesquisa btn btn-primary m-1">
         Timbrado Word
         <span class="position-absolute invisible">modelo</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/documentos/Requerimento.docx')}}/" class="pesquisa btn btn-primary m-1">
+    <a href="{% static '/documentos/Requerimento.docx' %}" class="pesquisa btn btn-primary m-1">
         Requerimento
         <span class="position-absolute invisible">modelo</span>
     </a>
@@ -368,17 +365,17 @@
 <div class="">
     <h3 class="pesquisa">ÁUDIO</h3>
 
-    <a href="{{url_for('hino_nacional')}}" class="pesquisa btn btn-info m-1">
+    <a href="#" class="pesquisa btn btn-info m-1">
         Hino Nacional
         <span class="position-absolute invisible">audio musica</span>
     </a>
 
-    <a href="{{url_for('hino_estadual')}}" class="pesquisa btn btn-info m-1">
+    <a href="#" class="pesquisa btn btn-info m-1">
         Hino Estadual
         <span class="position-absolute invisible">audio musica</span>
     </a>
 
-    <a href="{{url_for('hino_municipal')}}" class="pesquisa btn btn-info m-1">
+    <a href="#" class="pesquisa btn btn-info m-1">
         Hino Municipal
         <span class="position-absolute invisible">audio musica</span>
     </a>
@@ -390,53 +387,53 @@
 <div class="">
     <h3 class="pesquisa">IMAGENS</h3>
 
-    <a href="{{ url_for('static', filename='/imagens/Brasao-Colorido.png')}}" target="_blank" class="pesquisa btn m-1">
+    <a href="{% static '/imagens/Brasao-Colorido.png' %}" target="_blank" class="pesquisa btn m-1">
         <img class="border border-0 bg-none" height="100" width="100"
-            src="{{ url_for('static', filename='/imagens/Brasao-Colorido.png')}}" alt="Brasão Colorido">
+            src="{% static '/imagens/Brasao-Colorido.png' %}" alt="Brasão Colorido">
         <span class="position-absolute invisible">brasão imagem</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/imagens/brasao_bw.png')}}" target="_blank" class="pesquisa btn m-1">
+    <a href="{% static '/imagens/brasao_bw.png' %}" target="_blank" class="pesquisa btn m-1">
         <img class="border border-0" height="100" width="100"
-            src="{{ url_for('static', filename='/imagens/brasao_bw.png')}}" alt="Brasão Preto e Branco">
+            src="{% static '/imagens/brasao_bw.png' %}" alt="Brasão Preto e Branco">
         <span class="position-absolute invisible">brasão imagem</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/imagens/Brasao-Sem-Fundo.png')}}" target="_blank" class="pesquisa btn m-1">
+    <a href="{% static '/imagens/Brasao-Sem-Fundo.png' %}" target="_blank" class="pesquisa btn m-1">
         <img class="border border-0" height="100" width="100"
-            src="{{ url_for('static', filename='/imagens/Brasao-Sem-Fundo.png')}}" alt="Brasão Sem Fundo">
+            src="{% static '/imagens/Brasao-Sem-Fundo.png' %}" alt="Brasão Sem Fundo">
         <span class="position-absolute invisible">brasão imagem</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/imagens/Logo-Governo.png')}}" target="_blank" class="pesquisa btn m-1">
+    <a href="{% static '/imagens/Logo-Governo.png' %}" target="_blank" class="pesquisa btn m-1">
         <img class="border border-0" height="100" width="100"
-            src="{{ url_for('static', filename='/imagens/Logo-Governo.png')}}" alt="Logo Governo">
+            src="{% static '/imagens/Logo-Governo.png' %}" alt="Logo Governo">
         <span class="position-absolute invisible">Governo imagem cs</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/imagens/Logo-Governo-bw.png')}}" target="_blank" class="pesquisa btn m-1">
+    <a href="{% static '/imagens/Logo-Governo-bw.png' %}" target="_blank" class="pesquisa btn m-1">
         <img class="border border-0" height="100" width="100"
-            src="{{ url_for('static', filename='/imagens/Logo-Governo-bw.png')}}" alt="Logo Governo">
+            src="{% static '/imagens/Logo-Governo-bw.png' %}" alt="Logo Governo">
         <span class="position-absolute invisible">Governo imagem cs</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/imagens/simbolo_centenariosul.png')}}" target="_blank"
+    <a href="{% static '/imagens/simbolo_centenariosul.png' %}" target="_blank"
         class="pesquisa btn m-1">
         <img class="img-thumbnail border border-0" height="100" width="100"
-            src="{{ url_for('static', filename='/imagens/simbolo_centenariosul.png')}}" alt="Simbolo Governo">
+            src="{% static '/imagens/simbolo_centenariosul.png' %}" alt="Simbolo Governo">
         <span class="position-absolute invisible">Governo imagem cs</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/imagens/infos_cores.jpg')}}" target="_blank" class="pesquisa btn m-1">
+    <a href="{% static '/imagens/infos_cores.jpg' %}" target="_blank" class="pesquisa btn m-1">
         <img class="border border-0" height="100" width="100"
-            src="{{ url_for('static', filename='/imagens/infos_cores.jpg')}}" alt="Informacao Logo">
+            src="{% static '/imagens/infos_cores.jpg' %}" alt="Informacao Logo">
         <span class="position-absolute invisible">cores imagem</span>
     </a>
 
-    <a href="{{ url_for('static', filename='/imagens/Bandeira_Municipal.png')}}" target="_blank"
+    <a href="{% static '/imagens/Bandeira_Municipal.png' %}" target="_blank"
         class="pesquisa btn m-1">
         <img class="border border-0" height="100" width="100"
-            src="{{ url_for('static', filename='/imagens/Bandeira_Municipal.png')}}" alt="Bandeira">
+            src="{% static '/imagens/Bandeira_Municipal.png' %}" alt="Bandeira">
         <span class="position-absolute invisible">bandeira municipal imagem</span>
     </a>
 

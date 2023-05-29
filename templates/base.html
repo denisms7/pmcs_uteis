@@ -1,4 +1,7 @@
 <!doctype html>
+
+{% load static %}
+
 <html lang="pt-br">
 
 <head>
@@ -7,16 +10,14 @@
     <meta name="author" content="Denis Muniz Silva">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PMCS Úteis</title>
-    <link rel="sortcut icon" href="{% url 'img/pmcs.ico' %}" type="image/x-icon" />
-    <link rel="stylesheet" href="{% url 'css/Bootstrap-v5.2.3.css' %}">
-    <link rel="stylesheet" href="{% url 'css/bootstrap-icons@1.8.3' %}">
-    <link rel="stylesheet" href="{% url 'css/main.css' %}">
+    <link rel="sortcut icon" href="{% static 'imagens/pmcs.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/Bootstrap-v5.2.3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons@1.8.3' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 
 <body class="text-bg-light">
-    {% block header %}
-        {% include header.html %}
-    {% endblock header %}
+    {% include 'menu.html' %}
     <div class="pt-3 ps-3 pe-3 container botao-hover">
         {% block pagina %}{% endblock pagina %}
     </div>
@@ -29,10 +30,9 @@
             </a>
         </div>
     </div>
-    {% block footer %}
-        {% include footer.html %}
-    {% endblock footer %}
+
+    {% include 'footer.html' %}
 </body>
-    <script src="{% url 'js/Bootstrap-v5.2.3.js' %}"></script>
-    <script src="{% url 'js/pesquisa.js' %}"></script>
+    <script src="{% static 'js/Bootstrap-v5.2.3.js' %}"></script>
+    <script src="{% static 'js/pesquisa.js' %}"></script>
 </html>
