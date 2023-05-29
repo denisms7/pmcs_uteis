@@ -12,20 +12,25 @@
     <title>PMCS Úteis</title>
     <link rel="sortcut icon" href="{% static 'imagens/pmcs.ico' %}" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'css/Bootstrap-v5.2.3.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-icons@1.8.3' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 
 <body class="text-bg-light">
+    <span id="topo"></span>
+
     {% include 'menu.html' %}
+
     <div class="pt-3 ps-3 pe-3 container botao-hover">
         {% block pagina %}{% endblock pagina %}
     </div>
+
     <div class="pb-3 ps-3 pe-3 container">
         <div class="clearfix pb-4">
             <a href="#topo" class="float-end text-decoration-none text-reset ms-2">
                 <button type="button" class="btn btn-outline-dark rounded-circle">
-                    <span class="bi bi-caret-up-fill" aria-hidden="true"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                    </svg>
                 </button>
             </a>
         </div>
