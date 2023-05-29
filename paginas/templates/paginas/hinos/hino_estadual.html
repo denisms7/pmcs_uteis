@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<h2 class="mt-3 mb-5">HINO ESTADUAL</h2>
+<div class="">
+    <div>
+        <p>
+            <audio controls="controls">
+                <source src="{{ url_for('static', filename='/audio/hino_parana.mp3')}}" type="audio/mp3" />
+                Seu navegador não suporta HTML5 para reproduzir este audio
+            </audio>
+        </p>
+    </div>
+
+    <a href="{{ url_for('static', filename='/audio/hino_parana.mp3')}}" download="Hino_Municipal"
+        class="pesquisa btn btn-success m-1" target="_blank">
+        Download Audio
+    </a>
+
+</div>
+
+<hr class="mt-5 mb-5">
+
+<div class="text-center">
+
+        <h3>HINO DO PARANÁ</h3>
+
+        
+        <p>Entre os astros do Cruzeiro<br>
+        És o mais belo a fulgir!<br>
+        Paraná! Serás luzeiro!<br>
+        Avante! Para o porvir!</p>
+
+        <p>O teu fulgor de mocidade<br>
+        Terra, tens brilho de alvorada<br>
+        Rumores de felicidade<br>
+        Canções e flores pela estrada</p>
+
+        <p>Rumores de felicidade<br>
+        Canções e flores pela estrada!</p>
+
+        <p>Entre os astros do Cruzeiro<br>
+        És o mais belo a fulgir!<br>
+        Paraná! Serás luzeiro!<br>
+        Avante! Para o porvir!</p>
+
+        <p>Outrora apenas panorama<br>
+        De campos ermos e florestas<br>
+        Vibra agora a tua fama<br>
+        Pelos clarins das grandes festas</p>
+
+        <p>Vibra agora a tua fama<br>
+        Pelos clarins das grandes festas!</p>
+
+        <p>Entre os astros do Cruzeiro<br>
+        És o mais belo a fulgir!<br>
+        Paraná! Serás luzeiro!<br>
+        Avante! Para o porvir!</p>
+
+        <p>A glória... A glória... Santuário!<br>
+        Que o povo aspire e que idolatre-a<br>
+        E brilharás com brilho vário<br>
+        Estrela rútila da Pátria</p>
+
+        <p>E brilharás com brilho vário<br>
+        Estrela rútila da Pátria!</p>
+
+        <p>Entre os astros do Cruzeiro<br>
+        És o mais belo a fulgir!<br>
+        Paraná! Serás luzeiro!<br>
+        Avante! Para o porvir!</p>
+
+        <p>Pela vitória do mais forte<br>
+        Lutar! Lutar! Chegada é a hora<br>
+        Para o Zênite! Eis o teu norte!<br>
+        Terra! Já vem rompendo a aurora!</p>
+
+        <p>Para o Zênite! Eis o teu norte!<br>
+        Terra! Já vem rompendo a aurora!</p>
+
+        <p>Entre os astros do Cruzeiro<br>
+        És o mais belo a fulgir!<br>
+        Paraná! Serás luzeiro!<br>
+        Avante! Para o porvir!</p>
+
+</div>
+
+{% endblock %}

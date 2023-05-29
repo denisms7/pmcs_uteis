@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<h2 class="mt-3 mb-5">HINO MUNICIPAL</h2>
+<div class="">
+    <div>
+        <p>
+            <audio controls="controls">
+                <source src="{{ url_for('static', filename='/audio/hino_municipal.mp3')}}" type="audio/mp3" />
+                Seu navegador não suporta HTML5 para reproduzir este audio
+            </audio>
+        </p>
+    </div>
+
+    <a href="{{ url_for('static', filename='/audio/hino_municipal.mp3')}}" download="Hino_Municipal"
+        class="pesquisa btn btn-success m-1" target="_blank">
+        Download Audio
+    </a>
+
+    <a href="{{ url_for('static', filename='/documentos/Hino-Municipal.docx')}}" class="pesquisa btn btn-success m-1"
+        download="Hino_Municipal" target="_blank">
+        Download Texto
+    </a>
+
+</div>
+
+<hr class="mt-5 mb-5">
+
+<div class="text-center">
+
+        <h3>HINO DE CENTENÁRIO DO SUL</h3>
+
+        <p>Parte I</p>
+
+        <p>Avante Centenário do Sul,<br>
+            O seu progresso não pode parar.<br>
+            Cidade que aqui nasceu,<br>
+            Entre as matas do meu Paraná.<br>
+            Imigrantes que hoje são pioneiros,<br>
+            Que aqui chegaram para desbravar,</p>
+
+        <p>Com muita fé, luta e coragem,<br>
+            Deram a vida por esse lugar. (2x)</p>
+
+        <p>Refrão</p>
+
+        <p>Centenário do Sul, vou sorrir<br>
+            De alegria, vou voar no espaço,<br>
+            Embarcar numa nuvem,<br>
+            Pra te dar um abraço! (2x)</p>
+
+        <p>Parte II</p>
+
+        <p>O lençol verde que se vê ao longe,<br>
+            Cobrindo o solo vermelho desse chão,<br>
+            O homem teceu com suor,<br>
+            Espalhou na terra sua plantação.<br>
+            Rio Centenário transporta esperança,<br>
+            Sua água é vida nessa região,</p>
+
+        <p>E reflete o brilho das estrelas<br>
+            Seu povo é parte da constelação. (2x)</p>
+
+        <p>Refrão</p>
+
+        <p>Centenário do Sul, vou sorrir<br>
+            De alegria, vou voar no espaço,<br>
+            Embarcar numa nuvem,<br>
+            Pra te dar um abraço! (2x)</p>
+
+        <p>Parte III</p>
+
+        <p>A bandeira que tremula no alto,<br>
+            Símbolo de fé, luta e de vitória.<br>
+            O vermelho é a chama que mantém aceso<br>
+            O passado em nossa memória.<br>
+            O branco é paz que reina em seu povo.<br>
+            Verde é a esperança e a nossa glória.</p>
+
+        <p>E o povo manterá para sempre,<br>
+            As tradições vindas de sua história. (2x)</p>
+
+        <p>Refrão</p>
+
+        <p>Centenário do Sul, vou sorrir<br>
+            De alegria, vou voar no espaço,<br>
+            Embarcar numa nuvem,<br>
+            Pra te dar um abraço! (2x)</p>
+
+        <p>Parte VI</p>
+
+        <p>O pilar que sustenta essa luta<br>
+            É a fé desse povo cristão,<br>
+            Que a cada dia faz da vida<br>
+            Um exemplo de superação.<br>
+            Promovendo festas e esportes,<br>
+            Ajudando sempre seu irmão.</p>
+
+        <p>Centenário, pequena gigante,<br>
+            Que engrandece nossa nação! (2x)</p>
+
+        <p>Refrão</p>
+
+        <p>Centenário do Sul, vou sorrir<br>
+            De alegria, vou voar no espaço,<br>
+            Embarcar numa nuvem,<br>
+            Pra te dar um abraço! (2x)</p>
+    </div>
+
+    <br>
+
+    <div class="text-start">
+        <p>Composição: Ademir de Oliveira Mendonça<br>
+            O Hino de Centenário do Sul foi escolhido no ano de 2011.<br>
+            Licitação n° 0116/2010, modalidade Concurso n° 0001/2010</p>
+    </div>
+
+{% endblock %}
