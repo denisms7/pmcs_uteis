@@ -7,21 +7,15 @@
 <h2 class="mt-3 mb-5">CURSOS</h2>
 
 <div class="">
-    <h3 class="pesquisa text-upper">MICROSOFT EXCEL</h3>
-
-    {% for item in Excel %}
-        <a href="{% url 'video_player' item.pk %}" target="_blank" class="pesquisa btn btn-success m-1">
-            {{item.title}}
+{% for curso in cursos %}
+    <h3>{{ curso.curso }}</h3>
+    {% for video in curso.video_set.all %}
+        <a href="{% url 'video_player' video.pk %}" target="_blank" class="pesquisa btn btn-success m-1">
+            {{ video.title }}
         </a>
     {% endfor %}
-
-
-    <a href="{% url 'video_player' 3 %}" target="_blank" class="pesquisa btn btn-success m-1">
-        3
-    </a>
-
-
-
+    <hr class="pesquisa mt-5 mb-5">
+{% endfor %}
 </div>
 
 

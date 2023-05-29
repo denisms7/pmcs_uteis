@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import VideoExcel
+from .models import Video, Curso
 
 
-class Cursos(TemplateView):
-    template_name = 'curso\index.html'
+
+def Cursos(request):
+    video = Video.objects.all()
+    cursos = Curso.objects.all()
+    return render(request, 'curso\index.html', {'video': video, 'cursos': cursos})
 
 
 def video_player(request, video_id):
-    Excel = VideoExcel.objects.get(pk=video_id)
-    return render(request, 'curso\player.html', {'video': Excel})
+    video = Video.objects.get(pk=video_id)
+    return render(request, 'curso\player.html', {'video': video})
