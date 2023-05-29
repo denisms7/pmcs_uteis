@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# Suporte
+Office2007.rar
+SCP550.rar
+
+
 # Distribution / packaging
 .Python
 build/
