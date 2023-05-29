@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import Video
+from .models import VideoExcel
 
 
 class Cursos(TemplateView):
@@ -8,5 +8,5 @@ class Cursos(TemplateView):
 
 
 def video_player(request, video_id):
-    video = Video.objects.get(pk=video_id)
-    return render(request, 'curso\player.html', {'video': video})
+    Excel = VideoExcel.objects.get(pk=video_id)
+    return render(request, 'curso\player.html', {'video': Excel})

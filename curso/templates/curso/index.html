@@ -8,25 +8,21 @@
 
 <div class="">
     <h3 class="pesquisa text-upper">MICROSOFT EXCEL</h3>
-    <a href="" target="_blank"
-        class="pesquisa btn btn-success m-1">
-        Reproduzir vídeo 01
+
+    {% for item in Excel %}
+        <a href="{% url 'video_player' item.pk %}" target="_blank" class="pesquisa btn btn-success m-1">
+            {{item.title}}
+        </a>
+    {% endfor %}
+
+
+    <a href="{% url 'video_player' 3 %}" target="_blank" class="pesquisa btn btn-success m-1">
+        3
     </a>
 
 
-
-    <a href="{% url 'video_player' 1 %}" target="_blank"
-        class="pesquisa btn btn-success m-1">
-        Base de Rap
-    </a>
-
-    <a href="{% url 'video_player' 2 %}" target="_blank"
-    class="pesquisa btn btn-success m-1">
-    Eco Famas
-    </a>
 
 </div>
 
-<hr class="pesquisa mt-5 mb-5">
 
 {% endblock pagina %}

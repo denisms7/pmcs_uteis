@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
 {% block pagina %}
 
 <div class="container">
     <video controls autoplay class="video_player">
         <source src="{{ video.video_file.url }}" type="video/mp4" />
-        <!-- Suportado no IE9, Chrome 6 e Safari 5 --> 
         Seu navegador não suporta a tag vídeo.
     </video>
-    <h2 class="mt-3 mb-5">{{ video.title }}</h2>
+    <h2 class="mt-3">{{ video.title }}</h2>
 </div>
 
+
 {% endblock pagina %}
+
+{% block topo %}{% endblock topo %}
+
+{% block rodape %} {% endblock rodape %}
