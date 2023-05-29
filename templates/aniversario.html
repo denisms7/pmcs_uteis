@@ -1,0 +1,12 @@
+{% if data|length > 0 %}
+<div class="aniversario alert" role="alert">
+    <div class="fw-bold">
+        <span style="color:blue;">F</span><span style="color:red;">E</span><span style="color:green;">L</span><span style="color:rgb(161, 161, 6);">I</span><span style="color:orange;">Z</span> <span style="color:purple;">A</span><span style="color:pink;">N</span><span style="color:brown;">I</span><span style="color:teal;">V</span><span style="color:maroon;">E</span><span style="color:olive;">R</span><span style="color:navy;">S</span><span style="color:gold;">Á</span><span style="color:darkblue;">R</span><span style="color:lime;">I</span><span style="color:darkorange;">O</span><span style="color:crimson;">!</span><span style="color:blueviolet;">!</span><span style="color:coral;">!</span>
+    </div>
+    <ul class="aniversario__lista">
+        {% for item in data %}
+            <li class="aniversario__lista">{{item[0]}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
