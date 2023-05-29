@@ -4,8 +4,20 @@
 
 {% block pagina %}
 
+<h2 class="mt-3 mb-5">CURSOS</h2>
 
-<a href="{% url 'video_player' video.id %}">Reproduzir vídeo</a>
+<div class="">
+    <h3 class="pesquisa text-upper">MICROSOFT EXCEL</h3>
+    <a href="{% url 'video_player' video.id %}" target="_blank"
+        class="pesquisa btn btn-primary m-1">
+        Reproduzir vídeo 01
+    </a>
+    <a href="{% url 'video_player' video.id %}" target="_blank"
+        class="pesquisa btn btn-primary m-1">
+        Reproduzir vídeo 02
+    </a>
+</div>
 
+<hr class="pesquisa mt-5 mb-5">
 
 {% endblock block pagina %}
