@@ -11,13 +11,13 @@
     <div>
         <p>
             <audio controls="controls">
-                <source src="{{ url_for('static', filename='/audio/hino_nacional.mp3')}}" type="audio/mp3" />
+                <source src="{% static 'paginas/audio/hino_nacional.mp3' %}" type="audio/mp3" />
                 Seu navegador não suporta HTML5 para reproduzir este audio
             </audio>
         </p>
     </div>
 
-    <a href="{{ url_for('static', filename='/audio/hino_nacional.mp3')}}" download="Hino_Municipal"
+    <a href="{% static 'paginas/audio/hino_nacional.mp3' %}" download="Hino_Municipal"
         class="pesquisa btn btn-success m-1" target="_blank">
         Download Audio
     </a>
