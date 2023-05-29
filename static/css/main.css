@@ -28,3 +28,9 @@
   list-style: none;
   margin: 0;
 }
+
+
+.video_player {
+  max-width: 100%;
+  width: 100%;
+}

@@ -7,7 +7,6 @@ class Cursos(TemplateView):
     template_name = 'curso\index.html'
 
 
-
 def video_player(request, video_id):
-    video = Video.objects.get(id=video_id)
-    return render(request, 'video_player.html', {'video': video})
+    video = Video.objects.get(pk=video_id)
+    return render(request, 'curso\player.html', {'video': video})

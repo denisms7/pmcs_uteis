@@ -8,16 +8,25 @@
 
 <div class="">
     <h3 class="pesquisa text-upper">MICROSOFT EXCEL</h3>
-    <a href="{% url 'video_player' video.id %}" target="_blank"
-        class="pesquisa btn btn-primary m-1">
+    <a href="" target="_blank"
+        class="pesquisa btn btn-success m-1">
         Reproduzir vídeo 01
     </a>
-    <a href="{% url 'video_player' video.id %}" target="_blank"
-        class="pesquisa btn btn-primary m-1">
-        Reproduzir vídeo 02
+
+
+
+    <a href="{% url 'video_player' 1 %}" target="_blank"
+        class="pesquisa btn btn-success m-1">
+        Base de Rap
     </a>
+
+    <a href="{% url 'video_player' 2 %}" target="_blank"
+    class="pesquisa btn btn-success m-1">
+    Eco Famas
+    </a>
+
 </div>
 
 <hr class="pesquisa mt-5 mb-5">
 
-{% endblock block pagina %}
+{% endblock pagina %}
