@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 import pandas as pd
 from django.conf import settings
 from datetime import datetime
+from django.shortcuts import render
 
 def Aniversariante():
     caminho = str(settings.BASE_DIR) + r'\aniversarios.csv'
@@ -38,3 +39,18 @@ class HinoEstadual(TemplateView):
 
 class HinoMunicipal(TemplateView):
     template_name = 'paginas\hinos\hino_municipal.html'
+
+def error_400_view(request, exception):
+    return render(request, 'error.html', {'status_code': 400})
+
+def error_403_view(request, exception):
+    return render(request, 'error.html', {'status_code': 403})
+
+def error_404_view(request, exception):
+    return render(request, 'error.html', {'status_code': 404})
+
+def error_500_view(request):
+    return render(request, 'error.html', {'status_code': 500})
+
+def error_502_view(request):
+    return render(request, 'error.html', {'status_code': 502})
