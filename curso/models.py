@@ -6,6 +6,7 @@ class Curso(models.Model):
     curso = models.CharField(max_length=200, verbose_name=_('Nome do Curso'))
     cor_botao = models.CharField(max_length=10, verbose_name=_('Cor Botões'), default="#0B5ED7")
     cor_texto = models.CharField(max_length=10, verbose_name=_('Cor Textos'), default="#fff")
+    descricao = models.TextField(max_length=2000, verbose_name=_('Descrição'), null=True, blank=True)
     def __str__(self):
         return f"{self.curso}"
     

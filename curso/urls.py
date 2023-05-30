@@ -1,7 +1,11 @@
 from django.urls import path
-from .views import video_player, Cursos
+from .views import video_player, Cursos, CursoAdded, CursoEdit
 
 urlpatterns = [
     path('/cursos/', Cursos, name='cursos'),
     path('video/<int:video_id>/', video_player, name='video_player'),
+
+
+    path('curso/added/', CursoAdded.as_view(), name='CursoAdded'),
+    path('curso/<int:pk>/update/', CursoEdit.as_view(), name='CursoEdit'),
 ]
