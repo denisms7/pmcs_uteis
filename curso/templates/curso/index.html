@@ -12,9 +12,9 @@
 
 <div class="">
 {% for curso in cursos %}
-    <h3>{{ curso.curso }}</h3>
+    <h3 class="pesquisa">{{ curso.curso }}</h3>
     {% for video in curso.video_set.all %}
-        <a href="{% url 'video_player' video.pk %}" class="pesquisa btn m-1 elemento" style="background-color: {{ video.curso.cor_botao }}; color:{{ video.curso.cor_texto }}">
+        <a href="{% url 'video_player' video.pk %}" class="pesquisa btn m-1 elemento pesquisa" style="background-color: {{ video.curso.cor_botao }}; color:{{ video.curso.cor_texto }}">
             {{ video.title }}
         </a>
     {% empty %}
