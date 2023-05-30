@@ -1,4 +1,5 @@
-# PMCS Uteis
+# DEPRECATED 
+## PMCS Uteis
 ## 🚀 Pagina Web de atalhos e Informação 
 
 Pagina web para auxilio dos servidores públicos do município de [Centenário do Sul](https://www.centenariodosul.pr.gov.br/), tem por objetivo reunir todos caminhos de informação em apenas um local
