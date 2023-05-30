@@ -40,6 +40,12 @@ class HinoEstadual(TemplateView):
 class HinoMunicipal(TemplateView):
     template_name = 'paginas\hinos\hino_municipal.html'
 
+class EnderecoOficiais(TemplateView):
+    template_name = 'paginas\endereco_oficial\enderecos.html'
+
+
+    
+
 def error_400_view(request, exception):
     return render(request, 'error.html', {'status_code': 400})
 

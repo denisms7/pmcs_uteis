@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PaginaInicial, InteligenciaA, PDM, HinoNacional, HinoEstadual, HinoMunicipal
+from .views import PaginaInicial, InteligenciaA, PDM, HinoNacional, HinoEstadual, HinoMunicipal, EnderecoOficiais
 
 urlpatterns = [
     path('', PaginaInicial.as_view(), name='inicio'),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('/hino/nacional/', HinoNacional.as_view(), name='hino_nacional'),
     path('/hino/estadual/', HinoEstadual.as_view(), name='hino_estadual'),
     path('/hino/municipal/', HinoMunicipal.as_view(), name='hino_municipal'),
+    path('/enderecos-oficiais/', EnderecoOficiais.as_view(), name='enderecos_of'),
 ]
