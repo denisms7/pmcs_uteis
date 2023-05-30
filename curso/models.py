@@ -4,6 +4,8 @@ from django.utils.translation import gettext_lazy as _
 class Curso(models.Model):
     data = models.DateTimeField(auto_now_add=True, verbose_name=_('Data'))
     curso = models.CharField(max_length=200, verbose_name=_('Nome do Curso'))
+    cor_botao = models.CharField(max_length=10, verbose_name=_('Cor Botões'), default="#0B5ED7")
+    cor_texto = models.CharField(max_length=10, verbose_name=_('Cor Textos'), default="#fff")
     def __str__(self):
         return f"{self.curso}"
     
