@@ -31,7 +31,7 @@ Execute o comando de migração no terminal do ambiente virtural para criação 
 python manage.py migrate
 ```
 
-Crie um super usuario executando o compando e informe os dados solicitados.
+Crie um super usuario executando o comando e informe os dados solicitados.
 ```
 python manage.py createsuperuser
 ```
@@ -51,7 +51,6 @@ Este comando ira executar o sistema e estará acessivel via IP http://127.0.0.1:
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
-![Pandas](https://pandas.pydata.org)
 
 ## ✒️ Autor
 * **Desenvolvedor** - *Denis Muniz Silva* 
