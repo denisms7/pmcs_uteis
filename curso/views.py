@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.views.generic import TemplateView
+from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
+from django.db.models import Q
 from .models import Video, Curso
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import FormCurso
@@ -39,3 +40,17 @@ class CursoEdit(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         messages.success(self.request, "Curso atualizado com sucesso.")
         return super().form_valid(form)
+    
+
+class CursoSearch(LoginRequiredMixin, ListView):
+    paginate_by = 20
+    model = Curso
+    template_name = 'curso/forms/busca.html'
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')
+        if query:
+            queryset = queryset.filter(
+                Q(curso__icontains=query) | Q(descricao__icontains=query) 
+            )
+        return queryset

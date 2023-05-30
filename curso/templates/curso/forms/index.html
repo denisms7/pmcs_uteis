@@ -38,7 +38,7 @@
 
     <div class="col-sm-12 col-md-12 mb-3">
         <label for="{{ form.descricao.id_for_label }}" class="form-label">{{ form.descricao.label }}: {% if form.descricao.field.required %}<span class="text-danger">*</span>{% endif %}</label>
-        {% render_field form.descricao class="form-control" row="2" %}
+        {% render_field form.descricao class="form-control" rows="3" %}
         {% for error in form.descricao.errors %}
             <span class="text-danger">{{ error }}</span>
         {% endfor %}
