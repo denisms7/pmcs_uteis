@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Define a pasta de trabalho dentro do container
-WORKDIR /app
+WORKDIR /pmcs_uteis
 
 # Copie o arquivo requirements.txt para o container
 COPY requirements.txt .

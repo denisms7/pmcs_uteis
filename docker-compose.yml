@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/app
+      - .:/pmcs_uteis
     ports:
       - 8000:8000
     environment:
