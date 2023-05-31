@@ -9,5 +9,7 @@ services:
     ports:
       - 8000:8000
     environment:
-      - DJANGO_SETTINGS_MODULE=myproject.settings
+      - DJANGO_SETTINGS_MODULE=core_django.settings
       - PYTHONUNBUFFERED=1
+
+    command: python manage.py runserver 0.0.0.0:8000

@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Defina as variáveis de ambiente necessárias para a aplicação Django
-ENV DJANGO_SETTINGS_MODULE=myproject.settings
+ENV DJANGO_SETTINGS_MODULE=core_django.settings
 ENV PYTHONUNBUFFERED=1
 
 
