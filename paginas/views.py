@@ -5,16 +5,19 @@ import pandas as pd
 from django.conf import settings
 from datetime import datetime
 from django.shortcuts import render
+import os
+
 
 def Aniversariante():
-    caminho = str(settings.BASE_DIR) + r'\aniversarios.csv'
+    caminho = os.path.join(settings.BASE_DIR, 'aniversarios.csv')
     print(caminho)
-    df = pd.read_csv(caminho, encoding='ANSI', delimiter=";")
-    df['data'] = pd.to_datetime(df['data'], format='%d/%m/%Y')
-    filtro = (df['data'].dt.day == datetime.now().day) & (df['data'].dt.month == datetime.now().month)
-    aniversariantes_do_dia = df[filtro]
-    data = aniversariantes_do_dia.values.tolist()
-    return data
+    if os.path.exists(caminho):
+        df = pd.read_csv(caminho, encoding='latin1', delimiter=";")
+        df['data'] = pd.to_datetime(df['data'], format='%d/%m/%Y')
+        filtro = (df['data'].dt.day == datetime.now().day) & (df['data'].dt.month == datetime.now().month)
+        aniversariantes_do_dia = df[filtro]
+        data = aniversariantes_do_dia.values.tolist()
+        return data
 
 
 class PaginaInicial(TemplateView):
