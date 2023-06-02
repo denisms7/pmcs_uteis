@@ -34,3 +34,15 @@
   max-width: 100%;
   width: 100%;
 }
+
+.corPrimaria {
+    background-color: #007A37;
+    color: #fff;
+}
+
+
+.corPrimaria a {
+  background-color: #007A37;
+  color: #fff;
+}
+
