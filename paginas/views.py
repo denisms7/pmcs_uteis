@@ -46,7 +46,8 @@ class HinoMunicipal(TemplateView):
 class EnderecoOficiais(TemplateView):
     template_name = 'paginas\endereco_oficial\enderecos.html'
 
-
+class Sismel(TemplateView):
+    template_name = 'paginas\sismel.html'
     
 
 def error_400_view(request, exception):
