@@ -23,10 +23,13 @@
                             </li>
                         </ul>
                     {% endif  %}
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" onkeyup="search_pag()" placeholder="Pesquisa"
-                            aria-label="Pesquisa" id="searchbar">
-                    </form>
+                    <div class="d-flex" >
+                        {% include "tema.html" %}
+                        <form role="search">
+                            <input class="form-control me-2" type="search" onkeyup="search_pag()" placeholder="Pesquisa"
+                                aria-label="Pesquisa" id="searchbar">
+                        </form>
+                    </div>
                 </div>
             </div>
         </nav>
