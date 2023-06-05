@@ -21,8 +21,8 @@ ENV PYTHONPATH=/app
 # Executa as migrações do Django
 RUN python manage.py migrate
 
-# Expõe a porta 8000 (ou qualquer porta usada pelo Django)
-EXPOSE 8000
+# Expõe a porta 80 (ou qualquer porta usada pelo Django)
+EXPOSE 80
 
 # Inicia o servidor do Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
