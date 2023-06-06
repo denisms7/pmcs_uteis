@@ -17,7 +17,6 @@ COPY . .
 ENV DJANGO_SETTINGS_MODULE=core_django.settings.production
 ENV PYTHONPATH=/app
 
-
 # Executa as migrações do Django
 RUN python manage.py migrate
 
@@ -25,4 +24,4 @@ RUN python manage.py migrate
 EXPOSE 80
 
 # Inicia o servidor do Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
