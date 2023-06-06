@@ -30,7 +30,6 @@ INSTALLED_APPS = [
 
     'paginas.apps.PaginasConfig',
     'curso.apps.CursoConfig',
-    'speedtest.apps.SpeedtestConfig',
 ]
 
 MIDDLEWARE = [
