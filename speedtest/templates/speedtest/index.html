@@ -4,9 +4,14 @@
 
 {% block pagina %}
 
+<h2 class="mt-3 mb-5">PLANO DIRETOR</h2>
+
+<link rel="{% static 'speedtest\css\main.css' %} href="style.css">
+
+
+
 <div class="container">
-    <h1 id="page-title">Teste sua Internet</h1>
-    <hr id="title_hr">
+
     <div id="wrapper">
         <div id="loader">
             <div class="lds-ripple">
@@ -36,6 +41,6 @@
 
     <script src="main.js"></script>
 
-    <script src="{% static 'speedtest/js/pesquisa.js' %}"></script>
+    <script src="{% static 'speedtest\js\main.js' %}"></script>
 
     {% endblock pagina %}
