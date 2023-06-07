@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load widget_tweaks %}  
+
+{% block pagina %}
+
+
+    {% if erro %}
+        <p>{{ erro }}</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'comprimir_pdf' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="pdf">
+        <button type="submit">Comprimir</button>
+    </form>
+
+{% endblock pagina %}

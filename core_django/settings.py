@@ -27,9 +27,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
+    'multiupload',
 
     'paginas.apps.PaginasConfig',
     'curso.apps.CursoConfig',
+    'pdf_ferramentas.apps.PdfFerramentasConfig',
+
+    
+
 ]
 
 MIDDLEWARE = [

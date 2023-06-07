@@ -8,6 +8,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('paginas.urls')),
     path('', include('curso.urls')),
+    path('', include('pdf_ferramentas.urls')),
+    
 ]
 
 handler400 = 'paginas.views.error_400_view'

@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from PyPDF2 import PdfMerger
 from django.utils import timezone
@@ -141,4 +140,56 @@ def download_zip(request, session_id):
     os.remove(zip_path)
 
     return response
+
+
+
+def comprimir_pdf(request):
+    if request.method == 'POST':
+        # Verifica se um arquivo PDF foi enviado no formulário
+        if 'pdf' not in request.FILES:
+            return render(request, 'seu_template.html', {'erro': 'Nenhum arquivo PDF foi enviado.'})
+
+        arquivo_pdf = request.FILES['pdf']
+
+        # Verifica se o arquivo possui um nome
+        if arquivo_pdf.name == '':
+            return render(request, 'seu_template.html', {'erro': 'Nome de arquivo inválido.'})
+
+        # Cria um objeto PdfFileReader para ler o arquivo PDF original
+        pdf_original = PdfFileReader(arquivo_pdf)
+
+        # Cria um objeto PdfFileWriter para escrever o arquivo PDF comprimido
+        pdf_comprimido = PdfFileWriter()
+
+        # Itera por todas as páginas do arquivo original
+        for pagina in range(pdf_original.getNumPages()):
+            # Obtém a página atual
+            pagina_atual = pdf_original.getPage(pagina)
+
+            # Aplica a compressão à página (opcional)
+            # Exemplo: reduzir a escala em 50% para comprimir pela metade
+            pagina_atual.scaleBy(0.5)
+
+            # Adiciona a página comprimida ao arquivo comprimido
+            pdf_comprimido.addPage(pagina_atual)
+
+        # Cria um arquivo temporário para armazenar o arquivo PDF comprimido
+        with tempfile.NamedTemporaryFile(delete=False) as arquivo_temporario:
+            caminho_arquivo_temporario = arquivo_temporario.name
+
+            # Salva o arquivo PDF comprimido no arquivo temporário
+            with open(caminho_arquivo_temporario, 'wb') as arquivo_saida:
+                pdf_comprimido.write(arquivo_saida)
+
+        # Define o nome do arquivo de saída
+        nome_arquivo_saida = 'pdf_comprimido.pdf'
+
+        # Retorna o arquivo comprimido para download no navegador
+        response = FileResponse(open(caminho_arquivo_temporario, 'rb'), as_attachment=True, filename=nome_arquivo_saida)
+        return response
+
+    return render(request, 'seu_template.html')
+
+
+
 
