@@ -3,7 +3,7 @@ from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
 from django.conf import settings
 from django.urls import reverse
-from PyPDF2 import PdfReader, PdfWriter, PdfMerger
+from PyPDF2 import PdfReader, PdfWriter, PdfMerger, PdfFileReader
 from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 import os
 import zipfile
@@ -147,7 +147,6 @@ def download_zip(request, session_id):
 
 
 
-
 def comprimir_pdf(request):
     if request.method == 'POST':
         # Verifica se um arquivo PDF foi enviado no formulário
@@ -192,6 +191,4 @@ def comprimir_pdf(request):
         return response
 
     return render(request, 'pdf_ferramentas/compressao.html')
-
-
 

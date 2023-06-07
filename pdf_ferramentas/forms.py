@@ -38,3 +38,4 @@ class SplitPDFForm(forms.Form):
         min_num=1,
         validators=[validate_pdf]
     )
+

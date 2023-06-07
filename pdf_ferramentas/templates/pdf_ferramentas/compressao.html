@@ -11,7 +11,8 @@
 
     <form method="post" action="{% url 'comprimir_pdf' %}" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="file" name="pdf" class="form-control mb-3">
+        <input type="file" name="pdf" class="form-control mb-3" accept=".pdf" required>
+
 
         <div class="mb-3">
             <label for="customRange3" class="form-label">Fator de Compressão:</label>
