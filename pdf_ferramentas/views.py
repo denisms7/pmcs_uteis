@@ -1,16 +1,17 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
-from PyPDF2 import PdfMerger
 from django.utils import timezone
 from django.conf import settings
 from django.urls import reverse
-from PyPDF2 import PdfReader, PdfWriter
-from django.http import HttpResponse, HttpResponseRedirect
+from PyPDF2 import PdfReader, PdfWriter, PdfMerger
+from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 import os
 import zipfile
 from .forms import PDFUploadForm, SplitPDFForm
 import shutil
 import uuid
+import tempfile
+
 
 
 def merge_pdf(request):
@@ -143,35 +144,37 @@ def download_zip(request, session_id):
 
 
 
+
+
+
+
 def comprimir_pdf(request):
     if request.method == 'POST':
         # Verifica se um arquivo PDF foi enviado no formulário
         if 'pdf' not in request.FILES:
-            return render(request, 'seu_template.html', {'erro': 'Nenhum arquivo PDF foi enviado.'})
+            return render(request, 'pdf_ferramentas/compressao.html', {'erro': 'Nenhum arquivo PDF foi enviado.'})
 
         arquivo_pdf = request.FILES['pdf']
+        fator_compressao = float(request.POST.get('fator_compressao', '1.0'))  # Obtém o fator de compressão definido pelo usuário
 
         # Verifica se o arquivo possui um nome
         if arquivo_pdf.name == '':
-            return render(request, 'seu_template.html', {'erro': 'Nome de arquivo inválido.'})
+            return render(request, 'pdf_ferramentas/compressao.html', {'erro': 'Nome de arquivo inválido.'})
 
-        # Cria um objeto PdfFileReader para ler o arquivo PDF original
-        pdf_original = PdfFileReader(arquivo_pdf)
+        # Cria um objeto PdfReader para ler o arquivo PDF original
+        pdf_original = PdfReader(arquivo_pdf)
 
-        # Cria um objeto PdfFileWriter para escrever o arquivo PDF comprimido
-        pdf_comprimido = PdfFileWriter()
+        # Cria um objeto PdfWriter para escrever o arquivo PDF comprimido
+        pdf_comprimido = PdfWriter()
 
         # Itera por todas as páginas do arquivo original
-        for pagina in range(pdf_original.getNumPages()):
-            # Obtém a página atual
-            pagina_atual = pdf_original.getPage(pagina)
-
+        for pagina_atual in pdf_original.pages:
             # Aplica a compressão à página (opcional)
-            # Exemplo: reduzir a escala em 50% para comprimir pela metade
-            pagina_atual.scaleBy(0.5)
+            # Exemplo: reduzir a escala em um fator de compressão definido pelo usuário
+            pagina_atual.scale_by(fator_compressao)
 
             # Adiciona a página comprimida ao arquivo comprimido
-            pdf_comprimido.addPage(pagina_atual)
+            pdf_comprimido.add_page(pagina_atual)
 
         # Cria um arquivo temporário para armazenar o arquivo PDF comprimido
         with tempfile.NamedTemporaryFile(delete=False) as arquivo_temporario:
@@ -188,8 +191,7 @@ def comprimir_pdf(request):
         response = FileResponse(open(caminho_arquivo_temporario, 'rb'), as_attachment=True, filename=nome_arquivo_saida)
         return response
 
-    return render(request, 'seu_template.html')
-
+    return render(request, 'pdf_ferramentas/compressao.html')
 
 
 

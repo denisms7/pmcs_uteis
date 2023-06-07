@@ -6,14 +6,26 @@
 {% block pagina %}
 
 
-    {% if erro %}
-        <p>{{ erro }}</p>
-    {% endif %}
+
+    <h2 class="mt-3 mb-5 text-upper">COMPRESSOR DE PDF</h2>
 
     <form method="post" action="{% url 'comprimir_pdf' %}" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="file" name="pdf">
-        <button type="submit">Comprimir</button>
+        <input type="file" name="pdf" class="form-control mb-3">
+
+        <div class="mb-3">
+            <label for="customRange3" class="form-label">Fator de Compressão:</label>
+            <input type="range" name="fator_compressao" min="0" max="10" value="1.0" required class="form-range">
+        </div>
+
+        {% if erro %}
+        <span class="text-danger py-3">{{ error }}</span>
+        {% endif %}
+
+        <button type="submit" class="btn btn-success" id="enviar">
+            <i class="bi bi-file-zip"></i>
+            Comprimir
+        </button>
     </form>
 
 {% endblock pagina %}
