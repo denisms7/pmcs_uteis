@@ -12,9 +12,9 @@
     {% csrf_token %}
     <div class="row">
       <div class="col-12 mb-3">
-        <label for="{{ form.pdf_file.id_for_label }}" class="form-label">{{ form.pdf_file.label }}: {% if form.pdf_file.field.required %}<span class="text-danger">*</span>{% endif %}</label>
-        {% render_field form.pdf_file class="form-control" accept="application/pdf" %}
-        {% for error in form.pdf_file.errors %}
+        <label for="{{ form.pdf_files.id_for_label }}" class="form-label">{{ form.pdf_files.label }}: {% if form.pdf_files.field.required %}<span class="text-danger">*</span>{% endif %}</label>
+        {% render_field form.pdf_files class="form-control" accept="application/pdf" %}
+        {% for error in form.pdf_files.errors %}
         <span class="text-danger py-3">{{ error }}</span>
         {% endfor %}
       </div>
@@ -28,6 +28,5 @@
 
 
 {% include "pdf_ferramentas/espera.html" %}
-
 
 {% endblock %}

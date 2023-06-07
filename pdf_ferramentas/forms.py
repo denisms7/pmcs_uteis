@@ -10,7 +10,7 @@ def validate_pdf(value):
 
 
 class PDFUploadForm(forms.Form):
-    pdf_file = MultiFileField(
+    pdf_files = MultiFileField(
         min_num=2,
         max_num=50,
         max_file_size=1024*1024*100,  # 100MB
@@ -38,4 +38,3 @@ class SplitPDFForm(forms.Form):
         min_num=1,
         validators=[validate_pdf]
     )
-

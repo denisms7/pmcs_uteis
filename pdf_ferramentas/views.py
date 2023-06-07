@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
+from PyPDF2 import PdfMerger
 from django.utils import timezone
 from django.conf import settings
 from django.urls import reverse
-from PyPDF2 import PdfReader, PdfWriter, PdfMerger, PdfFileReader
+from PyPDF2 import PdfReader, PdfWriter
 from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 import os
 import zipfile
@@ -12,9 +14,7 @@ import shutil
 import uuid
 import tempfile
 
-
-
-def merge_pdf(request):
+def upload_and_merge_pdf(request):
     if request.method == 'POST':
         form = PDFUploadForm(request.POST, request.FILES)
         if form.is_valid():
@@ -146,7 +146,6 @@ def download_zip(request, session_id):
 
 
 
-
 def comprimir_pdf(request):
     if request.method == 'POST':
         # Verifica se um arquivo PDF foi enviado no formulário
@@ -191,4 +190,3 @@ def comprimir_pdf(request):
         return response
 
     return render(request, 'pdf_ferramentas/compressao.html')
-
