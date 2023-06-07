@@ -10,7 +10,7 @@ def validate_pdf(value):
 
 
 class PDFUploadForm(forms.Form):
-    pdf_files = MultiFileField(
+    pdf_file = MultiFileField(
         min_num=2,
         max_num=50,
         max_file_size=1024*1024*100,  # 100MB

@@ -14,7 +14,7 @@ import shutil
 import uuid
 
 
-def upload_and_merge_pdf(request):
+def merge_pdf(request):
     if request.method == 'POST':
         form = PDFUploadForm(request.POST, request.FILES)
         if form.is_valid():
@@ -54,7 +54,7 @@ def upload_and_merge_pdf(request):
     else:
         form = PDFUploadForm()
 
-    return render(request, 'merge.html', {'form': form})
+    return render(request, 'pdf_ferramentas/merge.html', {'form': form})
 
 
 def delete_merged_pdf(merged_pdf_filename):
@@ -124,7 +124,7 @@ def split_pdf(request):
     else:
         form = SplitPDFForm()
 
-    return render(request, 'split.html', {'form': form})
+    return render(request, 'pdf_ferramentas/split.html', {'form': form})
 
 
 

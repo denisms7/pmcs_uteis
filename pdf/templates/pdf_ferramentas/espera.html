@@ -1,0 +1,38 @@
+<div id="aguarde" class="d-none">
+    <div class="text-center">
+        <h3 class="mt-3 my-5">Seu download iniciara em breve...</h3>
+        <div class="spinner-grow text-primary" role="status" style="width: 100px; height: 100px;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+
+    document.getElementById('enviar').addEventListener('click', function (event) {
+        verificarArquivoPDFVazio()
+    });
+
+
+
+    function verificarArquivoPDFVazio() {
+        const pdfFileInput = document.getElementById('id_pdf_file');
+        if (pdfFileInput.files.length === 0) {
+            console.log('O campo de arquivo PDF está vazio.');
+        } else {
+            ExibeCampos()
+        }
+    }
+
+
+    function ExibeCampos() {
+        const formulario = document.getElementById('formulario');
+        const aguarde = document.getElementById('aguarde');
+        formulario.classList.add('d-none');
+        aguarde.classList.remove('d-none');
+        aguarde.classList.add('d-block');
+    }
+
+
+</script>
