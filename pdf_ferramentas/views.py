@@ -156,7 +156,7 @@ def comprimir_pdf(request):
 
         arquivo_pdf = request.FILES['pdf']
         fator_compressao = float(request.POST.get('fator_compressao', '1.0'))  # Obtém o fator de compressão definido pelo usuário
-
+        fator_compressao = fator_compressao * 0.1
         # Verifica se o arquivo possui um nome
         if arquivo_pdf.name == '':
             return render(request, 'pdf_ferramentas/compressao.html', {'erro': 'Nome de arquivo inválido.'})
