@@ -1,47 +1,55 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% load widget_tweaks %}  
+{% load widget_tweaks %}
 
 {% block pagina %}
 
+<h2 class="mt-3 mb-5 text-upper">COMPRESSOR DE PDF</h2>
 
-
-    <h2 class="mt-3 mb-5 text-upper">COMPRESSOR DE PDF</h2>
-
-    <form method="post" action="{% url 'comprimir_pdf' %}" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="pdf" class="form-control mb-3" accept=".pdf" required>
-
-
-        <div class="mb-3">
-            <label for="customRange3" class="form-label">Fator de Compressão:</label>
-            <input type="range" name="fator_compressao" step="1" min="0" max="10" id="range_compressao" required class="form-range">
-            <div class="w-100 d-flex justify-content-between">
-                <span><i class="bi bi-dash-circle-fill"></i></span>
-                <span id="fator_lavel">Valor do fator de compressão: 5</span>
-                <span><i class="bi bi-plus-circle-fill"></i></span>
-            </div>
+<form method="post" action="{% url 'comprimir_pdf' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="pdf" class="form-control mb-3" accept=".pdf" required>
+    
+    <div class="mb-3">
+        <label for="#range_compressao" class="form-label">Fator de Compressão:</label>
+        <input type="range" name="fator_compressao" step="1" min="0" max="10" id="range_compressao" required
+            class="form-range">
+        <div class="w-100 d-flex justify-content-between">
+            <span><i class="bi bi-dash-circle-fill"></i></span>
+            <span id="fator_lavel">Valor do fator de compressão: 5</span>
+            <span><i class="bi bi-plus-circle-fill"></i></span>
         </div>
+    </div>
 
-        {% if erro %}
-        <span class="text-danger py-3">{{ error }}</span>
-        {% endif %}
+    {% for error in form.pdf_files.errors %}
+    <span class="text-danger py-3">{{ error }}</span>
+    {% endfor %}
 
-        <button type="submit" class="btn btn-success" id="enviar">
-            <i class="bi bi-file-zip"></i>
-            Comprimir
-        </button>
-    </form>
+    <button type="submit" class="btn btn-success" id="enviar">
+        <i class="bi bi-file-zip"></i>
+        Comprimir
+    </button>
+</form>
 
 
-    <script>
-        let rangeCompressao = document.getElementById('range_compressao');
-        let fator_lavel = document.getElementById('fator_lavel');
-        rangeCompressao.addEventListener('input', function() {
-            let valor = rangeCompressao.value;
-            fator_lavel.innerHTML = 'Valor do fator de compressão: ' + valor 
-        });
-    </script>
+<script>
+    let rangeCompressao = document.getElementById('range_compressao');
+    let fator_lavel = document.getElementById('fator_lavel');
+    rangeCompressao.addEventListener('input', function () {
+        let valor = rangeCompressao.value;
+        fator_lavel.innerHTML = 'Valor do fator de compressão: ' + valor
+        if (parseInt(valor) > 8) {
+            fator_lavel.classList.add('text-danger');
+            fator_lavel.classList.remove('text-warning');
+        } else if (parseInt(valor) > 5) {
+            fator_lavel.classList.remove('text-danger');
+            fator_lavel.classList.add('text-warning');
+        } else {
+            fator_lavel.classList.remove('text-danger');
+            fator_lavel.classList.remove('text-warning');
+        }
+    });
+</script>
 
 {% endblock pagina %}
