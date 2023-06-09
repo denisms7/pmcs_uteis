@@ -2,7 +2,7 @@ from django.urls import path
 from .views import video_player, Cursos, CursoAdded, CursoEdit, CursoSearch
 
 urlpatterns = [
-    path('/cursos/', Cursos, name='cursos'),
+    path('cursos/', Cursos, name='cursos'),
     path('video/<int:video_id>/', video_player, name='video_player'),
 
 

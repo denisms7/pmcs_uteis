@@ -1,16 +1,21 @@
 from pathlib import Path
 import os
+import dotenv
+
+# Carrega as variáveis de ambiente do arquivo .env
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)x4m+opn=h98yy-zvyz%^-qwta&si$(%1&1428q#4drc#^zvz9654655fdsfe555dfs65'
+SECRET_KEY = os.getenv('SECRET_KEY', 'sem.Env687654/968748>457')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', True)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS', '*')]
+
 
 
 # Application definition
@@ -93,9 +98,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'pt-br'
+LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', 'pt-br')
 
-TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = os.getenv('TIME_ZONE', 'America/Sao_Paulo')
 
 USE_I18N = True
 
