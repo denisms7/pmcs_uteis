@@ -1,20 +1,28 @@
-# Usa uma imagem base do Python
-FROM python:3.11
+# Imagem base do Python
+FROM python:3.9
 
-# Define o diretório de trabalho no contêiner
-WORKDIR /app
+# Configuração do ambiente
+ENV PYTHONUNBUFFERED 1
+ENV LANG C.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Copia o arquivo requirements.txt para o diretório de trabalho
-COPY requirements.txt .
+# Diretório de trabalho no contêiner
+WORKDIR /code
 
-# Instala as dependências do Django
+# Instalação das dependências do projeto
+COPY requirements.txt /code/
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Copia o restante do projeto para o diretório de trabalho
-COPY . .
+# Copiar o código do projeto para o contêiner
+COPY . /code/
 
-# Expõe a porta 80 (ou qualquer porta usada pelo Django)
-EXPOSE 80
+# Comandos para coletar arquivos estáticos e realizar as migrações do Django
+RUN python manage.py collectstatic --no-input
+RUN python manage.py migrate
 
-# Inicia o servidor do Django
-CMD python manage.py migrate && python manage.py runserver 0.0.0.0:80
+# Porta que será exposta no contêiner
+EXPOSE 8000
+
+# Comando para executar o servidor de desenvolvimento do Django
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
