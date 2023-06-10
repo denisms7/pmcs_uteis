@@ -1,5 +1,5 @@
 # Imagem base do Python
-FROM python:3.9
+FROM python:3.11
 
 # Configuração do ambiente
 ENV PYTHONUNBUFFERED 1
@@ -28,9 +28,32 @@ COPY nginx.conf /etc/nginx/sites-available/default
 RUN python manage.py collectstatic --no-input
 RUN python manage.py migrate
 
+# O valor 555 representa as permissões de somente leitura
+# O valor 755 proprietário do arquivo leitura, demais usuario somente leitura 
+
 # Definir permissões adequadas para a pasta staticfiles
 RUN chmod -R 755 /app-uteis/staticfiles
 RUN chown -R www-data:www-data /app-uteis/staticfiles
+
+# Definir permissões adequadas para a pasta media
+RUN chmod -R 755 /app-uteis/media
+RUN chown -R www-data:www-data /app-uteis/media
+
+# Definir permissões adequadas para a pasta paginas
+RUN chmod -R 555 /app-uteis/paginas
+
+# Definir permissões adequadas para a pasta core_django
+RUN chmod -R 555 /app-uteis/core_django
+
+# Definir permissões adequadas para a pasta curso
+RUN chmod -R 555 /app-uteis/curso
+
+# Definir permissões adequadas para a pasta pdf_ferramentas
+RUN chmod -R 755 /app-uteis/pdf_ferramentas
+RUN chown -R www-data:www-data /app-uteis/pdf_ferramentas
+
+# Definir permissões adequadas para a pasta templates
+RUN chmod -R 555 /app-uteis/templates
 
 
 # Expor a porta 80 para o Nginx
