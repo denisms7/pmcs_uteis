@@ -17,15 +17,21 @@ RUN pip install -r requirements.txt
 # Copiar o código do projeto para o contêiner
 COPY . /app-uteis/
 
-# Comandos para coletar arquivos estáticos e realizar as migrações do Django
-RUN python manage.py collectstatic --no-input
-RUN python manage.py migrate
-
 # Instalar o Nginx
 RUN apt-get update && apt-get install -y nginx
 
 # Copiar o arquivo de configuração do Nginx
 COPY nginx.conf /etc/nginx/sites-available/default
+
+
+# Comandos para coletar arquivos estáticos e realizar as migrações do Django
+RUN python manage.py collectstatic --no-input
+RUN python manage.py migrate
+
+# Definir permissões adequadas para a pasta staticfiles
+RUN chmod -R 755 /app-uteis/staticfiles
+RUN chown -R www-data:www-data /app-uteis/staticfiles
+
 
 # Expor a porta 80 para o Nginx
 EXPOSE 80
