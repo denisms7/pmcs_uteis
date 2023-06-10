@@ -9,12 +9,13 @@ dotenv.load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'sem.Env687654/968748>457')
+SECRET_KEY = os.getenv('ENV_SECRET_KEY', 'sem.Env687654/968748>457')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.getenv('DEBUG', True))
+DEBUG = int(os.getenv('ENV_DEBUG', True))
+print(f'ENV DEBUG: {DEBUG}')
 
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS', '*')]
+ALLOWED_HOSTS = [os.getenv('ENV_ALLOWED_HOSTS', '*')]
 
 
 
@@ -100,9 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', 'pt-br')
+LANGUAGE_CODE = os.getenv('ENV_LANGUAGE_CODE', 'pt-br')
 
-TIME_ZONE = os.getenv('TIME_ZONE', 'America/Sao_Paulo')
+TIME_ZONE = os.getenv('ENV_TIME_ZONE', 'America/Sao_Paulo')
 
 USE_I18N = True
 
@@ -118,19 +119,15 @@ DEFAULT_CHARSET = 'utf-8'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-
-STATIC_ROOT = '/staticfiles/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Configuração da pasta de mídia
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
 
 
 # Default primary key field type
