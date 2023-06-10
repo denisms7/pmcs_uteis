@@ -49,7 +49,7 @@ class EnderecoOficiais(TemplateView):
 class Sismel(TemplateView):
     template_name = 'paginas/sismel.html'
     
-
+'''
 def error_400_view(request, exception):
     return render(request, 'error.html', {'status_code': 400})
 
@@ -64,3 +64,5 @@ def error_500_view(request):
 
 def error_502_view(request):
     return render(request, 'error.html', {'status_code': 502})
+
+'''
