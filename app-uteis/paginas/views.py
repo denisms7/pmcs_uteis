@@ -21,33 +21,33 @@ def Aniversariante():
 
 
 class PaginaInicial(TemplateView):
-    template_name = 'paginas\index.html'
+    template_name = 'paginas/index.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['data'] = Aniversariante()
         return context
 
 class InteligenciaA(TemplateView):
-    template_name = 'paginas\inteligencia_a.html'
+    template_name = 'paginas/inteligencia_a.html'
 
 class PDM(TemplateView):
-    template_name = 'paginas\leis_pdm.html'
+    template_name = 'paginas/leis_pdm.html'
 
 
 class HinoNacional(TemplateView):
-    template_name = 'paginas\hinos\hino_nacional.html'
+    template_name = 'paginas/hinos/hino_nacional.html'
 
 class HinoEstadual(TemplateView):
-    template_name = 'paginas\hinos\hino_estadual.html'
+    template_name = 'paginas/hinos/hino_estadual.html'
 
 class HinoMunicipal(TemplateView):
-    template_name = 'paginas\hinos\hino_municipal.html'
+    template_name = 'paginas/hinos/hino_municipal.html'
 
 class EnderecoOficiais(TemplateView):
-    template_name = 'paginas\endereco_oficial\enderecos.html'
+    template_name = 'paginas/endereco_oficial/enderecos.html'
 
 class Sismel(TemplateView):
-    template_name = 'paginas\sismel.html'
+    template_name = 'paginas/sismel.html'
     
 
 def error_400_view(request, exception):
