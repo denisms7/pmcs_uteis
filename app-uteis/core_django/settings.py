@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'core_django.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('ENV_DB_ENGINE'),
@@ -79,8 +79,13 @@ DATABASES = {
         'PORT':  int(os.getenv('ENV_DB_PORT')),
     }
 }
-
-
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'pmcs_db.sqlite3',
+    }
+}
 
 
 # Password validation
