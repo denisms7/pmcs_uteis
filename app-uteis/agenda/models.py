@@ -15,7 +15,7 @@ class Agenda(models.Model):
     pessoa = models.CharField(max_length=200, verbose_name=_('Pessoa'))
     numero = models.CharField(max_length=20, verbose_name=_('Numero'))
     def __str__(self):
-        return f"{self.grupo} {self.pessoa}"
+        return f"{self.pessoa} - {self.numero}"
 
 
 
