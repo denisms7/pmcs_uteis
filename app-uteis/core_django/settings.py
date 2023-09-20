@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'paginas.apps.PaginasConfig',
     'curso.apps.CursoConfig',
     'pdf_ferramentas.apps.PdfFerramentasConfig',
+    'agenda.apps.AgendaConfig',
 ]
 
 MIDDLEWARE = [
