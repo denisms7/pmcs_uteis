@@ -5,6 +5,21 @@
 }
 
 
+@keyframes Gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+
 .botao-hover a:hover {
     transform: scale(1.1);
     border: black solid 1px;
@@ -36,13 +51,16 @@
 }
 
 .corPrimaria {
-    background-color: #007A37;
-    color: #fff;
+  background: rgb(0,122,55);
+  background: linear-gradient(-45deg, #007A37, #00B94F);
+  background-size: 400% 400%;
+  animation: Gradient 10s ease infinite;
+  color: #fff;
 }
 
 
 .corPrimaria a {
-  background-color: #007A37;
+  background: #00000000;
   color: #fff;
 }
 
