@@ -13,7 +13,11 @@ class v_Agenda(ListView):
         query = self.request.GET.get('q')
         if query:
             queryset = queryset.filter(
-                Q(pessoa__icontains=query) | Q(numero_interno__icontains=query) | Q(numero_externo__icontains=query)
+                Q(pessoa__icontains=query) | 
+                Q(numero_interno__icontains=query) | 
+                Q(numero_externo__icontains=query) | 
+                Q(grupo__grupo__icontains=query) |
+                Q(grupo__numero__icontains=query) 
             )
 
         # Ordenar em ordem alfabética
