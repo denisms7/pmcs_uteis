@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('paginas.urls')),
     path('', include('curso.urls')),
     path('', include('pdf_ferramentas.urls')),
+    path('', include('agenda.urls')),
     
 ]
 '''
