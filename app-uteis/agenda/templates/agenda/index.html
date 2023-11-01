@@ -2,44 +2,59 @@
 
 {% load static %}
 
+
+{% block pesquisa %}
+{% endblock pesquisa %}
+
 {% block pagina %}
 
 <h2 class="mt-3 mb-5">
     <i class="bi bi-bank"></i>
     AGENDA INTERNA
 </h2>
-<hr class="pesquisa mt-5 mb-5">
+<hr class="pesquisa mt-5">
 
 
 <div class="container">
     <div class="container">
     <form method="get">
-        <div class="row mb-3">
-            <label for="busca" class="form-label">Pesquisar:</label>
-            <div class="d-flex align-items-end" id="busca">
-                <input type="text" name="q" value="{{ request.GET.q }}" placeholder="Nome/Setor ou Número"
-                    class="form-control me-1">
-                <button type="submit" title="Pesquisar Registros" class="btn corPrimaria">
-                    <i class="bi bi-search" id="lupacep"></i>
-                </button>
+        <div class="row">
+
+            <div class="container my-5 px-5">
+                <!--- <label for="busca" class="form-label">Pesquisar:</label> --->
+                <div class="d-flex align-items-end" id="busca">
+                    <input type="text" name="q" value="{{ request.GET.q }}" placeholder="Pesquisa por Nome/Setor ou Número"
+                        class="form-control">
+
+                    <button type="submit" title="Pesquisar Registros" class="btn corPrimaria ms-1">
+                        <i class="bi bi-search" id="lupacep"></i>
+                    </button>
+                </div>
             </div>
+
+
         </div>
     </form>
 </div>
 
+
     <div class="table-responsive">
-        <table class="table table-sm table-striped mt-3">
+        <table class="table table-sm table-hover mt-3">
+
             <thead>
                 <tr>
-                    <th scope="col">Nome:</th>
-                    <th scope="col">Setor:</th>
-                    <th scope="col">Numero Setor:</th>
-                    <th scope="col">Ramal Pessoal:</th>
-                    <th scope="col">Numero Externo:</th>
-                    
+                    <th scope="col" rowspan="2">Nome:</th>
+                    <th scope="col" rowspan="2">Setor</th>
+                    <th scope="col" colspan="2" class="text-center">Números Internos</th>
+                    <th scope="col" rowspan="2" class="text-center">Número Externo</th>
+                </tr>
+                <tr>
+                    <th scope="col" class="text-center">Número Setor</th>
+                    <th scope="col" class="text-center">Ramal Pessoal</th>
                 </tr>
             </thead>
-            <tbody>
+
+            <tbody class="table-group-divider">
                 {% for item in object_list %}
                 <tr>
                     <td class="text-capitalize">
@@ -54,7 +69,7 @@
                         {% endif %}
                     </td>
 
-                    <td>
+                    <td class="text-center">
                         {% if item.grupo.numero %}
                             {{ item.grupo.numero }}
                         {% else %}
@@ -62,14 +77,14 @@
                         {% endif %}
                     </td>
 
-                    <td>
+                    <td class="text-center">
                         {% if item.numero_interno %}
                             {{ item.numero_interno }}
                         {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
                     </td>
-                    <td>
+                    <td class="text-center">
                         {% if item.numero_externo %}
                             {{ item.numero_externo }}
                         {% else %}

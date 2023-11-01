@@ -4,6 +4,8 @@
 
 {% block pagina %}
 
+
+
 <style>
     .logos-card {
         max-height: 100%;
@@ -12,35 +14,42 @@
     }
 </style>
 
-<h2 class="mt-3 mb-5">INTELIGÊNCIA ARTIFICIAL</h2>
+<h2 class="mt-3 mb-5">
+    <i class="bi bi-robot"></i>
+    INTELIGÊNCIA ARTIFICIAL
+</h2>
+<hr class="pesquisa mt-5 mb-5">
 
 <div class="row">
-    <div class="col-md-4 mb-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/chatgpt.png' %}" loading="lazy"
-                        alt="ChatGPT">
-                </h5>
-                <p class="card-text">Uma IA no formato chatbot online desenvolvido pela OpenAI, especializado
-                    em diálogo lançado em novembro de 2022.</p>
-            </div>
-            <div class="card-footer">
-                <a href="https://chat.openai.com/" target="_blank" class="btn btn-primary">
-                    <i class="bi bi-cursor-fill"></i>Abrir
-                </a>
+
+        <div class="col-md-4 mb-3 pesquisa">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <img class="logos-card " src="{% static 'paginas/imagens/ia/chatgpt.png' %}" loading="lazy"
+                            alt="ChatGPT">
+                    </h5>
+                    <p class="card-text pesquisa">Uma IA no formato chatbot online desenvolvido pela OpenAI, especializado
+                        em diálogo lançado em novembro de 2022.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://chat.openai.com/" target="_blank" class="btn btn-primary">
+                        <i class="bi bi-cursor-fill"></i>Abrir
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+
+
     <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/futuretools.svg' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/futuretools.svg' %}" loading="lazy"
                         alt="FutureTools">
                 </h5>
-                <p class="card-text">
-                    Future Tools é um assistente de indexação de pesquisas (similar ao google) sobre Inteligências
+                <p class="card-text ">
+                    Future Tools é um assistente de indexação de s (similar ao google) sobre Inteligências
                     artificiais e afins.</p>
             </div>
             <div class="card-footer">
@@ -53,11 +62,11 @@
     <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/Caktus.svg' %}" loading="lazy"
+                <h5 class="card-title ">
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/Caktus.svg' %}" loading="lazy"
                         alt="Caktus">
                 </h5>
-                <p class="card-text">Caktus é um assistente de estudos sobre diversos temas.
+                <p class="card-text ">Caktus é um assistente de estudos sobre diversos temas.
                     Fique mais inteligente na escola com seu próprio assistente.</p>
                 </div>
                 <div class="card-footer">
@@ -71,10 +80,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/consensus.svg' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/consensus.svg' %}" loading="lazy"
                         alt="Consensus">
                 </h5>
-                <p class="card-text">Faça uma pergunta, obtenha conclusões de artigos de pesquisa com
+                <p class="card-text ">Faça uma pergunta, obtenha conclusões de artigos de  com
                     auxílio de IA para localizá-los.
                 </p>
             </div>
@@ -90,10 +99,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/hume-share.png' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/hume-share.png' %}" loading="lazy"
                         alt="hume">
                 </h5>
-                <p class="card-text">IA para compreensão de sentimentos humanos, expressões vocais, faciais e
+                <p class="card-text ">IA para compreensão de sentimentos humanos, expressões vocais, faciais e
                     formas de expressão de linguagem.
                 </p>
             </div>
@@ -109,10 +118,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/versy.svg' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/versy.svg' %}" loading="lazy"
                         alt="Versy">
                 </h5>
-                <p class="card-text">Crie experiências interativas de qualquer tipo, desde a configuração de
+                <p class="card-text ">Crie experiências interativas de qualquer tipo, desde a configuração de
                     produtos e eventos, até salas e muito mais.</p>
                 </div>
                 <div class="card-footer">
@@ -127,10 +136,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/LeiaPix.png' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/LeiaPix.png' %}" loading="lazy"
                         alt="LeiaPix">
                 </h5>
-                <p class="card-text">LeiaPix Converter permite que você transforme qualquer uma de suas paginas/imagens
+                <p class="card-text ">LeiaPix Converter permite que você transforme qualquer uma de suas paginas/imagens
                     favoritas em Animações de profundidade impressionantes.</p>
                 </div>
                 <div class="card-footer">
@@ -147,10 +156,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/reimagine_home_ai.png' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/reimagine_home_ai.png' %}" loading="lazy"
                         alt="reimaginehome">
                 </h5>
-                <p class="card-text">Redesenhe qualquer espaço para corresponder à sua visão ou deixe que
+                <p class="card-text ">Redesenhe qualquer espaço para corresponder à sua visão ou deixe que
                     nossa IA mostre designs inspiradores em segundos. </p>
                 </div>
                 <div class="card-footer">
@@ -165,10 +174,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/Coohom_Logo.png' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/Coohom_Logo.png' %}" loading="lazy"
                         alt="Coohom">
                 </h5>
-                <p class="card-text">Se você é um entusiasta do DIY ou um designer profissional, nós sempre
+                <p class="card-text ">Se você é um entusiasta do DIY ou um designer profissional, nós sempre
                     ajudamos a obter o design dos seus sonhos. Design de Interiores 3D.</p>
                 </div>
                 <div class="card-footer">
@@ -182,10 +191,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/nvidia.png' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/nvidia.png' %}" loading="lazy"
                         alt="NVIDIA Canvas">
                 </h5>
-                <p class="card-text">Use IA para transformar pinceladas simples em imagens realistas. Crie planos de fundo rapidamente ou acelere sua exploração de conceitos.</p>
+                <p class="card-text ">Use IA para transformar pinceladas simples em imagens realistas. Crie planos de fundo rapidamente ou acelere sua exploração de conceitos.</p>
                 </div>
                 <div class="card-footer">
                     <a href="https://www.nvidia.com/en-us/studio/canvas/" target="_blank" class="btn btn-primary">
@@ -199,9 +208,9 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/mixo.png' %}" loading="lazy" alt="mixo">
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/mixo.png' %}" loading="lazy" alt="mixo">
                 </h5>
-                <p class="card-text">Tem uma ideia para uma startup, produto ou serviço? Nosso construtor
+                <p class="card-text ">Tem uma ideia para uma startup, produto ou serviço? Nosso construtor
                     alimentado por IA ajuda empreendedores a lançar e validar rapidamente suas ideias de negócios.</p>
                 </div>
                 <div class="card-footer">
@@ -216,10 +225,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/Rewind.svg' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/Rewind.svg' %}" loading="lazy"
                         alt="Rewind">
                 </h5>
-                <p class="card-text">
+                <p class="card-text ">
                     E se você tivesse memória perfeita?<br>
                     Encontre qualquer coisa que você viu, disse ou ouviu, o Rewind grava qualquer coisa e o torna
                     pesquisável
@@ -237,10 +246,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/blockadelabs.jpg' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/blockadelabs.jpg' %}" loading="lazy"
                         alt="blockadelabs">
                 </h5>
-                <p class="card-text">
+                <p class="card-text ">
                     Crie uma experiência com um clique<br>
                     Mundos infinitos de 360° estão aqui com Skybox AI
                 </p>
@@ -259,10 +268,10 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/elevenlabs.png' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/elevenlabs.png' %}" loading="lazy"
                         alt="">
                 </h5>
-                <p class="card-text">O software de fala de IA mais realista e versátil de todos os tempos. Eleven traz
+                <p class="card-text ">O software de fala de IA mais realista e versátil de todos os tempos. Eleven traz
                     as vozes mais atraentes, ricas e realistas para criadores e editores que buscam as melhores
                     ferramentas para contar histórias.</p>
                 </div>
@@ -277,14 +286,14 @@
 
 
 
-    <div class="col-md-4 mb-3">
+    <div class="col-md-4 mb-3 ">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    <img class="logos-card" src="{% static 'paginas/imagens/ia/synthesia-logo.svg' %}" loading="lazy"
+                    <img class="logos-card " src="{% static 'paginas/imagens/ia/synthesia-logo.svg' %}" loading="lazy"
                         alt="synthesia">
                 </h5>
-                <p class="card-text">Crie vídeos profissionais em 15 minutos.<br>
+                <p class="card-text ">Crie vídeos profissionais em 15 minutos.<br>
 
                     - Transforme texto em fala em mais de 120 idiomas<br>
                     - Escolha entre mais de 125 avatares de IA diversos<br>
