@@ -29,3 +29,12 @@ class v_Agenda(ListView):
 #    grupo = models.CharField(max_length=200, verbose_name=_('Grupo'))
 #    numero = models.CharField(max_length=5, verbose_name=_('Numero'))
 
+class v_Exporta(ListView):
+    model = Agenda
+    template_name = 'agenda/exportacao.html'
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Ordenar em ordem alfabética
+        queryset = queryset.order_by('grupo')
+        return queryset
+    
