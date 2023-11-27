@@ -15,17 +15,14 @@ Crie um ambiente virtual:
 ```
 python -m venv env
 ```
-
+Efetue a atualização do pip
+```
+python -m pip install --upgrade pip
+```
 Ative o ambiente virtual e apos isso instale as bibliotecas do arquivo requirements.txt
 ```
 pip install -r requirements.txt
 ```
-
-OBS: Caso ocorra algum erro efetue a atualização do pip
-```
-python -m pip install --upgrade pip
-```
-
 Execute o comando de migração no terminal do ambiente virtural para criação das tabelas e do banco de dados.
 ```
 python manage.py migrate
