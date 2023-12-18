@@ -48,7 +48,10 @@ class EnderecoOficiais(TemplateView):
 
 class Sismel(TemplateView):
     template_name = 'paginas/sismel.html'
-    
+
+class Atalhos(TemplateView):
+    template_name = 'paginas/atalhos.html'
+
 '''
 def error_400_view(request, exception):
     return render(request, 'error.html', {'status_code': 400})
