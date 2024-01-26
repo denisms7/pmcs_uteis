@@ -16,8 +16,39 @@
 
 <div>
     <a class="btn btn-primary" href="{% url 'AgendaExporta' %}" target="_blank">Gerar Impressão</a>
-  </div>
-  
+
+    <button  class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalAjuda">
+        <i class="bi bi-question-lg"></i>
+    </button >
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalAjuda" tabindex="-1" aria-labelledby="ModalAjudaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="ModalAjudaLabel">Ajuda</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Transferência cega: #1<br>
+                Transferência Assistida: *2<br>
+                <hr>
+                Meu Correio de Voz: *97<br>
+                Código de Acesso Correio de Voz: *98<br>
+                <hr>
+                Ramal de Captura: *8
+                <hr>
+                Ativar Não Perturbe (DND): *77<br>
+                Desativar Não Perturbe (DND): *78<br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="container">
     <div class="container">
