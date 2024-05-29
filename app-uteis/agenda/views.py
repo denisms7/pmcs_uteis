@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.db.models import Q
 
+from unidecode import unidecode
+
 from .models import Agenda
 
 class v_Agenda(ListView):
@@ -11,13 +13,23 @@ class v_Agenda(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         query = self.request.GET.get('q')
+
+        if query is not None:
+            queryS = unidecode(query)
+        else:
+            # Tratar o caso em que o texto é None
+            queryS = query
+
+
+
+        
         if query:
             queryset = queryset.filter(
-                Q(pessoa__icontains=query) | 
-                Q(numero_interno__icontains=query) | 
-                Q(numero_externo__icontains=query) | 
-                Q(grupo__grupo__icontains=query) |
-                Q(grupo__numero__icontains=query) 
+                Q(pessoa__icontains=queryS) | 
+                Q(numero_interno__icontains=queryS) | 
+                Q(numero_externo__icontains=queryS) | 
+                Q(grupo__grupo__icontains=queryS) |
+                Q(grupo__numero__icontains=queryS) 
             )
 
         # Ordenar em ordem alfabética
