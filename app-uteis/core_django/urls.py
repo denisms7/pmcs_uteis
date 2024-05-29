@@ -10,7 +10,7 @@ urlpatterns = [
     path('', include('curso.urls')),
     path('', include('pdf_ferramentas.urls')),
     path('', include('agenda.urls')),
-    
+    path('', include('leiLicitacao.urls')),
 ]
 '''
 handler400 = 'paginas.views.error_400_view'

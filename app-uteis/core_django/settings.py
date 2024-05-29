@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'curso.apps.CursoConfig',
     'pdf_ferramentas.apps.PdfFerramentasConfig',
     'agenda.apps.AgendaConfig',
+    'leiLicitacao.apps.LeilicitacaoConfig',
 ]
 
 MIDDLEWARE = [
