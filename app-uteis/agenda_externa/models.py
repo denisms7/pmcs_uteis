@@ -10,4 +10,4 @@ class Agenda_Externa(models.Model):
         'Numero Externo'), null=True, blank=True)
 
     def __str__(self):
-        return f"{self.pessoa} - {self.numero_interno}"
+        return f"{self.destino} - {self.numero_externo}"
