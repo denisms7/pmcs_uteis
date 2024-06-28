@@ -49,7 +49,7 @@
                 <tr>
                     <th scope="col" rowspan="2">Nome:</th>
                     <th scope="col" class="">Ramal: (Se Houver)</th>
-                    <th scope="col" class="">Número Externo</th>
+                    <th scope="col" class="">Número Externo:</th>
                 </tr>
             </thead>
 
@@ -60,6 +60,13 @@
                         {{ item.destino }}
                     </td>
 
+                    <td class="">
+                        {% if item.ramal %}
+                            {{ item.ramal }}
+                        {% else %}
+                            <i class="bi bi-hash"></i>
+                        {% endif %}
+                    </td>
 
                     <td class="">
                         {% if item.numero_externo %}
@@ -69,13 +76,7 @@
                         {% endif %}
                     </td>
 
-                    <td class="">
-                        {% if item.ramal %}
-                            {{ item.ramal }}
-                        {% else %}
-                            <i class="bi bi-hash"></i>
-                        {% endif %}
-                    </td>
+
 
                 </tr>
                 {% empty %}
