@@ -17,6 +17,8 @@
 
 <div class="container">
 
+<form method="post" class="needs-validation" novalidate>
+    {% csrf_token %}
 
 <section class="row">
     <div class="col-12 mt-3">
@@ -49,13 +51,22 @@
 
 </section>
 
+<button type="submit" class="btn btn-primary pesquisa">Salvar</button>
+<a class="btn btn-primary" href='{% url "Agenda_Externa" %}' role="button">Voltar</a>
 
-    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+
 
 
 
 
 {% include "paginacao.html" %}
+
+<script src="{% static 'agenda_externa/jQuery-v3.6.4.js' %}"></script>
+<script src="{% static 'agenda_externa/jQuery Mask Plugin v1.14.16.js' %}"></script>
+<script src="{% static 'agenda_externa/cadastro.js' %}"></script>
+
 
 
 {% endblock pagina %}
