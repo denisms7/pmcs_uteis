@@ -71,14 +71,22 @@
                     <td class="">
                         {% if item.numero_externo %}
                             {{ item.numero_externo }}
-                        {% else %}
+
+                            <a data-number="{{ item.numero_externo }}" target="_blank" class="btn btn-sm btn-outline-success contato">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        
+                            {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
+
+
+
+                        
+
                     </td>
-
-
-
                 </tr>
+
                 {% empty %}
                     <tr>
                         <td colspan="5" class="text-center">
@@ -94,6 +102,29 @@
 
 
 {% include "paginacao.html" %}
+
+<script>
+    function formatWhatsAppNumber(number) {
+        if (number) {
+            // Remove espaços, parênteses e traços
+            return number.replace(/[\s()-]/g, '');
+        }
+        return number;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const whatsappLinks = document.querySelectorAll('.contato');
+
+        whatsappLinks.forEach(function(link) {
+            const originalNumber = link.getAttribute('data-number');
+            if (originalNumber) {
+                const formattedNumber = formatWhatsAppNumber(originalNumber);
+                link.setAttribute('href', 'https://wa.me/' + formattedNumber);
+            }
+        });
+    });
+</script>
+
 
 
 {% endblock pagina %}
