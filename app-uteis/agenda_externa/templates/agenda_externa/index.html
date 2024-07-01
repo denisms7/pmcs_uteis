@@ -20,111 +20,113 @@
     <p class="text-danger">
         - Exclusões devem ser solicitadas ao setor de informática.
     </p>
-<div>
-
-
-<div class="container">
-    <div class="container">
-    <form method="get">
-        <div class="row">
-            <div class="container mb-5 mt-2 px-5">
-                <!--- <label for="busca" class="form-label">Pesquisar:</label> --->
-                <div class="d-flex align-items-end" id="busca">
-                    <input type="text" name="q" value="{{ request.GET.q }}" placeholder="Pesquisa por Nome"
-                        class="form-control">
-                    <button type="submit" title="Pesquisar Registros" class="btn corPrimaria ms-1">
-                        <i class="bi bi-search" id="lupacep"></i>
-                    </button>
-                </div>
+    
+    <div>
+        <div class="container">
+            <div class="container">
+                <form method="get">
+                    <div class="row">
+                        <div class="container mb-5 mt-2 px-5">
+                            <!--- <label for="busca" class="form-label">Pesquisar:</label> --->
+                            <div class="d-flex align-items-end" id="busca">
+                                <input type="text" name="q" value="{{ request.GET.q }}" placeholder="Pesquisa por Nome"
+                                    class="form-control">
+                                <button type="submit" title="Pesquisar Registros" class="btn corPrimaria ms-1">
+                                    <i class="bi bi-search" id="lupacep"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </form>
-</div>
 
 
-    <div class="table-responsive">
-        <table class="table table-sm table-hover mt-3">
+        <div class="table-responsive">
+            <table class="table table-sm table-hover mt-3">
 
-            <thead>
-                <tr>
-                    <th scope="col" rowspan="2">Nome:</th>
-                    <th scope="col" class="">Ramal: (Se Houver)</th>
-                    <th scope="col" class="">Número Externo:</th>
-                </tr>
-            </thead>
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2">Nome:</th>
+                        <th scope="col" class="">Ramal: (Se Houver)</th>
+                        <th scope="col" class="">Número Externo:</th>
+                        <th scope="col" class=""></th>
+                    </tr>
+                </thead>
 
-            <tbody class="table-group-divider">
-                {% for item in object_list %}
-                <tr>
-                    <td class="text-capitalize">
-                        {{ item.destino }}
-                    </td>
+                <tbody class="table-group-divider">
+                    {% for item in object_list %}
+                    <tr>
+                        <td class="text-capitalize">
+                            {{ item.destino }}
+                        </td>
 
-                    <td class="">
-                        {% if item.ramal %}
+                        <td class="">
+                            {% if item.ramal %}
                             {{ item.ramal }}
-                        {% else %}
-                            <i class="bi bi-hash"></i>
-                        {% endif %}
-                    </td>
-
-                    <td class="">
-                        {% if item.numero_externo %}
-                            {{ item.numero_externo }}
-
-                            <a data-number="{{ item.numero_externo }}" target="_blank" class="btn btn-sm btn-outline-success contato">
-                                <i class="bi bi-whatsapp"></i>
-                            </a>
-                        
                             {% else %}
                             <i class="bi bi-hash"></i>
-                        {% endif %}
+                            {% endif %}
+                        </td>
 
+                        <td class="">
+                            {% if item.numero_externo %}
+                            {{ item.numero_externo }}
+                            {% else %}
+                            <i class="bi bi-hash"></i>
+                            {% endif %}
+                        </td>
 
+                        <td class="">
+                            {% if item.numero_externo %}
+                            <a data-number="{{ item.numero_externo }}" target="_blank"
+                                class="btn btn-sm btn-outline-success contato">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                            {% endif %}
+                        </td>
 
-                        
+                    </tr>
 
-                    </td>
-                </tr>
-
-                {% empty %}
+                    {% empty %}
                     <tr>
                         <td colspan="5" class="text-center">
                             <i class="bi bi-exclamation-lg"></i>
                             Não existem Cadastros
                         </td>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
     </div>
 </div>
 
+    {% include "paginacao.html" %}
 
-{% include "paginacao.html" %}
-
-<script>
-    function formatWhatsAppNumber(number) {
-        if (number) {
-            // Remove espaços, parênteses e traços
-            return number.replace(/[\s()-]/g, '');
-        }
-        return number;
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const whatsappLinks = document.querySelectorAll('.contato');
-
-        whatsappLinks.forEach(function(link) {
-            const originalNumber = link.getAttribute('data-number');
-            if (originalNumber) {
-                const formattedNumber = formatWhatsAppNumber(originalNumber);
-                link.setAttribute('href', 'https://wa.me/' + formattedNumber);
+    <script>
+        function formatWhatsAppNumber(number) {
+            if (number) {
+                // Remove espaços, parênteses e traços
+                return number.replace(/[\s()-]/g, '');
             }
+            return number;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const whatsappLinks = document.querySelectorAll('.contato');
+
+            whatsappLinks.forEach(function (link) {
+                const originalNumber = link.getAttribute('data-number');
+                if (originalNumber) {
+                    const formattedNumber = formatWhatsAppNumber(originalNumber);
+                    link.setAttribute('href', 'https://wa.me/' + formattedNumber);
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 
 
-{% endblock pagina %}
+    {% endblock pagina %}
