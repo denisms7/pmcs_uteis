@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import PaginaInicial, InteligenciaA, PDM, HinoNacional, HinoEstadual, HinoMunicipal
-from .views import EnderecoOficiais, Sismel, Atalhos
+from .views import EnderecoOficiais, Sismel, Atalhos, Speed_test
 
 urlpatterns = [
     path('', PaginaInicial.as_view(), name='inicio'),
@@ -13,4 +13,5 @@ urlpatterns = [
     path('enderecos-oficiais/', EnderecoOficiais.as_view(), name='enderecos_of'),
     path('atalhosdeteclado/', Atalhos.as_view(), name='atalhos-teclado'),
     path('sismel/', Sismel.as_view(), name='sismel'),
+    path('SpeedTest-pmcs/', Speed_test.as_view(), name='SpeedTest'),
 ]

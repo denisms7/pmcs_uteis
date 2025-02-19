@@ -52,6 +52,9 @@ class Sismel(TemplateView):
 class Atalhos(TemplateView):
     template_name = 'paginas/atalhos.html'
 
+class Speed_test(TemplateView):
+    template_name = 'paginas/speed_test.html'
+
 '''
 def error_400_view(request, exception):
     return render(request, 'error.html', {'status_code': 400})

@@ -30,10 +30,17 @@
 </div>
 
 <div class="">
+    <a href="http://conta.equiplano.com.br:7474/conta/#/login?id=fe5fa9aa-90dd-d42f-ba3b-5769505bdc78&continue=http:%2F%2Fcentenariodosulprscp.equiplano.com.br:5508%2FtramitacaoProcesso%2F#/index?id=5d08f076-ad4f-47fe-89e0-3de3318dfa2d"
+    class="pesquisa btn btn-danger m-1" target="_blank">
+        eProcessos
+    </a>
+
+
     <a href="{% url 'InteligenciaA' %}"
     class="pesquisa btn btn-success m-1">
     Inteligencia Artificial
     </a>
+
     <a href="{% url 'cursos' %}"
     class="pesquisa btn btn-success m-1">
     Cursos
@@ -113,7 +120,7 @@
         <span class="position-absolute invisible">Requisições Requisicoes Diárias Diarias</span>
     </a>
 
-    <a class="pesquisa btn btn-primary" id="detect-speed" type="button">
+    <a class="pesquisa btn btn-primary" type="button" href="{% url 'SpeedTest' %}">
         SpeedTest
         <span class="spinner-border spinner-border-sm d-none" role="status" id="spinner-id" aria-hidden="true"></span>
     </a>
