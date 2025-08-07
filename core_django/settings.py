@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('ENV_SECRET_KEY', 'sem.Env687654/968748>457')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.getenv('ENV_DEBUG', True))
+DEBUG = False  # int(os.getenv('ENV_DEBUG', True))
 print(f'ENV DEBUG: {DEBUG}')
 
 ALLOWED_HOSTS = [os.getenv('ENV_ALLOWED_HOSTS', '*')]
@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'multiupload',
+    'whitenoise',
 
     'paginas.apps.PaginasConfig',
     'curso.apps.CursoConfig',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -137,6 +139,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Para compressão de arquivos
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
