@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('ENV_SECRET_KEY', 'sem.Env687654/968748>457')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # int(os.getenv('ENV_DEBUG', True))
+DEBUG = True  # int(os.getenv('ENV_DEBUG', True))
 print(f'ENV DEBUG: {DEBUG}')
 
 ALLOWED_HOSTS = [os.getenv('ENV_ALLOWED_HOSTS', '*')]

@@ -55,6 +55,20 @@ class Atalhos(TemplateView):
 class Speed_test(TemplateView):
     template_name = 'paginas/speed_test.html'
 
+class VideoTreinamentoView(TemplateView):
+    template_name = 'paginas/eProcesso.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # caminho fixo no MEDIA_URL
+        context['video_url'] = f"{settings.MEDIA_URL}TreinamentoeProcesso.mp4"
+        context['titulo'] = "Treinamento eProcesso"
+        context['descricao'] = "Treinamento realizado pela equipe da Sysmar em 21/01/2025"
+        return context
+
+
+
+
 '''
 def error_400_view(request, exception):
     return render(request, 'error.html', {'status_code': 400})
