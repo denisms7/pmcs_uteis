@@ -1,0 +1,14 @@
+# Diretório estático
+location /static/ {
+    alias /var/www/staticfiles/;
+    access_log off;
+    expires 1y;
+    add_header Cache-Control "public";
+}
+
+# Diretório de mídia
+location /media/ {
+    alias /var/www/media/;
+    expires 30d;
+    add_header Cache-Control "public";
+}

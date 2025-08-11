@@ -10,9 +10,10 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
-      - ./staticfiles:/var/www/staticfiles/
+      - ./staticfiles:/var/www/staticfiles
+      - ./media:/var/www/media
     networks:
-      - nginx-network
+      - uteis-network
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
       interval: 30s
@@ -23,26 +24,24 @@ services:
     container_name: django-uteis
     build: .
     restart: always
-    #ports:  # expor a porta 8000 para a rede local e externamente
-    #  - "8000:8000"
     volumes:
       - ./:/app
       - ./staticfiles:/app/staticfiles
-      - ./staticfiles:/staticfiles
+      - ./media:/app/media
     env_file:
       - .env
     networks:
-      - nginx-network
+      - uteis-network
     depends_on:
-      - nginx-uteis
+      - nginx-proxy
     command: >
       sh -c "
         python manage.py migrate &&
         python manage.py collectstatic --noinput &&
-        gunicorn --config gunicorn_config.py base_sistema.wsgi:application
+        gunicorn --config gunicorn_config.py core_django.wsgi:application
       "
-  
+
 networks:
-  nginx-network:
+  uteis-network:
     driver: bridge
     attachable: true
