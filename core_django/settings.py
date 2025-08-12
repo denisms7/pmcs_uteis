@@ -1,23 +1,27 @@
 from pathlib import Path
 import os
-import dotenv
+from dotenv import load_dotenv
 
 # Carrega as variáveis de ambiente do arquivo .env
-dotenv.load_dotenv()
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('ENV_SECRET_KEY', 'sem.Env687654/968748>457')
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-28mqai_rk_%d4r@z3ew!m#x3nvs_7xid3%f')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # int(os.getenv('ENV_DEBUG', True))
-print(f'ENV DEBUG: {DEBUG}')
+# 1 = True, 0 = False
+DEBUG = bool(int(os.getenv('DEBUG', 0)))
+for x in range(5):
+    print(f"DEBUG: {DEBUG}")
 
-ALLOWED_HOSTS = [os.getenv('ENV_ALLOWED_HOSTS', '*')]
 
-
+ALLOWED_HOSTS = [
+    h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
+    if h.strip()
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -74,19 +78,6 @@ WSGI_APPLICATION = 'core_django.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': os.getenv('ENV_DB_ENGINE'),
-        'NAME':  os.getenv('ENV_DB_NAME'),
-        'USER':  os.getenv('ENV_DB_USER'),
-        'PASSWORD':  os.getenv('ENV_DB_PASSWORD'),
-        'HOST':  os.getenv('ENV_DB_HOST'),
-        'PORT':  int(os.getenv('ENV_DB_PORT')),
-    }
-}
-'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -117,9 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = os.getenv('ENV_LANGUAGE_CODE', 'pt-br')
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = os.getenv('ENV_TIME_ZONE', 'America/Sao_Paulo')
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
