@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+letsencrypt
+
 data/
 
 # C extensions
