@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'pdf_ferramentas.apps.PdfFerramentasConfig',
     'agenda.apps.AgendaConfig',
     'leiLicitacao.apps.LeilicitacaoConfig',
-    'agenda_externa.apps.AgendaExternaConfig',
 ]
 
 

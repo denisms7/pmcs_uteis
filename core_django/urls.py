@@ -11,7 +11,6 @@ urlpatterns = [
     path('', include('pdf_ferramentas.urls')),
     path('', include('agenda.urls')),
     path('', include('leiLicitacao.urls')),
-    path('', include('agenda_externa.urls')),
 ]
 
 

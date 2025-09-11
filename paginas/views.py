@@ -33,7 +33,6 @@ class InteligenciaA(TemplateView):
 class PDM(TemplateView):
     template_name = 'paginas/leis_pdm.html'
 
-
 class HinoNacional(TemplateView):
     template_name = 'paginas/hinos/hino_nacional.html'
 
@@ -46,32 +45,5 @@ class HinoMunicipal(TemplateView):
 class EnderecoOficiais(TemplateView):
     template_name = 'paginas/endereco_oficial/enderecos.html'
 
-class Sismel(TemplateView):
-    template_name = 'paginas/sismel.html'
-
-class Atalhos(TemplateView):
-    template_name = 'paginas/atalhos.html'
-
 class Speed_test(TemplateView):
     template_name = 'paginas/speed_test.html'
-
-
-
-
-'''
-def error_400_view(request, exception):
-    return render(request, 'error.html', {'status_code': 400})
-
-def error_403_view(request, exception):
-    return render(request, 'error.html', {'status_code': 403})
-
-def error_404_view(request, exception):
-    return render(request, 'error.html', {'status_code': 404})
-
-def error_500_view(request):
-    return render(request, 'error.html', {'status_code': 500})
-
-def error_502_view(request):
-    return render(request, 'error.html', {'status_code': 502})
-
-'''
