@@ -5,6 +5,7 @@ __pycache__/
 
 letsencrypt
 
+venv
 data/
 
 # C extensions
