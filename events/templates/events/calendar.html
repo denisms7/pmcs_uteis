@@ -37,9 +37,8 @@
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,list'
       },
-      events: "#"
+      events: "{% url 'calendar_api' %}"
     });
 
     calendar.render();
