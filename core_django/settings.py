@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'leiLicitacao.apps.LeilicitacaoConfig',
 
     'identity',
+    'events',
 ]
 
 

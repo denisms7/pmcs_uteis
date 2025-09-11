@@ -1,7 +1,6 @@
 from django.urls import path
-from .views import CalendarioView, agendamentos_json
+from .views import CalendarTemplateView
 
 urlpatterns = [
-    path('calendario/', CalendarioView.as_view(), name='calendario'),
-    path('calendario/eventos/', agendamentos_json, name='eventos_consulta_json'),
+    path('calendario/', CalendarTemplateView.as_view(), name='calendar'),
 ]
