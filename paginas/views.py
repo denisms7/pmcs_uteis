@@ -33,15 +33,6 @@ class InteligenciaA(TemplateView):
 class PDM(TemplateView):
     template_name = 'paginas/leis_pdm.html'
 
-class HinoNacional(TemplateView):
-    template_name = 'paginas/hinos/hino_nacional.html'
-
-class HinoEstadual(TemplateView):
-    template_name = 'paginas/hinos/hino_estadual.html'
-
-class HinoMunicipal(TemplateView):
-    template_name = 'paginas/hinos/hino_municipal.html'
-
 class EnderecoOficiais(TemplateView):
     template_name = 'paginas/endereco_oficial/enderecos.html'
 

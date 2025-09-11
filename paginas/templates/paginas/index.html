@@ -213,82 +213,11 @@
 
 <hr class="pesquisa mt-5 mb-5">
 
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-file-music"></i>
-        ÁUDIO
-    </h3>
-
-    <a href="{% url 'hino_nacional' %}" class="pesquisa btn btn-info m-1">
-        Hino Nacional
-        <span class="position-absolute invisible">audio musica</span>
-    </a>
-    <a href="{% url 'hino_estadual' %}" class="pesquisa btn btn-info m-1">
-        Hino Estadual
-        <span class="position-absolute invisible">audio musica</span>
-    </a>
-    <a href="{% url 'hino_municipal' %}" class="pesquisa btn btn-info m-1">
-        Hino Municipal
-        <span class="position-absolute invisible">audio musica</span>
-    </a>
-</div>
+{% include "identity/img/index.html" %}
 
 <hr class="pesquisa mt-5 mb-5">
 
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-file-earmark-image"></i>
-        IMAGENS
-    </h3>
-    <a href="{% static 'paginas/imagens/Brasao-Colorido.png' %}" target="_blank" class="pesquisa btn m-1" download>
-        <img class="border border-0 bg-none" height="100" width="100"
-            src="{% static 'paginas/imagens/apresentacao/Brasao-Colorido.png' %}" alt="Brasão Colorido" title="Brasão Colorido">
-        <span class="position-absolute invisible">brasão imagem</span>
-    </a>
-
-    <a href="{% static 'paginas/imagens/Brasao_3D.png' %}" target="_blank" class="pesquisa btn m-1" download>
-        <img class="border border-0 bg-none" height="100" width="100"
-            src="{% static 'paginas/imagens/apresentacao/Brasao_3D.png' %}" alt="Brasão 3D" title="Brasão 3D">
-        <span class="position-absolute invisible">brasão 3D</span>
-    </a>
-
-    <a href="{% static 'paginas/imagens/brasao_bw.png' %}" target="_blank" class="pesquisa btn m-1" download>
-        <img class="border border-0" height="100" width="100"
-            src="{% static 'paginas/imagens/apresentacao/brasao_bw.png' %}" alt="Brasão Preto e Branco" title="Brasão Preto e Branco">
-        <span class="position-absolute invisible">brasão imagem</span>
-    </a>
-    <a href="{% static 'paginas/imagens/Brasao-Sem-Fundo.png' %}" target="_blank" class="pesquisa btn m-1" download>
-        <img class="border border-0" height="100" width="100"
-            src="{% static 'paginas/imagens/apresentacao/Brasao-Sem-Fundo.png' %}" alt="Brasão Sem Fundo" title="Brasão Sem Fundo">
-        <span class="position-absolute invisible">brasão imagem</span>
-    </a>
-
-    <a href="{% static 'paginas/imagens/logo-gov-0.png' %}" target="_blank" class="pesquisa btn m-1" download>
-        <img class="border border-0" height="100" width="100"
-            src="{% static 'paginas/imagens/apresentacao/logo-gov-0.png' %}" alt="Logo Governo" title="Governo Logo letra branca">
-        <span class="position-absolute invisible">Governo imagem cs</span>
-    </a>
-
-    <a href="{% static 'paginas/imagens/logo-gov-1.png' %}" target="_blank" class="pesquisa btn m-1" download>
-        <img class="border border-0" height="100" width="100"
-            src="{% static 'paginas/imagens/apresentacao/logo-gov-1.png' %}" alt="Logo Governo" title="Governo Logo letra preta">
-        <span class="position-absolute invisible">Governo imagem cs</span>
-    </a>
-
-    <a href="{% static 'paginas/imagens/logo-bw.png' %}" target="_blank" class="pesquisa btn m-1" download>
-        <img class="border border-0" height="100" width="100"
-            src="{% static 'paginas/imagens/apresentacao/logo-gov-2.png' %}" alt="Logo Governo" title="Governo Logo tons de cinza">
-        <span class="position-absolute invisible">Governo imagem cs</span>
-    </a>
-
-    <a href="{% static 'paginas/imagens/Bandeira_Municipal.png' %}" target="_blank" 
-        class="pesquisa btn m-1" download>
-        <img class="border border-0" height="100" width="100"
-            src="{% static 'paginas/imagens/apresentacao/Bandeira_Municipal.png' %}" alt="Bandeira" title="Bandeira Municipal">
-        <span class="position-absolute invisible">bandeira municipal imagem</span>
-    </a>
-</div>
-
+{% include "identity/audio/index.html" %}
 
 {% endblock pagina %}
 

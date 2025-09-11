@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+class NationalTemplateView(TemplateView):
+    template_name = 'identity/anthem/national.html'
+
+class StateTemplateView(TemplateView):
+    template_name = 'identity/anthem/state.html'
+
+class MunicipalTemplateView(TemplateView):
+    template_name = 'identity/anthem/municipal.html'
