@@ -9,7 +9,6 @@ class BirthdaySerializer(serializers.ModelSerializer):
     allDay = serializers.BooleanField(default=True)
     color = serializers.CharField(default="#0d6efd")
 
-
     class Meta:
         model = Birthday
         fields = ["title", "start", "allDay", "color"]
@@ -19,8 +18,8 @@ class BirthdaySerializer(serializers.ModelSerializer):
 
     def get_start(self, obj):
         today = date.today()
-        # sempre atualiza o ano do aniversário para o ano atual
-        birthday_this_year = obj.birth.replace(year=today.year)
+        year = self.context.get("year", today.year)
+        birthday_this_year = obj.birth.replace(year=year)
         return birthday_this_year.isoformat()
 
 
@@ -36,3 +35,16 @@ class HolidaySerializer(serializers.ModelSerializer):
 
     def get_title(self, obj):
         return f"📅 {obj.name}"
+
+
+class BrasilAPIFeriadoSerializer(serializers.Serializer):
+    title = serializers.SerializerMethodField()
+    start = serializers.SerializerMethodField()  # corrigido para pegar `date`
+    allDay = serializers.BooleanField(default=True)
+    color = serializers.CharField(default="#FAE94E")
+
+    def get_title(self, obj):
+        return f"BR {obj['name']}"
+
+    def get_start(self, obj):
+        return obj["date"]  # BrasilAPI já manda no formato YYYY-MM-DD
