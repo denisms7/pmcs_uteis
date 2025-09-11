@@ -1,6 +1,4 @@
-from django.http import JsonResponse
 from .models import Birthday, Holidays
-from datetime import date
 
 def get_events():
     events = []
@@ -9,18 +7,18 @@ def get_events():
     for b in Birthday.objects.all():
         events.append({
             "title": f"🎂 {b.name}",
-            "start": b.birth.strftime("%Y-%m-%d"),
+            "start": b.birth.isoformat(),
             "allDay": True,
-            "color": "#0d6efd"
+            "color": "#0d6efd",
         })
 
     # Feriados
     for h in Holidays.objects.all():
         events.append({
             "title": f"📅 {h.name}",
-            "start": h.date.strftime("%Y-%m-%d"),
+            "start": h.date.isoformat(),
             "allDay": True,
-            "color": "#dc3545"
+            "color": "#dc3545",
         })
 
-    return JsonResponse(events, safe=False)
+    return events

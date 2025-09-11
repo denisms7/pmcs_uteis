@@ -7,12 +7,14 @@
 
 <div class="container">
   <h2>Calendário de Agendamentos</h2>
+
+  {{ get_events }}
+
   
   <div class="container py-5">
     <div id="calendar"></div>
   </div>
 </div>
-
 
 <script src="{% static 'calendar/index.global.min.js' %}"></script>
 <script src="{% static 'calendar/core/locales-all.global.js' %}"></script>
@@ -37,7 +39,7 @@
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,list'
       },
-      events: "{{ get_events }}"
+      events: "#"
     });
 
     calendar.render();
