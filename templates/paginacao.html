@@ -1,8 +1,19 @@
 <style>
-    .btn-paginacao.active a.page-link {
-        background-color: rgb(0,122,55);
-        color: #fff;
+    .pagination .page-link {
+        color: #007a37; /* cor do tema */
+        border-radius: 8px;
+        margin: 0 3px;
+        transition: all 0.2s ease-in-out;
     }
+
+    .pagination .page-item.active .page-link {
+        background-color: #007a37;
+        border-color: #007a37;
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 0 6px rgba(0, 122, 55, 0.5);
+    }
+
 </style>
 
 {% if page_obj.paginator.count > 0 %}

@@ -25,6 +25,29 @@
     Cursos
     </a>
 
+    <a href="{% url 'Agenda' %}" 
+    class="pesquisa btn btn-warning m-1">
+    Agenda Interna
+    <span class="position-absolute invisible">telefone ramal agenda celular numero</span>
+    </a>
+
+
+    <a href="{% url 'Agenda' %}" 
+    class="pesquisa btn btn-warning m-1">
+    Endereços Oficiais
+    <span class="position-absolute invisible">telefone ramal agenda celular numero</span>
+    </a>
+
+
+</div>
+
+<hr class="pesquisa mt-5 mb-5">
+
+<div class="">
+    <h3 class="pesquisa">
+        <i class="bi bi-filetype-pdf"></i>
+        PDF
+    </h3>
     <a href="{% url 'marge_pdf' %}"
     class="pesquisa btn btn-success m-1">
     Unir PDF
@@ -40,93 +63,7 @@
     Comprimir PDF
     </a>
 
-    <a href="{% url 'Agenda' %}" 
-    class="pesquisa btn btn-warning m-1">
-    Agenda Interna
-    <span class="position-absolute invisible">telefone ramal agenda celular numero</span>
-    </a>
-
-
 </div>
-
-
-<hr class="pesquisa mt-5 mb-5">
-
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-calendar3-range"></i>
-        SISTEMAS
-    </h3>
-
-    <a href="http://conta.equiplano.com.br:7474/conta/#/login?id=fe5fa9aa-90dd-d42f-ba3b-5769505bdc78&continue=http:%2F%2Fcentenariodosulprscp.equiplano.com.br:5508%2FtramitacaoProcesso%2F#/index?id=5d08f076-ad4f-47fe-89e0-3de3318dfa2d"
-    class="pesquisa btn btn-primary m-1" target="_blank">
-        eProcessos
-    </a>
-
-    <a href="http://192.168.1.1:8092/" target="_blank" class="pesquisa btn btn-primary m-1">
-        Requisições/Diárias
-        <span class="position-absolute invisible">Requisições Requisicoes Diárias Diarias</span>
-    </a>
-
-    <a class="pesquisa btn btn-primary" type="button" href="{% url 'SpeedTest' %}">
-        SpeedTest
-        <span class="spinner-border spinner-border-sm d-none" role="status" id="spinner-id" aria-hidden="true"></span>
-    </a>
-
-    <a href="https://centenariodosulpr.equiplano.com.br:7508/srh/srhLogin/load" target="_blank" class="pesquisa btn btn-primary m-1">
-        RH
-        <span class="position-absolute invisible">RH</span>
-    </a>
-
-    <a href="https://centenariodosul.simplissweb.com.br/prefeitura/202110/Account/Login" target="_blank" class="pesquisa btn btn-primary m-1">
-        NFe ISS
-        <span class="position-absolute invisible">NFe ISS</span>
-    </a>
-
-</div>
-
-<hr class="pesquisa mt-5 mb-5">
-
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-geo-alt"></i>
-        DADOS MUNICIPAIS
-    </h3>
-
-    <a type="pesquisa btn btn-info m-1" href="https://centenariodosulpr.equiplano.com.br:7508/transparencia/" target="_blank" class="pesquisa btn btn-info m-1">
-        Transparência Municipal
-    </a>
-
-    <a href="https://www.centenariodosul.pr.leg.br/" target="_blank" class="pesquisa btn btn-info m-1">
-        Câmara Municipal
-    </a>
-
-    <a href="https://www.diariomunicipal.com.br/amp/pesquisar" target="_blank" class="pesquisa btn btn-info m-1">
-        Diário Oficial
-        <span class="position-absolute invisible">AMP</span>
-    </a>
-
-    <a href="http://www.ipardes.pr.gov.br/Pagina/Cadernos-municipais" target="_blank" class="pesquisa btn btn-info m-1">
-        IPARDES
-    </a>
-
-    <a href="https://apmifcentenariodosul.com.br/" target="_blank" class="pesquisa btn btn-info m-1">
-        APMIF
-    </a>
-
-    <a href="https://www.centenariodosul.pr.gov.br/index.php?meio=16562" target="_blank"
-        class="pesquisa btn btn-info m-1">
-        Licitações
-    </a>
-
-    <a href="{% url 'enderecos_of' %}" class="pesquisa btn btn-info m-1">
-        Endereços Oficiais
-    </a>
-
-
-    
-</div>
-
 
 
 <hr class="pesquisa mt-5 mb-5">
@@ -139,10 +76,6 @@
 
     <a href="https://leismunicipais.com.br/legislacao-municipal/3222/leis-de-centenario-do-sul" class="pesquisa btn btn-warning m-1" target="_blank">
         Leis Municipais
-    </a>
-
-    <a href="{% static 'paginas/PDF/Resolucao-01_2022.pdf' %}" class="pesquisa btn btn-warning m-1" target="_blank">
-        ATRICON
     </a>
 
     <a href="{% url 'pdm_municipal' %}" class="pesquisa btn btn-warning m-1">
@@ -228,173 +161,6 @@
     <span class="position-absolute invisible">Licitação Lei 2021</span>
 </a>
 
-<hr class="pesquisa mt-5 mb-5">
-
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-graph-up"></i>
-        COTAÇÃO DE PREÇOS
-    </h3>
-
-    <a href="https://www.portaldecompraspublicas.com.br/" target="_blank" class="pesquisa btn btn-secondary m-1">
-        Portal Compras Públicas
-    </a>
-
-    <a href="https://paineldeprecos.planejamento.gov.br/" target="_blank" class="pesquisa btn btn-secondary m-1">
-        Painel de preços
-    </a>
-
-    <a href="https://antigo.comprasgovernamentais.gov.br/" target="_blank" class="pesquisa btn btn-secondary m-1">
-        Portal de Compras (antigo compras governamentais)
-    </a>
-
-    <a href="https://compras.menorpreco.pr.gov.br/" target="_blank" class="pesquisa btn btn-secondary m-1">
-        Menor preço PR
-    </a>
-
-</div>
-
-<hr class="pesquisa mt-5 mb-5">
-
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-bank"></i>
-        INSTITUCIONAL E GOVERNO
-    </h3>
-
-    <a href="https://dedicado2.valesolucoesemgestao.com.br/webmail/" target="_blank" class="pesquisa btn btn-success m-1">
-        E-mail Corporativo
-        <span class="position-absolute invisible">e-mail email e mail webmail web mail</span>
-    </a>
-
-    <a href="https://centenariodosulpr.equiplano.com.br:7508/esportal/srhlogincontrachequebs.carregar.logic" target="_blank"
-        class="pesquisa btn btn-success m-1">
-        Holerite
-    </a>
-
-    <a href="https://www.gov.br/pt-br" target="_blank" class="pesquisa btn btn-success m-1">
-        Gov.br
-    </a>
-
-    <a href="https://centenariodosulpr.equiplano.com.br:7508/esadmin/sistemas.index.logic" target="_blank" class="pesquisa btn btn-success m-1">
-        EsAdmin Equiplano
-    </a>
-
-    <a href="https://www.sbk.net.br/sanepar" target="_blank" class="pesquisa btn btn-success m-1">
-        Taxa de Coleta de Lixo
-    </a>
-
-    <a href="https://autenticacao.voxtecnologia.com.br/" target="_blank" class="pesquisa btn btn-success m-1">
-        Empresa Fácil
-    </a>
-
-    <a href="https://centenariodosul.simplissweb.com.br/prefeitura/202110/Account/Login" target="_blank"
-        class="pesquisa btn btn-success m-1">
-        Simpliss Admin
-    </a>
-
-    <a href="https://edi7.itau.com.br/index_login.htm" target="_blank" class="pesquisa btn btn-success m-1">
-        ITAU EDI7
-    </a>
-
-    <a href="https://www.caixa.gov.br/empresa/conectividade-social/Paginas/default.aspx" target="_blank"
-        class="pesquisa btn btn-success m-1">
-        Conectividade Social
-    </a>
-
-    <a href="https://cav.receita.fazenda.gov.br/autenticacao/login/index" target="_blank"
-        class="pesquisa btn btn-success m-1">
-        eCac
-    </a>
-
-    <a href="http://www8.receita.fazenda.gov.br/SimplesNacional/aplicacoes.aspx?id=21" target="_blank"
-        class="pesquisa btn btn-success m-1">
-        Simples Nacional Optantes
-    </a>
-</div>
-
-<hr class="pesquisa mt-5 mb-5">
-
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-file-earmark-text"></i>
-        CONSULTAS E CERTIDÕES NEGATIVAS
-    </h3>
-
-    <a href="http://servicos.receita.fazenda.gov.br/Servicos/certidao/CNDConjuntaInter/InformaNICertidao.asp?tipo=1"
-        target="_blank" class="pesquisa btn btn-secondary m-1">
-        Certidão Conjunta de Tributos Federais
-    </a>
-
-    <a href="http://www.cdw.fazenda.pr.gov.br/cdw/emissao/certidaoAutomatica" target="_blank"
-        class="pesquisa btn btn-secondary m-1">
-        Certidão Negativa de Débitos de Tributos Estaduais
-    </a>
-
-    <a href="https://sti.tesouro.gov.br/cauc/index.jsf" target="_blank" class="pesquisa btn btn-secondary m-1">
-        CAUC
-    </a>
-
-    <a href="http://www.fazenda.pr.gov.br/servicos/consultar-emitir-certidao-transferencia-voluntaria" target="_blank"
-        class="pesquisa btn btn-secondary m-1">
-        Certidão Negativa de transferências voluntarias do Paraná
-    </a>
-
-    <a href="https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf" target="_blank"
-        class="pesquisa btn btn-secondary m-1">
-        FGTS
-    </a>
-
-    <a href="http://www.tst.jus.br/certidao/" target="_blank" class="pesquisa btn btn-secondary m-1">
-        Certidão Negativa de Débitos Trabalhistas
-    </a>
-
-    <a href="http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/cnpjreva_solicitacao.asp" target="_blank"
-        class="pesquisa btn btn-secondary m-1">
-        CNPJ
-    </a>
-
-    <a href="https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp" target="_blank"
-        class="pesquisa btn btn-secondary m-1">
-        CPF
-    </a>
-
-    <a href="https://menorpreco.notaparana.pr.gov.br/index" target="_blank" class="pesquisa btn btn-secondary m-1">
-        Menor Preço PR
-    </a>
-
-    <a href="https://cadin.pr.gov.br/cadin/publico/pendencia/consultar" target="_blank"
-        class="pesquisa btn btn-secondary m-1">
-        CADIN
-    </a>
-</div>
-
-<hr class="pesquisa mt-5 mb-5">
-
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-cash-coin"></i>
-        TRANSFERÊNCIAS DE RECURSOS
-    </h3>
-
-    <a href="http://sisweb.tesouro.gov.br/apex/f?p=2600:1::::::" target="_blank" class="pesquisa btn btn-warning m-1">
-        Transferências Federais
-    </a>
-
-    <a href="http://www.transparencia.pr.gov.br/pte/assunto/4/100?origem=2" target="_blank"
-        class="pesquisa btn btn-warning m-1">
-        Transferências Estaduais
-    </a>
-
-    <a href="https://consultafns.saude.gov.br/#/repasse-dia" target="_blank" class="pesquisa btn btn-warning m-1">
-        Transferências dos Programas de Saúde
-    </a>
-
-    <a href="https://www.fnde.gov.br/pls/simad/internet_fnde.liberacoes_01_pc" target="_blank"
-        class="pesquisa btn btn-warning m-1">
-        Transferências dos Programas do FNDE
-    </a>
-</div>
 
 <hr class="pesquisa mt-5 mb-5">
 
@@ -521,57 +287,6 @@
             src="{% static 'paginas/imagens/apresentacao/Bandeira_Municipal.png' %}" alt="Bandeira" title="Bandeira Municipal">
         <span class="position-absolute invisible">bandeira municipal imagem</span>
     </a>
-</div>
-
-<hr class="pesquisa mt-5 mb-5">
-
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-gear"></i>
-        SUPORTE
-    </h3>
-
-    <a href="https://anydesk.com/pt/downloads/windows" target="_blank" class="pesquisa btn btn-warning m-1">
-        Anydesk
-    </a>
-
-    <a href="https://www.teamviewer.com/pt-br/" target="_blank" class="pesquisa btn btn-warning m-1">
-        TeamViewer
-    </a>
-
-    <a href="https://ninite.com/" target="_blank" class="pesquisa btn btn-warning m-1">
-        Ninite
-    </a>
-
-    <a href="{% static 'paginas\suporte\go-global.rar' %}" download
-    class="pesquisa btn btn-warning m-1">
-    Go Global
-    <span class="position-absolute invisible">Go Global</span>
-    </a>
-
-    <a href="{% static 'paginas\suporte\Office Enterprise 2007.zip' %}" download
-    class="pesquisa btn btn-warning m-1">
-    Office Enterprise 2007
-    <span class="position-absolute invisible">Office Enterprise 2007</span>
-    </a>
-
-    <a href="https://www.naps2.com/" target="_blank" class="pesquisa btn btn-warning m-1">
-        Naps2
-    </a>
-
-    <a href="{% static 'paginas\suporte\adobe_acrobat_reader_pt_br.msi' %}" download
-    class="pesquisa btn btn-warning m-1">
-    Adobe Reader PDF
-    <span class="position-absolute invisible">Adobe Reader PDF</span>
-    </a>
-
-    <a href="{% static 'paginas\suporte\Kaspersky.rar' %}" download
-    class="pesquisa btn btn-warning m-1">
-    Kaspersky Small Office Security 
-    <span class="position-absolute invisible">Kaspersky Small Office Security</span>
-    </a>
-
-    
 </div>
 
 
