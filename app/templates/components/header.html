@@ -26,8 +26,23 @@
                                 Endereços
                             </a>
                         </li>
+                        {% if user.is_superuser %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'admin:index' %}">
+                                    Admin
+                                </a>
+                            </li>
+                        {% endif %}
                     </ul>
-                    <div class="d-flex" >
+                    <div class="d-flex gap-2" >
+                        {% if user.is_authenticated %}
+                            <form method="post" action="{% url 'logout' %}"> {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-light">
+                                    Sair
+                                </button>
+                            </form>
+                        {% endif %}
+                        
                         {% include "components/theme.html" %}
                     </div>
                 </div>
