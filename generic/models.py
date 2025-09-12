@@ -1,8 +1,13 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+ACTIVE_CHOICES = [
+    (True, _('Ativo')),
+    (False, _('Inativo')),
+]
 
 class Category(models.Model):
+    active = models.BooleanField(choices=ACTIVE_CHOICES, verbose_name=_('Ativo'), default=True,)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
     name = models.CharField(max_length=200, verbose_name=_('Categoria'))
     button_color = models.CharField(max_length=10, verbose_name=_('Cor Botões'), default="#0B5ED7")
@@ -42,6 +47,7 @@ class Legislation(models.Model):
         (2, _('Licitação')),
     ]
 
+    active = models.BooleanField(choices=ACTIVE_CHOICES, verbose_name=_('Ativo'), default=True,)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
     category = models.PositiveSmallIntegerField(choices=CATEGORY_CHOICES, verbose_name=_('Categoria'))
     document = models.CharField(max_length=100, verbose_name=_('Documento'))
@@ -50,15 +56,16 @@ class Legislation(models.Model):
     url = models.URLField(max_length=250, verbose_name=_('URL'), null=True, blank=True)
 
     class Meta:
-        ordering = ["title"]
-        verbose_name = "Licitação"
-        verbose_name_plural = "Licitações"
+        ordering = ["document"]
+        verbose_name = "Licitação/PDM"
+        verbose_name_plural = "Licitações/PDM"
 
     def __str__(self):
-        return f"{self.category} || {self.title}"
+        return f"{self.category} || {self.document}"
 
 
 class LegislationButton(models.Model):
+    active = models.BooleanField(choices=ACTIVE_CHOICES, verbose_name=_('Ativo'), default=True,)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
     title = models.CharField(max_length=100, verbose_name=_('Título'))
     description = models.TextField(max_length=2000, verbose_name=_('Descrição'), null=True, blank=True)

@@ -21,10 +21,8 @@
 
 
 .botao-hover a:hover {
-    background-color: #fbff006e;        /* muda o fundo */
-    color: #000000;                   /* muda a cor do texto */
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);  /* sombra mais forte */
-    transform: translateY(-3px);   /* elevação suave */
+    transform: translateY(-5px);   /* elevação suave */
     border-color: #333;            /* borda sutil */
 }
 

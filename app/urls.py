@@ -13,10 +13,11 @@ urlpatterns = [
 
     path('', include('curso.urls')),
     
-    path('', include('generic.urls')),
     path('', include('identity.urls')),
     path('', include('events.urls')),
-    path('', include('institutional.urls'))
+    path('', include('institutional.urls')),
+    path('', include('generic.urls')),
+
 ]
 
 
