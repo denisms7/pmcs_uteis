@@ -1,51 +1,29 @@
 ﻿{% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
 
-
-{% block pesquisa %}
-    {% include "pesquisa.html" %}
-{% endblock pesquisa %}
-
-
+    {% include "search.html" %}
 
 <div class="">
-
-
-
-    <a href="{% url 'InteligenciaA' %}"
-    class="pesquisa btn btn-success m-1">
-    Inteligencia Artificial
+    <a href="{% url 'InteligenciaA' %}" class="pesquisa btn btn-success m-1">
+        Inteligencia Artificial
     </a>
-
-    <a href="{% url 'cursos' %}"
-    class="pesquisa btn btn-success m-1 alerta-btn">
-    Cursos
+    <a href="{% url 'cursos' %}" class="pesquisa btn btn-success m-1 alerta-btn">
+        Cursos
     </a>
-
-    <a href="#" 
-    class="pesquisa btn btn-warning m-1">
-    Agenda Interna
-    <span class="position-absolute invisible">telefone ramal agenda celular numero</span>
+    <a href="#" class="pesquisa btn btn-warning m-1">
+        Agenda Interna
+        <span class="position-absolute invisible">telefone ramal agenda celular numero</span>
     </a>
-
-
-    <a href="{% url 'Agenda' %}" 
-    class="pesquisa btn btn-warning m-1">
-    Endereços Oficiais
-    <span class="position-absolute invisible">telefone ramal agenda celular numero</span>
+    <a href="{% url 'Agenda' %}" class="pesquisa btn btn-warning m-1">
+        Endereços Oficiais
+        <span class="position-absolute invisible">telefone ramal agenda celular numero</span>
     </a>
-
     <a href="{% url 'calendar' %}" class="pesquisa btn btn-success m-1">
         Calendario
         <span class="position-absolute invisible">calendario de datas de aniversario e feriados</span>
     </a>
-
-
-
-
 </div>
 
 <hr class="pesquisa mt-5 mb-5">
