@@ -10,6 +10,7 @@
                 target="_blank"
                 style="background-color: {{ item_category.button_color }}; color: {{ item_category.text_color }}">
                 {{ btn.title }}
+                <span class="position-absolute invisible">{{ btn.description }}</span>
             </a>
         {% endfor %}
 

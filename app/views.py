@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
-from generic.models import Category, Button
+from generic.models import Category, Button, LegislationButton
+
 
 
 class HomeTemplateView(TemplateView):
@@ -8,6 +9,7 @@ class HomeTemplateView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['birthday'] = None
         context['category'] = Category.objects.filter(active=True)
+        context['legislation'] = LegislationButton.objects.filter(active=True)
         context['button'] = Button.objects.filter()
         return context
 
