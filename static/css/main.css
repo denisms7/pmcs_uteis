@@ -21,13 +21,12 @@
 
 
 .botao-hover a:hover {
-    transform: scale(1.1);
-    border: black solid 1px;
-		box-shadow: 3px 3px 1px black;
-		-moz-box-shadow: 1px 1px 0px black;
-		-webkit-box-shadow: 3px 3px 1px black;
+    background-color: #fbff006e;        /* muda o fundo */
+    color: #000000;                   /* muda a cor do texto */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);  /* sombra mais forte */
+    transform: translateY(-3px);   /* elevação suave */
+    border-color: #333;            /* borda sutil */
 }
-
 
 .aniversario {
   background-image: url("../gif/confete.gif");
@@ -38,11 +37,6 @@
   font-size: 1.1em;
 }
 
-
-.aniversario__lista {
-  list-style: none;
-  margin: 0;
-}
 
 
 .video_player {

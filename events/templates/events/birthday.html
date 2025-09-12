@@ -1,12 +1,62 @@
+{% load static %}
 {% if data|length > 0 %}
-<div class="aniversario alert w-75 m-auto" role="alert">
-    <div class="fw-bold">
-        <span style="color:blue;">F</span><span style="color:red;">E</span><span style="color:green;">L</span><span style="color:rgb(161, 161, 6);">I</span><span style="color:orange;">Z</span> <span style="color:purple;">A</span><span style="color:pink;">N</span><span style="color:brown;">I</span><span style="color:teal;">V</span><span style="color:maroon;">E</span><span style="color:olive;">R</span><span style="color:navy;">S</span><span style="color:gold;">Á</span><span style="color:darkblue;">R</span><span style="color:lime;">I</span><span style="color:darkorange;">O</span><span style="color:crimson;">!</span><span style="color:blueviolet;">!</span><span style="color:coral;">!</span>
+<div class="aniversario-alert w-75 m-auto" role="alert">
+    <div class="aniversario-title">
+        Feliz Aniversário!
     </div>
-    <ul class="aniversario__lista">
+    <ul class="aniversario-lista">
         {% for item in data %}
-            <li class="aniversario__lista">{{item.0}}</li>
+        <li>{{ item.0 }}</li>
         {% endfor %}
     </ul>
 </div>
 {% endif %}
+
+
+<style>
+.aniversario-alert {
+    position: relative; /* ou fixed se quiser que acompanhe o scroll */
+    top: 0; /* ou ajuste se usar relative */
+    z-index: 1050; /* acima de navbars comuns do Bootstrap */
+    margin: 0 auto; /* centraliza horizontalmente */
+    margin-top: 80px; /* espaço abaixo da navbar, ajuste conforme altura da navbar */
+    width: 75%; 
+    background-image: url("{% static 'calendar/img/confete.gif' %}");
+    background-repeat: repeat;
+    border-radius: 12px;
+    padding: 12px 20px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    animation: floatAlert 3s ease-in-out infinite alternate;
+}
+.aniversario-title {
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.aniversario-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aniversario-lista li {
+    font-size: 16px;
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.aniversario-lista li:last-child {
+    border-bottom: none;
+}
+
+@keyframes floatAlert {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+</style>

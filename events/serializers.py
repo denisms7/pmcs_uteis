@@ -41,7 +41,7 @@ class BrasilAPIFeriadoSerializer(serializers.Serializer):
     title = serializers.SerializerMethodField()
     start = serializers.SerializerMethodField()  # corrigido para pegar `date`
     allDay = serializers.BooleanField(default=True)
-    color = serializers.CharField(default="#FAE94E")
+    color = serializers.CharField(default="#000000")
 
     def get_title(self, obj):
         return f"BR {obj['name']}"
