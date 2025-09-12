@@ -20,8 +20,6 @@ def video_player(request, video_id):
     return render(request, 'curso/player.html', {'video': video})
 
 
-
-
 class CursoAdded(LoginRequiredMixin, CreateView):
     form_class = FormCurso 
     template_name = 'curso/forms/index.html'
@@ -40,7 +38,7 @@ class CursoEdit(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         messages.success(self.request, "Curso atualizado com sucesso.")
         return super().form_valid(form)
-    
+
 
 class CursoSearch(LoginRequiredMixin, ListView):
     paginate_by = 20

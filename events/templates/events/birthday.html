@@ -1,11 +1,11 @@
 {% load static %}
-{% if data|length > 0 %}
+{% if birthday|length > 0 %}
 <div class="aniversario-alert w-75 m-auto" role="alert">
     <div class="aniversario-title">
         Feliz Aniversário!
     </div>
     <ul class="aniversario-lista">
-        {% for item in data %}
+        {% for item in birthday %}
         <li>{{ item.0 }}</li>
         {% endfor %}
     </ul>

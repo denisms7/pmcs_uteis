@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+
 class Curso(models.Model):
     data = models.DateTimeField(auto_now_add=True, verbose_name=_('Data'))
     curso = models.CharField(max_length=200, verbose_name=_('Nome do Curso'))
@@ -9,7 +10,7 @@ class Curso(models.Model):
     descricao = models.TextField(max_length=2000, verbose_name=_('Descrição'), null=True, blank=True)
     def __str__(self):
         return f"{self.curso}"
-    
+
 
 class Video(models.Model):
     data = models.DateTimeField(auto_now_add=True, verbose_name=_('Data'))
@@ -24,4 +25,3 @@ class Video(models.Model):
     
     def __str__(self):
         return f"{self.curso.curso} || {self.title}"
-
