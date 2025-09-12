@@ -2,6 +2,7 @@ from django.db.models.signals import post_migrate
 from django.dispatch import receiver
 from .models import OfficialAddress
 
+
 OFFICIAL_ADDRESSES = [
     {
         "name": "Secretaria Municipal da Saúde",
@@ -39,7 +40,7 @@ OFFICIAL_ADDRESSES = [
         "maps": "",
     },
     {
-        "name": "Clínica da Criança e da Mulher",
+        "name": "UAPSF - Unidade de Atendimento Primário à Saúde da Família",
         "address": "Avenida Wanderley Antunes Moraes, 1369 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8042",
@@ -229,4 +230,3 @@ def create_official_addresses(sender, **kwargs):
                     "maps": data["maps"],
                 },
             )
-

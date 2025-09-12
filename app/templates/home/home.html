@@ -7,111 +7,40 @@
 
     {% include "components/search.html" %}
 
-<div class="">
-    <a href="{% url 'ia' %}" class="pesquisa btn btn-success m-1">
-        Inteligencia Artificial
-    </a>
-    <a href="{% url 'cursos' %}" class="pesquisa btn btn-success m-1 alerta-btn">
-        Cursos
-    </a>
-</div>
+    <section>
+        <a href="{% url 'ia' %}" class="pesquisa btn btn-success m-1">
+            Inteligencia Artificial
+        </a>
+        <a href="{% url 'cursos' %}" class="pesquisa btn btn-success m-1 alerta-btn">
+            Cursos
+        </a>
+    </section>
 
+    <hr class="pesquisa mt-5 mb-5">
 
-<hr class="pesquisa mt-5 mb-5">
+    <section>
+        <h3 class="pesquisa">
+            LEGISLAÇÃO
+        </h3>
 
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-diagram-2-fill"></i>
-        LEGISLAÇÃO
-    </h3>
+        <a href="#" class="pesquisa btn btn-warning m-1">
+            Plano Diretor Municipal
+            <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
+        </a>
 
-    <a href="https://leismunicipais.com.br/legislacao-municipal/3222/leis-de-centenario-do-sul" class="pesquisa btn btn-warning m-1" target="_blank">
-        Leis Municipais
-    </a>
+        <a href="#" class="pesquisa btn btn-warning m-1">
+            Licitação 
+            <span class="position-absolute invisible">Licitação Lei 2021</span>
+        </a>
+    </section>
 
-    <a href="#" class="pesquisa btn btn-warning m-1">
-        Plano Diretor Municipal
-        <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
-    </a>
+    <hr class="pesquisa mt-5 mb-5">
 
-    <a href="https://centenariodosulpr.equiplano.com.br:7508/transparencia/estruturaOrganizacional" class="pesquisa btn btn-warning m-1" target="_blank">
-        Organograma
-        <span class="position-absolute invisible">Organograma</span>
-    </a>
+    {% include "identity/img/index.html" %}
 
-    
+    <hr class="pesquisa mt-5 mb-5">
 
-    <a href="https://pncp.gov.br/app/pca?pagina=1" class="pesquisa btn btn-warning m-1" target="_blank">
-        Plano de Contratação Anual - PCA
-    </a>
-
-    
-
-
-
-
-<a href="{% url 'licitacao_ajuda' %}" class="pesquisa btn btn-warning m-1">
-    Licitação Lei 2021 
-    <span class="position-absolute invisible">Licitação Lei 2021</span>
-</a>
-
-
-<hr class="pesquisa mt-5 mb-5">
-
-<div class="">
-    <h3 class="pesquisa">
-        <i class="bi bi-filetype-doc"></i>
-        MODELOS
-    </h3>
-
-    <a href="{% static 'paginas/documentos/Timbre.docx' %}" download class="pesquisa btn btn-primary m-1">
-        Timbrado Preto
-        <span class="position-absolute invisible">modelo timbrado preto e branco doc docx</span>
-    </a>
-
-    <a href="{% static 'paginas/documentos/Timbre-Colorido.docx' %}" download class="pesquisa btn btn-primary m-1">
-        Timbrado Colorido
-        <span class="position-absolute invisible">modelo timbrado colorido doc docx</span>
-    </a>
-
-    <a href="{% static 'paginas/documentos/Solicitacao-de-Compras.docx' %}" download
-        class="pesquisa btn btn-primary m-1">
-        Solicitação de Compras
-        <span class="position-absolute invisible">modelo solicitação de compras doc docx</span>
-    </a>
-
-    <a href="{% static 'paginas/documentos/Requerimento-de-Aditivo.docx' %}" download
-    class="pesquisa btn btn-primary m-1">
-    Requerimento de Aditivo
-    <span class="position-absolute invisible">modelo requerimento de aditivo doc docx</span>
-    </a>
-
-    <a href="{% static 'paginas/documentos/Ordem-de-Servico.docx' %}" download
-    class="pesquisa btn btn-primary m-1">
-    Ordem de Serviço
-    <span class="position-absolute invisible">ordem de servico serviço doc docx</span>
-    </a>
-
-    <a href="{% static 'paginas/documentos/Termo-de-Referencia.docx' %}" download
-    class="pesquisa btn btn-primary m-1">
-    Termo de Referência
-    <span class="position-absolute invisible">termo de referencia doc docx</span>
-    </a>
-
-    <a href="{% static 'paginas/documentos/ETP.docx' %}" download
-    class="pesquisa btn btn-primary m-1">
-    Estudo Técnico
-    <span class="position-absolute invisible">estudo técnico preliminar doc docx</span>
-    </a>
-</div>
-
-<hr class="pesquisa mt-5 mb-5">
-
-{% include "identity/img/index.html" %}
-
-<hr class="pesquisa mt-5 mb-5">
-
-{% include "identity/audio/index.html" %}
+    {% include "identity/audio/index.html" %}
 
 {% endblock content %}
 
