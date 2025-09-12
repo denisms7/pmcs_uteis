@@ -11,7 +11,7 @@
         <a href="{% url 'ia' %}" class="pesquisa btn btn-success m-1">
             Inteligencia Artificial
         </a>
-        <a href="{% url 'cursos' %}" class="pesquisa btn btn-success m-1 alerta-btn">
+        <a href="{% url 'cursos' %}" class="pesquisa btn btn-success m-1 {% if has_recent_video %}alerta-btn{% endif %}">
             Cursos
         </a>
     </section>
@@ -22,19 +22,15 @@
         <h3 class="pesquisa">
             LEGISLAÇÃO
         </h3>
-
         <a href="{% url 'legislation_list' 1 %}" class="pesquisa btn btn-warning m-1">
             Plano Diretor Municipal
             <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
         </a>
-
         <a href="{% url 'legislation_list' 2 %}" class="pesquisa btn btn-warning m-1">
             Licitação 
             <span class="position-absolute invisible">Licitação Lei 2021</span>
         </a>
-
         {% include "generic/button.html" %}
-
     </section>
 
     {% include "generic/index.html" %}
