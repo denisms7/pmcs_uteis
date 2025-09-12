@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse justify-content-end p-0" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'Agenda' %}">
+                            <a class="nav-link" href="{% url 'contacts_' %}">
                                 Agenda
                             </a>
                         </li>
@@ -22,13 +22,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{% url 'addresses_' %}">
                                 Endereços
                             </a>
                         </li>
                     </ul>
                     <div class="d-flex" >
-                        {% include "theme.html" %}
+                        {% include "components/theme.html" %}
                     </div>
                 </div>
             </div>

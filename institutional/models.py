@@ -1,30 +1,39 @@
 from django.db import models
-from django.utils import timezone
 
 
 class OfficialAddress(models.Model):
-    created_at = models.DateTimeField(default=timezone.now, auto_now_add=True, verbose_name='Cadastro', db_index=True)
-    name = models.CharField(max_length=150, verbose_name='Local')
-    phone = models.CharField(max_length=20, verbose_name='Contato')
-    address = models.CharField(max_length=250, verbose_name='Logradouro')
-    operation = models.CharField(max_length=250, verbose_name='Funcionamento')
-    maps = models.URLField(max_length=250, verbose_name='Maps')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
+    name = models.CharField(max_length=150, verbose_name='Local', unique=True)
+    phone = models.CharField(max_length=20, verbose_name='Contato', null=True, blank=True)
+    address = models.CharField(max_length=250, verbose_name='Logradouro', null=True, blank=True)
+    operation = models.CharField(max_length=250, verbose_name='Funcionamento', null=True, blank=True)
+    maps = models.URLField(max_length=250, verbose_name='Maps', null=True, blank=True)
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Endereço Oficial"
+        verbose_name_plural = "Endereços Oficiais"
 
     def __str__(self):
-        return f"{self.grupo}"
+        return f"{self.name}"
 
 
 class Group(models.Model):
-    created_at = models.DateTimeField(default=timezone.now, auto_now_add=True, verbose_name='Cadastro', db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
     name = models.CharField(max_length=200, verbose_name='Grupo')
     number = models.CharField(max_length=5, verbose_name='Numero')
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Grupo"
+        verbose_name_plural = "Grupos"
 
     def __str__(self):
         return f"{self.name}"
 
 
 class Schedule(models.Model):
-    created_at = models.DateTimeField(default=timezone.now, auto_now_add=True, verbose_name='Cadastro', db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
     group = models.ForeignKey(
         Group,
         on_delete=models.PROTECT,
@@ -40,6 +49,11 @@ class Schedule(models.Model):
         null=True,
         blank=True
     )
+
+    class Meta:
+        ordering = ["group", "person"]
+        verbose_name = "Contato"
+        verbose_name_plural = "Contatos"
 
     def __str__(self):
         return f"{self.person} - {self.internal_number}"

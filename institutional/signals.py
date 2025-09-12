@@ -1,44 +1,48 @@
+from django.db.models.signals import post_migrate
+from django.dispatch import receiver
+from .models import OfficialAddress
+
 OFFICIAL_ADDRESSES = [
     {
         "name": "Secretaria Municipal da Saúde",
-        "address": "Av. Pref. Vanderlei Antunes de Morães, 644 - Centro - CEP: 86630-000",
+        "address": "Av. Pref. Vanderlei Antunes de Morães, 644 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8044",
         "maps": "https://goo.gl/maps/VPcQBL5NH9eJBGQL6",
     },
     {
         "name": "Hospital Municipal Dr. Lauro Marcedo Sobrinho",
-        "address": "Rua Nossa Sra. do Rocio, 583 - Centro - CEP: 86630-000",
+        "address": "Rua Nossa Sra. do Rocio, 583 - Centro",
         "operation": "24 horas",
-        "phone": "(43) 3675-1388",
+        "phone": "(43) 3675-8041",
         "maps": "https://goo.gl/maps/7Kep51VDMjfkMx2m7",
     },
     {
         "name": "UBS - Unidade Basica De Saúde Anita Canet",
-        "address": "Avenida Wanderley Antunes Moraes, 850 - Centro - CEP: 86630-000",
+        "address": "Avenida Wanderley Antunes Moraes, 850 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1001",
+        "phone": "(43) 3675-8042",
         "maps": "https://goo.gl/maps/z3bvvqJBG6v3ksGS8",
     },
     {
         "name": "UBS - Unidade Basica De Saúde Ana Garcia Ramos",
-        "address": "Rua Dom Geraldo Fernandes, s/n - Conjunto Maximino P. Santos - CEP: 86630-000",
+        "address": "Rua Dom Geraldo Fernandes, s/n - Conjunto Maximino P. Santos",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1518",
+        "phone": "(43) 3675-8042",
         "maps": "https://goo.gl/maps/TUoejjjmPC3NPCow5",
     },
     {
         "name": "UBS - Unidade Basica de Saúde Vila Progresso",
-        "address": "Avenida Brasil, s/n - Vila Progresso - CEP: 86630-000",
+        "address": "Avenida Brasil, s/n - Vila Progresso",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "s/n",
+        "phone": "(43) 3675-8042",
         "maps": "",
     },
     {
         "name": "Clínica da Criança e da Mulher",
-        "address": "Avenida Wanderley Antunes Moraes, 1369 - Centro - CEP: 86630-000",
+        "address": "Avenida Wanderley Antunes Moraes, 1369 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1855",
+        "phone": "(43) 3675-8042",
         "maps": "https://goo.gl/maps/CNLqgaWcJ3vyb7t48",
     },
     {
@@ -59,7 +63,7 @@ OFFICIAL_ADDRESSES = [
         "name": "Secretaria de Educação",
         "address": "Rua Prefeito Aparecido Ferreira Lima, 00 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1134 / (43) 3675-2785",
+        "phone": "(43) 3675-8048",
         "maps": "",
     },
     {
@@ -73,28 +77,28 @@ OFFICIAL_ADDRESSES = [
         "name": "Secretaria de Assistência Social",
         "address": "Rua Desembargador Munhoz de Melo, 385 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1160",
+        "phone": "(43) 3675-8035",
         "maps": "",
     },
     {
         "name": "CREAS - Centro de Referência Especializado de Assistência Social",
         "address": "Rua Sulaiman Felicio , 651 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1160",
+        "phone": "(43) 3675-8035",
         "maps": "",
     },
     {
         "name": "CRAS - Centro de Referência de Assistência Social",
         "address": "Rua Dezembargador Munhoz de Melo, 746 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-2264",
+        "phone": "(43) 3675-8035",
         "maps": "",
     },
     {
         "name": "Conselho Tutelar",
         "address": "Rua João Alves da Silva Neto, 77 - Conjunto Adalgiza B. Felício",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-2889 / Plantão 24h: (43) 98863-2776 (WhatsApp)",
+        "phone": "(43) 3675-8038",
         "maps": "",
     },
     {
@@ -108,14 +112,14 @@ OFFICIAL_ADDRESSES = [
         "name": "Terminal Rodoviário de Centenário do Sul",
         "address": "Rua Nossa Sra. do Rocio, s/n - Centro",
         "operation": "Segunda a Sexta-feira das 06:00 as 22:00",
-        "phone": "(43) 3675-1491",
+        "phone": "(43) 3675-8005",
         "maps": "",
     },
     {
         "name": "Cozinha Comunitária de Centenário do Sul",
         "address": "xxxxxxxx - Centro",
         "operation": "Segunda a Segunda das 06:00 as 22:00",
-        "phone": "xxxxxxxx",
+        "phone": "",
         "maps": "",
     },
     {
@@ -136,56 +140,56 @@ OFFICIAL_ADDRESSES = [
         "name": "Escola Municipal Irmã Osmunda – Ensino Fundamental I",
         "address": "Rua Francisco Brigido Dutra, 714 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1133",
+        "phone": "(43) 3675-8045",
         "maps": "",
     },
     {
         "name": "Escola Municipal José De Anchieta – Ensino Fundamental I",
         "address": "Rua Vereador Antonio Pereira da Silva, 820 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1938",
+        "phone": "(43) 3675-8045",
         "maps": "",
     },
     {
         "name": "Escola Municipal São José – Ensino Fundamental I",
         "address": "Rua João Severiano Ferreira, 105 - Conjunto Habitacional Adalgiza Aparecida Bueno Felício",
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-2636",
+        "phone": "(43) 3675-8045",
         "maps": "",
     },
     {
         "name": "Escola Municipal Prefeito Afonso Belenda – Ensino Fundamental I",
         "address": "Rodovia Fuad Nacli, Km 01 - Vila Progresso",
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-9004",
+        "phone": "(43) 3675-8045",
         "maps": "",
     },
     {
         "name": "Centro Municipal de Educação Ulysses Pessoa de Lima",
         "address": "Rua Generino Fernandes Leão, 188 - Parque Industrial José Augusto Ferreira",
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1134",
+        "phone": "(43) 3675-8045",
         "maps": "",
     },
     {
         "name": "CEI - Centro De Educação Infantil Menino Jesus I",
         "address": "Rua Vereador Maziad Felício, nº 615 - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1231",
+        "phone": "(43) 3675-8045",
         "maps": "",
     },
     {
         "name": "CEI - Centro De Educação Infantil Menino Jesus III",
         "address": "Rua João Alves da Silva Neto, 127 - Conjunto Habitacional Adalgiza Aparecida Bueno Felício",
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1134",
+        "phone": "(43) 3675-8045",
         "maps": "",
     },
     {
         "name": "CEI - Centro de Educação Infantil Menino Jesus V",
         "address": "Avenida Brasil, s/n - Vila Progresso",
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
-        "phone": "(43) 3675-1134",
+        "phone": "(43) 3675-8045",
         "maps": "",
     },
     {
@@ -210,3 +214,19 @@ OFFICIAL_ADDRESSES = [
         "maps": "",
     },
 ]
+
+
+@receiver(post_migrate)
+def create_official_addresses(sender, **kwargs):
+    if sender.name == "institutional":
+        for data in OFFICIAL_ADDRESSES:
+            OfficialAddress.objects.get_or_create(
+                name=data["name"],
+                defaults={
+                    "address": data["address"],
+                    "operation": data["operation"],
+                    "phone": data["phone"],
+                    "maps": data["maps"],
+                },
+            )
+

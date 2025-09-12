@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
-
-{% block pesquisa %}
-{% endblock pesquisa %}
 
 {% block content %}
 
@@ -15,7 +10,7 @@
 <hr class="pesquisa mt-5">
 
 <div>
-    <a class="btn btn-primary" href="{% url 'AgendaExporta' %}" target="_blank">Gerar Impressão</a>
+    <a class="btn btn-primary" href="{% url 'contacts_export' %}" target="_blank">Gerar Impressão</a>
 
     <button  class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalAjuda">
         <i class="bi bi-question-lg"></i>
@@ -141,7 +136,7 @@
 </div>
 
 
-{% include "pagination.html" %}
+{% include "components/pagination.html" %}
 
 
 {% endblock content %}

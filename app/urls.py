@@ -9,10 +9,11 @@ urlpatterns = [
     path('', include('paginas.urls')),
     path('', include('curso.urls')),
     path('', include('pdf_ferramentas.urls')),
-    path('', include('agenda.urls')),
     path('', include('leiLicitacao.urls')),
+
     path('', include('identity.urls')),
-    path('', include('events.urls'))
+    path('', include('events.urls')),
+    path('', include('institutional.urls'))
 ]
 
 

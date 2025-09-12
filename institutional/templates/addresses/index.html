@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<section class="container mb-4">
+    <h1>Endereços Oficiais</h1>
+    <hr>
+</section>
+
+{% include "components/search.html" %}
+
+<div class="container">
+
+{% for item in address %}
+
+        <section class="pesquisa my-4">
+            <h2>
+                {{ item.name }}
+            </h2>
+            <p>
+                {{ item.address }}<br>
+                Centenário do Sul - Paraná - CEP: 86630-000
+            </p>
+            <p>
+                {{ item.operation }}<br>
+                Fone: {{ item.phone }}<br>
+                {% if item.maps %}
+                    Google Maps: <a href="{{ item.maps }}" target="_blank">Abrir</a>
+                {% endif %}
+            </p>
+        </section>
+    {% empty %}
+        <p>
+            Nenhum endereço encontrado...
+        </p>
+    {% endfor %}
+</div>
+
+<div class="container">
+    <script src="{% static 'js/main.js' %}"></script>
+</div>
+
+{% endblock %}
