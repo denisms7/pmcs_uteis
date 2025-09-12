@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2 class="mt-3 mb-5 text-uppercase">
+    <i class="bi bi-music-note-beamed"></i>
+    Hino da Independência 
+</h2>
+<div class="">
+    <div>
+        <p>
+            <audio controls="controls" class="">
+                <source src="{% static 'identity/audio/zzz.mp3' %}" type="audio/mp3" />
+                Seu navegador não suporta HTML5 para reproduzir este audio
+            </audio>
+        </p>
+    </div>
+
+    <a href="{% static 'identity/audio/zzz.mp3' %}" download="Hino_Municipal"
+        class="pesquisa btn btn-success m-1" target="_blank">
+        <i class="bi bi-arrow-down"></i>
+        Download Audio
+    </a>
+
+</div>
+
+<hr class="mt-5 mb-5">
+
+<div class="text-center">
+
+    <h3 class="text-uppercase">Hino da Independência do Brasil</h3>
+
+    <p>
+        Já podeis, da Pátria filhos<br>
+        Ver contente a Mãe gentil<br>
+        Já raiou a liberdade<br>
+        No horizonte do Brasil<br>
+        Já raiou a liberdade<br>
+        Já raiou a liberdade<br>
+        No horizonte do Brasil
+    </p>
+
+    <p>
+        Brava gente brasileira<br>
+        Longe vá, temor servil<br>
+        Ou ficar a Pátria livre<br>
+        Ou morrer pelo Brasil<br>
+        Ou ficar a Pátria livre<br>
+        Ou morrer pelo Brasil
+    </p>
+
+    <p>
+        Os grilhões que nos forjava<br>
+        Da perfídia astuto ardil<br>
+        Houve mão mais poderosa<br>
+        Zombou deles o Brasil<br>
+        Houve mão mais poderosa<br>
+        Houve mão mais poderosa<br>
+        Zombou deles o Brasil
+    </p>
+
+    <p>
+        Brava gente brasileira<br>
+        Longe vá, temor servil<br>
+        Ou ficar a Pátria livre<br>
+        Ou morrer pelo Brasil<br>
+        Ou ficar a Pátria livre<br>
+        Ou morrer pelo Brasil
+    </p>
+
+    <p>
+        Não temais ímpias falanges<br>
+        Que apresentam face hostil<br>
+        Vossos peitos, vossos braços<br>
+        São muralhas do Brasil<br>
+        Vossos peitos, vossos braços<br>
+        Vossos peitos, vossos braços<br>
+        São muralhas do Brasil
+    </p>
+
+    <p>
+        Brava gente brasileira<br>
+        Longe vá, temor servil<br>
+        Ou ficar a Pátria livre<br>
+        Ou morrer pelo Brasil<br>
+        Ou ficar a Pátria livre<br>
+        Ou morrer pelo Brasil
+    </p>
+
+    <p>
+        Parabéns, ó brasileiros<br>
+        Já, com garbo juvenil<br>
+        Do universo entre as nações<br>
+        Resplandece a do Brasil<br>
+        Do universo entre as nações<br>
+        Do universo entre as nações<br>
+        Resplandece a do Brasil
+    </p>
+
+    <p>
+        Brava gente brasileira<br>
+        Longe vá, temor servil<br>
+        Ou ficar a Pátria livre<br>
+        Ou morrer pelo Brasil<br>
+        Ou ficar a Pátria livre<br>
+        Ou morrer pelo Brasil
+    </p>
+
+</div>
+
+{% endblock %}

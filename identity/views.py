@@ -11,3 +11,6 @@ class StateTemplateView(TemplateView):
 
 class MunicipalTemplateView(TemplateView):
     template_name = 'identity/anthem/municipal.html'
+
+class IndependenceTemplateView(TemplateView):
+    template_name = 'identity/anthem/independence.html'
