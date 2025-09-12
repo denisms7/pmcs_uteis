@@ -12,8 +12,8 @@ urlpatterns = [
     path('ia/', IaTemplateView.as_view(), name='ia'),
 
     path('', include('curso.urls')),
-    path('', include('leiLicitacao.urls')),
-
+    
+    path('', include('generic.urls')),
     path('', include('identity.urls')),
     path('', include('events.urls')),
     path('', include('institutional.urls'))
