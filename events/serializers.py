@@ -44,7 +44,7 @@ class BrasilAPIFeriadoSerializer(serializers.Serializer):
     color = serializers.CharField(default="#000000")
 
     def get_title(self, obj):
-        return f"BR {obj['name']}"
+        return f"📅 {obj['name']}"
 
     def get_start(self, obj):
         return obj["date"]  # BrasilAPI já manda no formato YYYY-MM-DD
