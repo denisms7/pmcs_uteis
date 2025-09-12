@@ -1,8 +1,9 @@
 from django.db import models
+from django.utils import timezone
 
 
 class OfficialAddress(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Data')
+    created_at = models.DateTimeField(default=timezone.now, auto_now_add=True, verbose_name='Cadastro', db_index=True)
     name = models.CharField(max_length=150, verbose_name='Local')
     phone = models.CharField(max_length=20, verbose_name='Contato')
     address = models.CharField(max_length=250, verbose_name='Logradouro')
@@ -14,7 +15,7 @@ class OfficialAddress(models.Model):
 
 
 class Group(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Data')
+    created_at = models.DateTimeField(default=timezone.now, auto_now_add=True, verbose_name='Cadastro', db_index=True)
     name = models.CharField(max_length=200, verbose_name='Grupo')
     number = models.CharField(max_length=5, verbose_name='Numero')
 
@@ -23,7 +24,7 @@ class Group(models.Model):
 
 
 class Schedule(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Data')
+    created_at = models.DateTimeField(default=timezone.now, auto_now_add=True, verbose_name='Cadastro', db_index=True)
     group = models.ForeignKey(
         Group,
         on_delete=models.PROTECT,
