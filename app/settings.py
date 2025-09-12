@@ -47,9 +47,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'multiupload',
 
-    'paginas.apps.PaginasConfig',
+
     'curso.apps.CursoConfig',
-    'pdf_ferramentas.apps.PdfFerramentasConfig',
     'leiLicitacao.apps.LeilicitacaoConfig',
 
     'identity',

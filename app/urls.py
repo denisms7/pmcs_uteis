@@ -1,15 +1,17 @@
 from django.conf import settings
 from django.contrib import admin
-from .views import HomeTemplateView
+from .views import HomeTemplateView, IaTemplateView
 from django.urls import path, include
 from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeTemplateView.as_view(), name='home'),
-    path('', include('paginas.urls')),
+    path('ia/', IaTemplateView.as_view(), name='ia'),
+
     path('', include('curso.urls')),
-    path('', include('pdf_ferramentas.urls')),
     path('', include('leiLicitacao.urls')),
 
     path('', include('identity.urls')),

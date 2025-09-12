@@ -1,0 +1,64 @@
+﻿{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2 class="mt-3 mb-5">PLANO DIRETOR</h2>
+
+
+<a href="{% static 'paginas/PDF/pdm/PDM.pdf' %}" class="pesquisa btn btn-warning m-1" target="_blank">
+	Plano Diretor Completo
+	<span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
+</a>
+
+<hr class="pesquisa mt-5 mb-5">
+
+<table class="table table-sm table-hover">
+	<thead class="text-bg-dark">
+		<tr>
+			<th scope="col">Lei:</th>
+			<th scope="col">Descrição:</th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Lei Complementar 0010/2022</td>
+			<td>Institui o Plano Diretor Municipal (PDM) de Centenario do Sul.</td>
+			<td><a class="btn btn-primary" href="{% static 'paginas/PDF/pdm/10.pdf' %}" role="button" target="_blank">Abrir</a></td>
+		</tr>
+		<tr>
+			<td>Lei Complementar 0011/2022</td>
+			<td>Dispoe sobre o Uso e Ocupação do Solo - Zoneamento - e da outras providencias.</td>
+			<td><a class="btn btn-primary" href="{% static 'paginas/PDF/pdm/11.pdf' %}" role="button" target="_blank">Abrir</a></td>
+		</tr>
+		<tr>
+			<td>Lei Complementar 0012/2022</td>
+			<td>Dispoe sobre o parcelamento e o remembramento do solo para fins urbanos e da outras providencias</td>
+			<td><a class="btn btn-primary" href="{% static 'paginas/PDF/pdm/12.pdf' %}" role="button" target="_blank">Abrir</a></td>
+		</tr>
+		<tr>
+			<td>Lei Complementar 0013/2022</td>
+			<td>Dispoe sobre os Perimetros Urbanos do Municipio de Centenario do Sul</td>
+			<td><a class="btn btn-primary" href="{% static 'paginas/PDF/pdm/13.pdf' %}" role="button" target="_blank">Abrir</a></td>
+		</tr>
+		<tr>
+			<td>Lei Complementar 0014/2022</td>
+			<td>Dispoe sobre o sistema viario do Municipio de Centenario do Sul</td>
+			<td><a class="btn btn-primary" href="{% static 'paginas/PDF/pdm/14.pdf' %}" role="button" target="_blank">Abrir</a></td>
+		</tr>
+		<tr>
+			<td>Lei Complementar 0015/2022</td>
+			<td>Dispoe sobre o Codigo de Obras do Municipio de Centenario do Sul</td>
+			<td><a class="btn btn-primary" href="{% static 'paginas/PDF/pdm/15.pdf' %}" role="button" target="_blank">Abrir</a></td>
+		</tr>
+		<tr>
+			<td>Lei Complementar 0016/2022</td>
+			<td>Dispoe Sobre o Codigo de Posturas do Municipio de Centenario do Sul</td>
+			<td><a class="btn btn-primary" href="{% static 'paginas/PDF/pdm/16.pdf' %}" role="button" target="_blank">Abrir</a></td>
+		</tr>
+	</tbody>
+</table>
+
+{% endblock content %}

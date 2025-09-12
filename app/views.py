@@ -2,8 +2,16 @@ from django.views.generic import TemplateView
 
 
 class HomeTemplateView(TemplateView):
-    template_name = 'home.html'
+    template_name = 'home/home.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['birthday'] = None
         return context
+
+
+class IaTemplateView(TemplateView):
+    template_name = 'home/ia.html'
+
+
+class PDM(TemplateView):
+    template_name = 'home/pdm.html'
