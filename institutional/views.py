@@ -18,11 +18,7 @@ class ContactsListView(ListView):
 
         if query_normalized:
             queryset = queryset.filter(
-                Q(person__icontains=query_normalized) |
-                Q(internal_number__icontains=query_normalized) |
-                Q(external_number__icontains=query_normalized) |
-                Q(group__name__icontains=query_normalized) |
-                Q(group__number__icontains=query_normalized)
+                Q(person__icontains=query_normalized) | Q(internal_number__icontains=query_normalized) | Q(external_number__icontains=query_normalized) | Q(group__name__icontains=query_normalized) | Q(group__number__icontains=query_normalized)
             )
         return queryset
 

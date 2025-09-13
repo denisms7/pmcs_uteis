@@ -8,6 +8,7 @@ from rest_framework.response import Response
 import requests
 from django.core.cache import cache
 
+
 class CalendarTemplateView(TemplateView):
     template_name = 'events/calendar.html'
 
@@ -15,7 +16,6 @@ class CalendarTemplateView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['LANGUAGE_CODE'] = get_language()
         return context
-
 
 
 class CalendarListAPIView(generics.GenericAPIView):

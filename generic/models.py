@@ -6,6 +6,7 @@ ACTIVE_CHOICES = [
     (False, _('Inativo')),
 ]
 
+
 class Category(models.Model):
     active = models.BooleanField(choices=ACTIVE_CHOICES, verbose_name=_('Ativo'), default=True,)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)

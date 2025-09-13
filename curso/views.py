@@ -21,13 +21,14 @@ def video_player(request, video_id):
 
 
 class CursoAdded(LoginRequiredMixin, CreateView):
-    form_class = FormCurso 
+    form_class = FormCurso
     template_name = 'curso/forms/index.html'
     success_url = reverse_lazy('inicio')
 
     def form_valid(self, form):
         messages.success(self.request, "Curso salvo com sucesso.")
         return super().form_valid(form)
+
 
 class CursoEdit(LoginRequiredMixin, UpdateView):
     model = Curso
@@ -44,11 +45,13 @@ class CursoSearch(LoginRequiredMixin, ListView):
     paginate_by = 20
     model = Curso
     template_name = 'curso/forms/busca.html'
+
     def get_queryset(self):
         queryset = super().get_queryset()
         query = self.request.GET.get('q')
+
         if query:
             queryset = queryset.filter(
-                Q(curso__icontains=query) | Q(descricao__icontains=query) 
+                Q(curso__icontains=query) | Q(descricao__icontains=query)
             )
         return queryset

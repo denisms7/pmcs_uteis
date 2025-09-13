@@ -6,6 +6,7 @@ from generic.models import Category, Button, LegislationButton
 from curso.models import Video
 from events.models import Birthday
 
+
 def has_recent_video():
     ten_days_ago = timezone.now() - timedelta(days=10)
     # Verifica se existe algum vídeo com data maior ou igual a 10 dias atrás
@@ -14,7 +15,7 @@ def has_recent_video():
 
 class HomeTemplateView(TemplateView):
     template_name = 'home/home.html'
-    
+
     def get_context_data(self, **kwargs):
         today = date.today()
         context = super().get_context_data(**kwargs)
