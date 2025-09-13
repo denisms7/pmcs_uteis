@@ -1,17 +1,16 @@
 {% load static %}
 {% if birthday|length > 0 %}
-<div class="aniversario-alert w-75 m-auto" role="alert">
+<div class="aniversario-alert w-50 m-auto" role="alert">
     <div class="aniversario-title">
         Feliz Aniversário!
     </div>
     <ul class="aniversario-lista">
         {% for item in birthday %}
-        <li>{{ item.0 }}</li>
+        <li class="fw-bold text-black">{{ item.name }}</li>
         {% endfor %}
     </ul>
 </div>
 {% endif %}
-
 
 <style>
 .aniversario-alert {
