@@ -4,5 +4,5 @@ from .views import CalendarTemplateView, CalendarListAPIView
 
 urlpatterns = [
     path('calendario/', CalendarTemplateView.as_view(), name='calendar'),
-    path('calendario/api/', CalendarListAPIView.as_view(), name='calendar_api'),
+    path('calendario/api/v1/', CalendarListAPIView.as_view(), name='calendar_api'),
 ]
