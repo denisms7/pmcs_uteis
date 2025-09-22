@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import OfficialAddress, Group, Schedule, Category
+from .models import OfficialAddress, Schedule, Category
 
 
 @admin.register(Category)
@@ -18,18 +18,10 @@ class OfficialAddressAdmin(admin.ModelAdmin):
     readonly_fields = ("created_at",)
 
 
-@admin.register(Group)
-class GroupAdmin(admin.ModelAdmin):
-    list_display = ("name", "number", "created_at")
-    search_fields = ("name", "number")
-    ordering = ("name",)
-    readonly_fields = ("created_at",)
-
 
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
-    list_display = ("person", "internal_number", "external_number", "group", "created_at")
-    search_fields = ("person", "internal_number", "external_number")
-    list_filter = ("group", "created_at")
+    list_display = ("person", "internal_number", "created_at")
+    search_fields = ("person", "internal_number")
     ordering = ("person",)
     readonly_fields = ("created_at",)

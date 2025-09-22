@@ -261,6 +261,14 @@ OFFICIAL_ADDRESSES = [
         "maps": "",
         "category": 3,
     },
+    {
+        "name": "Secretaria de Desenvolvimento Econômico e Turismo",
+        "address": "Rua Londrina, nº 525 - Centro",
+        "operation": "Segunda a Sexta-feira das 08:00 as 17:00",
+        "phone": "(43) 3675-8001",
+        "maps": "",
+        "category": 12,
+    },
 ]
 
 
@@ -295,12 +303,15 @@ def create_default_categories(sender, **kwargs):
 def create_official_addresses(sender, **kwargs):
     if sender.name != "institutional":
         return
+    
+    if OfficialAddress.objects.exists():
+        return
 
     for data in OFFICIAL_ADDRESSES:
         try:
             category = Category.objects.get(pk=data["category"])
         except Category.DoesNotExist:
-            print('ERRO')
+            print(f'[ERRO] = {data}')
             continue  # ou levante erro, se quiser obrigar a existir
 
         OfficialAddress.objects.get_or_create(

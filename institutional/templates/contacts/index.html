@@ -73,14 +73,10 @@
 
             <thead>
                 <tr>
-                    <th scope="col" rowspan="2">Nome:</th>
-                    <th scope="col" rowspan="2">Setor</th>
-                    <th scope="col" colspan="2" class="text-center table-primary">Números Internos</th>
-                    <th scope="col" rowspan="2" class="text-center">Número Externo</th>
-                </tr>
-                <tr>
-                    <th scope="col" class="text-center table-primary">Número Setor</th>
-                    <th scope="col" class="text-center table-primary">Ramal Pessoal</th>
+                    <th scope="col">Nome:</th>
+                    <th scope="col" class="text-center">Setor:</th>
+                    <th scope="col" class="text-center">Ramal Pessoal:</th>
+                    <th scope="col" class="text-center">Número Predio:</th>
                 </tr>
             </thead>
 
@@ -88,35 +84,27 @@
                 {% for item in object_list %}
                 <tr>
                     <td class="text-capitalize">
-                        {{ item.pessoa }}
+                        {{ item.person }}
                     </td>
 
-                    <td>
-                        {% if item.grupo.grupo %}
-                            {{ item.grupo.grupo }}
+                    <td class="text-center">
+                        {% if item.group %}
+                            {{ item.group }}
                         {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
                     </td>
 
                     <td class="text-center">
-                        {% if item.grupo.numero %}
-                            {{ item.grupo.numero }}
-                        {% else %}
-                            <i class="bi bi-hash"></i>
-                        {% endif %}
-                    </td>
-
-                    <td class="text-center">
-                        {% if item.numero_interno %}
-                            {{ item.numero_interno }}
+                        {% if item.internal_number %}
+                            {{ item.internal_number }}
                         {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
                     </td>
                     <td class="text-center">
-                        {% if item.numero_externo %}
-                            {{ item.numero_externo }}
+                        {% if item.address.phone %}
+                            {{ item.address.phone }}
                         {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
