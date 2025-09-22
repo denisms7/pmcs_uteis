@@ -17,8 +17,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ["name"]
-        verbose_name = "Categoria"
-        verbose_name_plural = "Categorias"
+        verbose_name = "Botão - Categoria"
+        verbose_name_plural = "Botões - Categorias"
 
     def __str__(self):
         return f"{self.name}"
@@ -75,8 +75,8 @@ class LegislationButton(models.Model):
 
     class Meta:
         ordering = ["title"]
-        verbose_name = "Botão Legislação"
-        verbose_name_plural = "Botão Legislação"
+        verbose_name = "Legislação Botão "
+        verbose_name_plural = "Legislação Botão"
 
     def __str__(self):
         return f"Legislação || {self.title}"

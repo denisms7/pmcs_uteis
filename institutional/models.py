@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=150, verbose_name='Categoria', unique=True)
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Endereço - Categoria"
+        verbose_name_plural = "Endereços - Categorias"
+
+    def __str__(self):
+        return f"{self.name}"
+
 class OfficialAddress(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
     name = models.CharField(max_length=150, verbose_name='Local', unique=True)
@@ -11,8 +22,8 @@ class OfficialAddress(models.Model):
 
     class Meta:
         ordering = ["name"]
-        verbose_name = "Endereço Oficial"
-        verbose_name_plural = "Endereços Oficiais"
+        verbose_name = "Endereço"
+        verbose_name_plural = "Endereços"
 
     def __str__(self):
         return f"{self.name}"
@@ -25,8 +36,8 @@ class Group(models.Model):
 
     class Meta:
         ordering = ["name"]
-        verbose_name = "Grupo"
-        verbose_name_plural = "Grupos"
+        verbose_name = "Contato - Grupo"
+        verbose_name_plural = "Contatos - Grupos"
 
     def __str__(self):
         return f"{self.name}"

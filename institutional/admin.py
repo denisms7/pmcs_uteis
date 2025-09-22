@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import OfficialAddress, Group, Schedule
+from .models import OfficialAddress, Group, Schedule, Category
+
+
+@admin.register(Category)
+class OfficialAddressAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+    ordering = ("name",)
 
 
 @admin.register(OfficialAddress)

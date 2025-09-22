@@ -1,6 +1,6 @@
 from django.db.models.signals import post_migrate
 from django.dispatch import receiver
-from .models import OfficialAddress
+from .models import OfficialAddress, Category
 
 
 OFFICIAL_ADDRESSES = [
@@ -10,6 +10,13 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8044",
         "maps": "https://goo.gl/maps/VPcQBL5NH9eJBGQL6",
+    },
+    {
+        "name": "Academia de Saúde",
+        "address": "Rua Luiz Carlos Castoldi, s/n - Conjunto Maximino P. Santos",
+        "operation": "Segunda a Sexta-feira das 08:00 as 17:00",
+        "phone": "(43) 3675-8042",
+        "maps": "",
     },
     {
         "name": "Hospital Municipal Dr. Lauro Marcedo Sobrinho",
@@ -106,6 +113,13 @@ OFFICIAL_ADDRESSES = [
         "name": "Secretaria de Infra Estrutura e Serviços Publicos",
         "address": "Rua Engenheiro Wilson Daminhao, s/n - Centro",
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
+        "phone": "(43) 3675-8030",
+        "maps": "",
+    },
+    {
+        "name": "Patio (Antigo DR)",
+        "address": "Wilson Daminhão, 891 - Centro",
+        "operation": "Segunda a Sexta-feira das 08:00 as 17:00",
         "phone": "(43) 3675-8030",
         "maps": "",
     },
@@ -215,6 +229,33 @@ OFFICIAL_ADDRESSES = [
         "maps": "",
     },
 ]
+
+
+@receiver(post_migrate)
+def create_default_categories(sender, **kwargs):
+    """
+    Cria categorias padrão com IDs fixos (1 a 5) após a migração.
+    """
+    default_categories = {
+        1: "Educação",
+        2: "Saúde",
+        3: "Cultura",
+        4: "Administração",
+        5: "Infraestrutura",
+        6: "Segurança",
+        7: "Assistência Social",
+        8: "Meio Ambiente",
+        9: "Transporte",
+        10: "Habitação",
+        11: "Esporte e Lazer",
+        12: "Turismo",
+    }
+
+    for pk, name in default_categories.items():
+        Category.objects.update_or_create(
+            id=pk,
+            defaults={"name": name},
+        )
 
 
 @receiver(post_migrate)
