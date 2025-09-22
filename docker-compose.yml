@@ -10,38 +10,61 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
-      - ./staticfiles:/var/www/staticfiles
-      - ./media:/var/www/media
+      - ./staticfiles:/var/www/staticfiles/
     networks:
-      - uteis-network
+      - network-uteis
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
 
+
+  postgres-db:
+    container_name: ${POSTGRES_HOST}
+    image: postgres:17.5
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - network-uteis
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+
   django-app:
     container_name: django-uteis
     build: .
     restart: always
+    #ports:  # expor a porta 8000 para a rede local e externamente
+    #  - "8000:8000"
     volumes:
       - ./:/app
       - ./staticfiles:/app/staticfiles
-      - ./media:/app/media
+      - ./staticfiles:/staticfiles
     env_file:
       - .env
     networks:
-      - uteis-network
+      - network-uteis
     depends_on:
+      - postgres-db
       - nginx-proxy
     command: >
       sh -c "
         python manage.py migrate &&
         python manage.py collectstatic --noinput &&
-        gunicorn --config gunicorn_config.py core_django.wsgi:application
+        gunicorn --config gunicorn_config.py base_sistema.wsgi:application
       "
 
 networks:
-  uteis-network:
+  network-uteis:
     driver: bridge
     attachable: true
+
+volumes:
+  postgres_data:

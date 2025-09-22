@@ -24,12 +24,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-up20e9+!m71kc@7e5o@w*u&7=^$$m##z7q%8cg0b$%ojfiht-b'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-up20e9+!m71kc@7e5o@w*u&7=^$$m##z7q%8cg0b$%ojfiht-b')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.getenv('DEBUG', 0)))
 
-ALLOWED_HOSTS = []
+
+for x in range(5):
+    print(f"DEBUG: {DEBUG}")
+
+
+ALLOWED_HOSTS = [
+    h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
+    if h.strip()
+]
 
 
 # Application definition
@@ -90,12 +98,25 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': os.getenv('DB_ENGINE', 'changeme'),
+            'NAME': os.getenv('POSTGRES_DB', 'changeme'),
+            'USER': os.getenv('POSTGRES_USER', 'changeme'),
+            'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'changeme'),
+            'HOST': os.getenv('POSTGRES_HOST', 'changeme'),
+            'PORT': os.getenv('POSTGRES_PORT', 'changeme'),
+        }
+    }
+
 
 
 # Password validation
