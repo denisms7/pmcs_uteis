@@ -10,6 +10,8 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8044",
         "maps": "https://goo.gl/maps/VPcQBL5NH9eJBGQL6",
+        "category": 2,
+        
     },
     {
         "name": "Academia de Saúde",
@@ -17,6 +19,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 17:00",
         "phone": "(43) 3675-8042",
         "maps": "",
+        "category": 2,
     },
     {
         "name": "Hospital Municipal Dr. Lauro Marcedo Sobrinho",
@@ -24,6 +27,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "24 horas",
         "phone": "(43) 3675-8041",
         "maps": "https://goo.gl/maps/7Kep51VDMjfkMx2m7",
+        "category": 2,
     },
     {
         "name": "UBS - Unidade Basica De Saúde Anita Canet",
@@ -31,6 +35,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8042",
         "maps": "https://goo.gl/maps/z3bvvqJBG6v3ksGS8",
+        "category": 2,
     },
     {
         "name": "UBS - Unidade Basica De Saúde Ana Garcia Ramos",
@@ -38,6 +43,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8042",
         "maps": "https://goo.gl/maps/TUoejjjmPC3NPCow5",
+        "category": 2,
     },
     {
         "name": "UBS - Unidade Basica de Saúde Vila Progresso",
@@ -45,6 +51,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8042",
         "maps": "",
+        "category": 2,
     },
     {
         "name": "UAPSF - Unidade de Atendimento Primário à Saúde da Família",
@@ -52,6 +59,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8042",
         "maps": "https://goo.gl/maps/CNLqgaWcJ3vyb7t48",
+        "category": 2,
     },
     {
         "name": "Paço Municipal",
@@ -59,6 +67,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8000",
         "maps": "https://goo.gl/maps/wo6QNBRGHYg8s7DM7",
+        "category": 4,
     },
     {
         "name": "Secretaria de Agricultura e Meio Ambiente",
@@ -66,6 +75,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8000",
         "maps": "",
+        "category": 8,
     },
     {
         "name": "Secretaria de Educação",
@@ -73,6 +83,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8048",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "Secretaria de Esporte Cultura e Lazer",
@@ -80,6 +91,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8000",
         "maps": "",
+        "category": 3,
     },
     {
         "name": "Secretaria de Assistência Social",
@@ -87,6 +99,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8035",
         "maps": "",
+        "category": 7,
     },
     {
         "name": "CREAS - Centro de Referência Especializado de Assistência Social",
@@ -94,6 +107,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8035",
         "maps": "",
+        "category": 7,
     },
     {
         "name": "CRAS - Centro de Referência de Assistência Social",
@@ -101,6 +115,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8035",
         "maps": "",
+        "category": 7,
     },
     {
         "name": "Conselho Tutelar",
@@ -108,6 +123,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8038",
         "maps": "",
+        "category": 7,
     },
     {
         "name": "Secretaria de Infra Estrutura e Serviços Publicos",
@@ -115,6 +131,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8030",
         "maps": "",
+        "category": 5,
     },
     {
         "name": "Patio (Antigo DR)",
@@ -122,6 +139,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 17:00",
         "phone": "(43) 3675-8030",
         "maps": "",
+        "category": 5,
     },
     {
         "name": "Terminal Rodoviário de Centenário do Sul",
@@ -129,6 +147,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 06:00 as 22:00",
         "phone": "(43) 3675-8005",
         "maps": "",
+        "category": 4,
     },
     {
         "name": "Cozinha Comunitária de Centenário do Sul",
@@ -136,6 +155,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Segunda das 06:00 as 22:00",
         "phone": "",
         "maps": "",
+        "category": 7,
     },
     {
         "name": "Cozinha Central",
@@ -143,6 +163,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8049",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "Biblioteca Cidadã Professora Maria Aparecida de Lima Dias",
@@ -150,6 +171,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 11:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8000",
         "maps": "",
+        "category": 3,
     },
     {
         "name": "Escola Municipal Irmã Osmunda – Ensino Fundamental I",
@@ -157,6 +179,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8045",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "Escola Municipal José De Anchieta – Ensino Fundamental I",
@@ -164,6 +187,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8045",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "Escola Municipal São José – Ensino Fundamental I",
@@ -171,6 +195,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8045",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "Escola Municipal Prefeito Afonso Belenda – Ensino Fundamental I",
@@ -178,6 +203,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8045",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "Centro Municipal de Educação Ulysses Pessoa de Lima",
@@ -185,6 +211,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8045",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "CEI - Centro De Educação Infantil Menino Jesus I",
@@ -192,6 +219,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8045",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "CEI - Centro De Educação Infantil Menino Jesus III",
@@ -199,6 +227,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8045",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "CEI - Centro de Educação Infantil Menino Jesus V",
@@ -206,6 +235,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8045",
         "maps": "",
+        "category": 1,
     },
     {
         "name": "Ginásio de Esportes José Ferreira Lima",
@@ -213,6 +243,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 12:00 e das 13:00 as 17:00",
         "phone": "(43) 3675-8000",
         "maps": "",
+        "category": 3,
     },
     {
         "name": "Estadio Muncipal Sérgio Vito Meca",
@@ -220,6 +251,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Segunda a Sexta-feira das 08:00 as 17:00",
         "phone": "s/n",
         "maps": "",
+        "category": 3,
     },
     {
         "name": "Teatro Muncipal",
@@ -227,6 +259,7 @@ OFFICIAL_ADDRESSES = [
         "operation": "Agendamento",
         "phone": "(43) 3675-8000",
         "maps": "",
+        "category": 3,
     },
 ]
 
@@ -260,14 +293,23 @@ def create_default_categories(sender, **kwargs):
 
 @receiver(post_migrate)
 def create_official_addresses(sender, **kwargs):
-    if sender.name == "institutional":
-        for data in OFFICIAL_ADDRESSES:
-            OfficialAddress.objects.get_or_create(
-                name=data["name"],
-                defaults={
-                    "address": data["address"],
-                    "operation": data["operation"],
-                    "phone": data["phone"],
-                    "maps": data["maps"],
-                },
-            )
+    if sender.name != "institutional":
+        return
+
+    for data in OFFICIAL_ADDRESSES:
+        try:
+            category = Category.objects.get(pk=data["category"])
+        except Category.DoesNotExist:
+            print('ERRO')
+            continue  # ou levante erro, se quiser obrigar a existir
+
+        OfficialAddress.objects.get_or_create(
+            name=data["name"],
+            defaults={
+                "address": data.get("address", ""),
+                "operation": data.get("operation", ""),
+                "phone": data.get("phone", ""),
+                "maps": data.get("maps", ""),
+                "category": category,
+            },
+        )

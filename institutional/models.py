@@ -14,6 +14,7 @@ class Category(models.Model):
 
 class OfficialAddress(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name='Categoria')
     name = models.CharField(max_length=150, verbose_name='Local', unique=True)
     phone = models.CharField(max_length=20, verbose_name='Contato', null=True, blank=True)
     address = models.CharField(max_length=250, verbose_name='Logradouro', null=True, blank=True)
@@ -21,7 +22,7 @@ class OfficialAddress(models.Model):
     maps = models.URLField(max_length=250, verbose_name='Maps', null=True, blank=True)
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["category", "name"]
         verbose_name = "Endereço"
         verbose_name_plural = "Endereços"
 
