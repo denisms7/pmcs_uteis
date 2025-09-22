@@ -21,11 +21,10 @@
             </h2>
             <p>
                 {{ item.address }}<br>
-                Centenário do Sul - Paraná - CEP: 86630-000
-            </p>
-            <p>
+                Centenário do Sul - Paraná - CEP: 86630-000<br>
+                Categoria: {{ item.category }}<br>
                 {{ item.operation }}<br>
-                Categoria: {{ item.category }}, Fone: {{ item.phone }}<br>
+                Fone: {{ item.phone }}<br>
                 {% if item.maps %}
                     Google Maps: <a href="{{ item.maps }}" target="_blank">Abrir</a>
                 {% endif %}
