@@ -3,11 +3,11 @@
 
 {% block content %}
 
-<h2 class="mt-3 mb-5">
-    <i class="bi bi-bank"></i>
-    AGENDA INTERNA
-</h2>
-<hr class="pesquisa mt-5">
+
+<section class="container mb-4">
+    <h1>Agenda Interna</h1>
+    <hr>
+</section>
 
 <div>
     <a class="btn btn-primary" href="{% url 'contacts_export' %}" target="_blank">Gerar Impressão</a>
@@ -74,9 +74,10 @@
             <thead>
                 <tr>
                     <th scope="col">Nome:</th>
-                    <th scope="col" class="text-center">Setor:</th>
-                    <th scope="col" class="text-center">Ramal Pessoal:</th>
-                    <th scope="col" class="text-center">Número Predio:</th>
+                    <th scope="col">Setor:</th>
+                    <th scope="col">Ramal Pessoal:</th>
+                    <th scope="col">Local:</th>
+                    <th scope="col">Número Predio:</th>
                 </tr>
             </thead>
 
@@ -87,7 +88,7 @@
                         {{ item.person }}
                     </td>
 
-                    <td class="text-center">
+                    <td>
                         {% if item.group %}
                             {{ item.group }}
                         {% else %}
@@ -95,14 +96,17 @@
                         {% endif %}
                     </td>
 
-                    <td class="text-center">
+                    <td>
                         {% if item.internal_number %}
                             {{ item.internal_number }}
                         {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
                     </td>
-                    <td class="text-center">
+                    <td class="text-capitalize">
+                        {{ item.address.name }}
+                    </td>
+                    <td>
                         {% if item.address.phone %}
                             {{ item.address.phone }}
                         {% else %}
