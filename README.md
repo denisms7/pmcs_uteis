@@ -39,6 +39,26 @@ python manage.py runserver
 ```
 Este comando ira executar o sistema e estará acessivel via IP http://127.0.0.1:8000/ para os testes das funcionalidades.
 
+Config Ngnix
+```
+location /static/ {
+    alias /var/www/staticfiles/;
+    access_log off;
+    expires 1y;
+    add_header Cache-Control "public";
+}
+```
+```
+location /media/ {
+    alias /var/www/media/;
+    access_log off;
+    expires 30d;
+    add_header Cache-Control "public";
+}
+
+```
+
+
 
 ## 🛠️ Construído com
 

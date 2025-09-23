@@ -1,24 +1,4 @@
 services:
-  nginx-proxy:
-    container_name: nginx-uteis
-    image: 'jc21/nginx-proxy-manager:latest'
-    restart: unless-stopped
-    ports:
-      - '80:80'
-      - '443:443'
-      - '81:81'
-    volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
-      - ./staticfiles:/var/www/staticfiles/
-    networks:
-      - network-uteis
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
 
   postgres-db:
     container_name: ${POSTGRES_HOST}
@@ -37,28 +17,47 @@ services:
       retries: 5
 
 
+  nginx-proxy:
+    container_name: nginx-uteis
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+      - '81:81'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+      - ./staticfiles:/var/www/staticfiles
+      - ./media:/var/www/media
+    networks:
+      - network-uteis
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   django-app:
     container_name: django-uteis
     build: .
     restart: always
-    #ports:  # expor a porta 8000 para a rede local e externamente
-    #  - "8000:8000"
     volumes:
       - ./:/app
       - ./staticfiles:/app/staticfiles
-      - ./staticfiles:/staticfiles
+      - ./media:/app/media
     env_file:
       - .env
     networks:
       - network-uteis
     depends_on:
-      - postgres-db
       - nginx-proxy
+      - postgres-db
     command: >
       sh -c "
         python manage.py migrate &&
         python manage.py collectstatic --noinput &&
-        gunicorn --config gunicorn_config.py base_sistema.wsgi:application
+        gunicorn --config gunicorn_config.py app.wsgi:application
       "
 
 networks:
@@ -66,5 +65,11 @@ networks:
     driver: bridge
     attachable: true
 
+
 volumes:
   postgres_data:
+  media:
+
+
+
+
