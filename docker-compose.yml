@@ -1,5 +1,4 @@
 services:
-
   postgres-db:
     container_name: ${POSTGRES_HOST}
     image: postgres:17.5
@@ -16,7 +15,6 @@ services:
       timeout: 10s
       retries: 5
 
-
   nginx-proxy:
     container_name: nginx-uteis
     image: 'jc21/nginx-proxy-manager:latest'
@@ -29,7 +27,7 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
       - ./staticfiles:/var/www/staticfiles
-      - ./media:/var/www/media
+      - media:/var/www/media
     networks:
       - network-uteis
     healthcheck:
@@ -45,13 +43,12 @@ services:
     volumes:
       - ./:/app
       - ./staticfiles:/app/staticfiles
-      - ./media:/app/media
+      - media:/app/media
     env_file:
       - .env
     networks:
       - network-uteis
     depends_on:
-      - nginx-proxy
       - postgres-db
     command: >
       sh -c "
@@ -65,11 +62,6 @@ networks:
     driver: bridge
     attachable: true
 
-
 volumes:
   postgres_data:
   media:
-
-
-
-
