@@ -25,7 +25,3 @@ class HomeTemplateView(TemplateView):
         context['button'] = Button.objects.filter()
         context['has_recent_video'] = has_recent_video()
         return context
-
-
-class IaTemplateView(TemplateView):
-    template_name = 'home/ia.html'

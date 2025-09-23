@@ -8,9 +8,6 @@
     {% include "components/search.html" %}
 
     <section>
-        <a href="{% url 'ia' %}" class="pesquisa btn btn-success m-1">
-            Inteligencia Artificial
-        </a>
         <a href="{% url 'cursos' %}" class="pesquisa btn btn-success m-1 {% if has_recent_video %}alerta-btn{% endif %}">
             Cursos
         </a>
