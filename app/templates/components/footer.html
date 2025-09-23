@@ -5,7 +5,10 @@
         <hr class="border-light opacity-25 my-2">
         <p class="mb-0 small">
         Desenvolvido por <span class="fw-semibold">Denis Muniz Silva</span><br>
-        <span class="text-white-50">2025 - Versão 6.0</span>
+        <span class="text-white-50"><span id="ano"></span> - Versão 6.0</span>
         </p>
     </div>
 </footer>
+<script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+</script>

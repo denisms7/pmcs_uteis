@@ -29,7 +29,3 @@ class HomeTemplateView(TemplateView):
 
 class IaTemplateView(TemplateView):
     template_name = 'home/ia.html'
-
-
-class PDM(TemplateView):
-    template_name = 'home/pdm.html'
