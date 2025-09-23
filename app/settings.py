@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'widget_tweaks',
     'multiupload',
+    "import_export",
 
     'curso.apps.CursoConfig',
 

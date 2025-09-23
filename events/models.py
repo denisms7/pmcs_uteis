@@ -3,11 +3,7 @@ from django.utils import timezone
 
 
 class Birthday(models.Model):
-    created_at = models.DateTimeField(
-        default=timezone.now,
-        verbose_name='Cadastro',
-        db_index=True
-    )
+    created_at = models.DateTimeField(default=timezone.now, verbose_name='Cadastro', db_index=True)
     name = models.CharField(max_length=150, verbose_name='Nome Completo')
     birth = models.DateField(verbose_name='Nascimento')
 
