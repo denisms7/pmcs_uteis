@@ -19,7 +19,13 @@ class BirthdaySerializer(serializers.ModelSerializer):
     def get_start(self, obj):
         today = date.today()
         year = self.context.get("year", today.year)
-        birthday_this_year = obj.birth.replace(year=year)
+
+        try:
+            birthday_this_year = obj.birth.replace(year=year)
+        except ValueError:
+            # Trata aniversários em 29/02 em anos não bissextos
+            birthday_this_year = date(year, 2, 28)  # ou date(year, 3, 1) se preferir
+
         return birthday_this_year.isoformat()
 
 
