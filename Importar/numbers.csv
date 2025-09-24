@@ -1,0 +1,112 @@
+person,person_num,sector,sector_num
+Junta de Servico Militar,5043,,
+Cozinha Central,5044,,
+Secretaria Municipal de Saude,7011,,
+Secretaria Municipal de Cultura Esporte e Lazer,5041,,
+Ginasio de Esportes,5040,,
+Biblioteca Cidada,5039,,
+Fabio Jose Alves,5038,,
+Maria Emilia Churk Lago,5027,,
+Lilian Faustina da Silva,5004,,
+Melquiades Tavian Junior,5006,,
+Sueli Casteluzzi Vechiatto,5007,,
+Secretaria Municipal de Infra Estrutura e Servicos Publicos,5042,,
+PMCS Recepcao,5000,,
+Conselho Tutelar,8038,,
+Matheus Quiado,1039,,
+Denis Muniz Silva,5023,Informatica,8016
+Kaio Vitor Terra,5024,Informatica,8016
+Anderson Muniz da Silva,5033,Licitacao,8013
+Danilo Kaina Garcia da Silveira,5034,Licitacao,8013
+Antonio dos Santos Filho,5025,Licitacao,8013
+Marco Antonio Leite,5001,Administracao,8015
+Sueli Simon,5002,Administracao,8015
+Viviane Arroio Orlando Pereira,5003,Administracao,8015
+Joao Ferreira Juliao,5005,Contabilidade,8008
+emerson Costa de Souza,5013,Contabilidade,8008
+Fernando Aparecido Miguel,5012,Contabilidade,8008
+Juliana de Lima Gabriel,5011,Contabilidade,8008
+Fabricia Lazaro Miguel da Silva,5009,Contabilidade,8008
+Crislaine de Fatima Ramos Cruz,5010,Contabilidade,8008
+Daiane de Moura Bezerra Lopes,5026,Contabilidade,8008
+Aecio Flavio dos Santos,5014,Tributacao,8004
+Tiago Aparecido dos Santos,5015,Tributacao,8004
+Jose Carlos Cezario,5016,Tributacao,8004
+Nelson Alves da Silva,5019,RH,8002
+Bruna Tiemy Pereira Santos Oliveira,5020,RH,8002
+Luan Vicente dos Santos,5021,Controladoria,8019
+Bianca Santos Paulozi Pizolato,5028,Procuradoria,8026
+Claudemir Teodoro da Silveira,5029,Procuradoria,8026
+Rafael Vasconcelos Taveira,5030,Procuradoria,8026
+Beatriz Verssao Spirandio,5031,Engenharia,8030
+Heitor Teixeira Goncalves,5032,Engenharia,8030
+UBS - Unidade Basica de Saude Vila Progresso,1029,UBS,7010
+UBS - Unidade Basica De Saude Ana Garcia Ramos,1028,UBS,7010
+UBS Medico Ana Garcia Ramos,1030,UBS,7010
+UBS Vacinas Ana Garcia Ramos,1031,UBS,7010
+Ademir Mancan Junior,5035,Agricultura,7005
+Simara Goes Alves,5036,Agricultura,7005
+Wanucci Lopes dos Santos,5037,Agricultura,7005
+Secretaria Municipal de Agricultura,7005,Agricultura,7005
+Gilson Barbosa da Silva,5017,Compras,8012
+Talita Guizoni,5018,Compras,8012
+Luiz Augusto dos Santos,5008,Compras,8012
+Aparecida Ribeiro,1002,Secretaria de Saude,7011
+Recepcao,1001,Secretaria de Saude,7011
+Odilia Melo,1003,Secretaria de Saude,7011
+Mariza Pombo,1004,Secretaria de Saude,7011
+Keilla Silva,1005,Secretaria de Saude,7011
+Francisca Vieira,1007,Secretaria de Saude,7011
+Leide Aparecida,1008,Secretaria de Saude,7011
+Elsa Muniz,1009,Secretaria de Saude,7011
+Elizabete Simon,1010,Secretaria de Saude,7011
+Jaime Antonio,1011,Secretaria de Saude,7011
+Lyria Lua amadea,1012,Secretaria de Saude,7011
+Rodrigo A Lens,1035,Secretaria de Saude,7011
+Ouvidoria da Saude,2000,Ouvidoria,7002
+Ouvidoria da Mulher,2001,Ouvidoria,7002
+Ouvidoria Geral,2002,Ouvidoria,7002
+Paula Roberta Podesta De Moraes,5102,CRAS,7013
+Recepcao,5101,CRAS,7013
+Ingledy Geanne Pereira,5105,CRAS,7013
+Geni dos Santos,5106,CREAS,7014
+Iara Rodrigues Passeti,5107,CREAS,7014
+Vanderly Pissinati Nicacio,5108,CREAS,7014
+Thayna Correia,5109,CREAS,7014
+Elisangela Batista Moura,5110,CREAS,7014
+Rosana Lopes M Castoldi,5047,Secretaria de Educacao,7015
+Zeila Aparecida Felicio,5048,Secretaria de Educacao,7015
+Valkiria Pereira de Barros,5049,Secretaria de Educacao,7015
+Valeria Ap Quadros Mancan,5050,Secretaria de Educacao,7015
+Marcos V Podesta de Moraes,5051,Secretaria de Educacao,7015
+Lucineide Maria de Melo,5052,Secretaria de Educacao,7015
+Marcelo Romao Goncalves,5053,Secretaria de Educacao,7015
+Vitor Educacao,5054,Secretaria de Educacao,7015
+Denise A de Castro,5055,Secretaria de Educacao,7015
+Rosirene Cristina S Araujo,5056,Secretaria de Educacao,7015
+Vaulene Francisco da Silva,5057,Secretaria de Educacao,7015
+Janice Verderio Martins,5058,Secretaria de Educacao,7015
+Rita Ap do Amaral Zaia,5059,Secretaria de Educacao,7015
+Recepcao,1024,Hospital,1024
+Cozinha,1025,Hospital,1024
+Administracao 01,1017,Hospital,1024
+Administracao 02,1022,Hospital,1024
+Lavanderia,1018,Hospital,1024
+Amanda Kamilly G da Silveira,5200,Trabalho,
+Francisco Cesar de Melo,5201,Trabalho,
+Gilson Barbosa da Silva,5202,Trabalho,
+Diego Soares Pereira,5203,Trabalho,
+Poliana Papker Lavall,5204,Trabalho,
+Sueli Marconi de Azevedo,5202,Trabalho,
+Jose de Padua Ribeiro Filho,5206,Trabalho,
+Amilton Aparecido da Silva,5022,Planejamento,
+Jose Marcos Lago,5045,Frotas,8070
+Paraiso Douglas de O. Pereira,5062,Frotas,8070
+CEI Menino Jesus I,5301,CEI,7017
+CEI Menino Jesus III,5302,CEI,7017
+CEI Menino Jesus V,5303,CEI,7017
+CEI Ullyses Pessoa de Lima,5304,CEI,7017
+Escola Municipal Afonso Belenda,5306,Escolas,7018
+Escola Municipal Irma Osmunda,5307,Escolas,7018
+Escola Municipal Jose de Anchieta,5308,Escolas,7018
+Escola Municipal Sao Jose,5309,Escolas,7018
