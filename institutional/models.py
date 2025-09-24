@@ -13,7 +13,8 @@ class Category(models.Model):
         return f"{self.name}"
 
 class OfficialAddress(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Alterado')
     category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name='Categoria')
     name = models.CharField(max_length=150, verbose_name='Local', unique=True)
     phone = models.CharField(max_length=20, verbose_name='Contato', null=True, blank=True)
@@ -31,7 +32,8 @@ class OfficialAddress(models.Model):
 
 
 class Schedule(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Alterado')
     person = models.CharField(max_length=150, verbose_name='Pessoa', unique=True)
     person_num = models.CharField(max_length=10, verbose_name='Pessoa Numero')
     sector = models.CharField(max_length=150, verbose_name='Setor', null=True, blank=True)

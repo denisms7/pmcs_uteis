@@ -9,6 +9,11 @@ class Curso(models.Model):
     cor_texto = models.CharField(max_length=10, verbose_name=_('Cor Textos'), default="#fff")
     descricao = models.TextField(max_length=2000, verbose_name=_('Descrição'), null=True, blank=True)
 
+    class Meta:
+        ordering = ["data", "curso"]
+        verbose_name = "Categoria"
+        verbose_name_plural = "Categorias"
+
     def __str__(self):
         return f"{self.curso}"
 
@@ -19,6 +24,11 @@ class Video(models.Model):
     title = models.CharField(max_length=100, verbose_name=_('Título'))
     descricao = models.TextField(max_length=2000, verbose_name=_('Descrição'), null=True, blank=True)
     video_file = models.FileField(upload_to='videos/', verbose_name=_('Vídeo'))
+
+    class Meta:
+        ordering = ["data", "title"]
+        verbose_name = "Video"
+        verbose_name_plural = "Videos"
 
     @property
     def video_url(self):
