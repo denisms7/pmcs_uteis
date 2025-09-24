@@ -32,10 +32,10 @@ class OfficialAddress(models.Model):
 
 class Schedule(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
-    address = models.ForeignKey(OfficialAddress, on_delete=models.PROTECT, verbose_name='Endereço')
-    group = models.CharField(max_length=5, verbose_name='Numero Grupo')
     person = models.CharField(max_length=200, verbose_name='Pessoa')
+    group = models.CharField(max_length=5, verbose_name='Numero Grupo', null=True, blank=True)
     internal_number = models.CharField(max_length=20, verbose_name='Numero Interno')
+    address = models.ForeignKey(OfficialAddress, on_delete=models.PROTECT, verbose_name='Endereço', null=True, blank=True)
 
     class Meta:
         ordering = ["address", "person"]
