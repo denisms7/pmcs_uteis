@@ -73,8 +73,9 @@
             <thead>
                 <tr>
                     <th scope="col">Nome:</th>
-                    <th scope="col">Setor:</th>
                     <th scope="col">Ramal Pessoal:</th>
+                    <th scope="col">Setor:</th>
+                    <th scope="col">Setor Num.:</th>
                     <th scope="col">Local:</th>
                     <th scope="col">Número Predio:</th>
                 </tr>
@@ -86,22 +87,28 @@
                     <td class="text-capitalize">
                         {{ item.person }}
                     </td>
-
                     <td>
-                        {% if item.group %}
-                            {{ item.group }}
+                        {% if item.person_num %}
+                            {{ item.person_num }}
+                        {% else %}
+                            <i class="bi bi-hash"></i>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if item.sector %}
+                            {{ item.sector }}
+                        {% else %}
+                            <i class="bi bi-hash"></i>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if item.sector_num %}
+                            {{ item.sector_num }}
                         {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
                     </td>
 
-                    <td>
-                        {% if item.internal_number %}
-                            {{ item.internal_number }}
-                        {% else %}
-                            <i class="bi bi-hash"></i>
-                        {% endif %}
-                    </td>
                     <td class="text-capitalize">
                         {{ item.address.name }}
                     </td>

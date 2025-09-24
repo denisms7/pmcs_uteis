@@ -17,9 +17,9 @@
     <thead>
         <tr>
             <th scope="col">Nome:</th>
-            <th scope="col" class="text-center">Setor:</th>
-            <th scope="col" class="text-center">Ramal Pessoal:</th>
-            <th scope="col" class="text-center">Número Predio:</th>
+            <th scope="col">Setor:</th>
+            <th scope="col">Ramal Pessoal:</th>
+            <th scope="col">Número Predio:</th>
         </tr>
     </thead>
     <tbody>
@@ -35,22 +35,22 @@
                         {{ item.person }}
                     </td>
 
-                    <td class="text-center">
-                        {% if item.group %}
-                            {{ item.group }}
+                    <td>
+                        {% if item.sector %}
+                            {{ item.sector }} - {{ item.sector_num }}
                         {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
                     </td>
 
-                    <td class="text-center">
-                        {% if item.internal_number %}
-                            {{ item.internal_number }}
+                    <td>
+                        {% if item.person_num %}
+                            {{ item.person_num }}
                         {% else %}
                             <i class="bi bi-hash"></i>
                         {% endif %}
                     </td>
-                    <td class="text-center">
+                    <td>
                         {% if item.address.phone %}
                             {{ item.address.phone }}
                         {% else %}

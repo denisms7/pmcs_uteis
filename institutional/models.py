@@ -32,9 +32,10 @@ class OfficialAddress(models.Model):
 
 class Schedule(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro', db_index=True)
-    person = models.CharField(max_length=200, verbose_name='Pessoa')
-    group = models.CharField(max_length=5, verbose_name='Numero Grupo', null=True, blank=True)
-    internal_number = models.CharField(max_length=20, verbose_name='Numero Interno')
+    person = models.CharField(max_length=150, verbose_name='Pessoa', unique=True)
+    person_num = models.CharField(max_length=10, verbose_name='Pessoa Numero')
+    sector = models.CharField(max_length=150, verbose_name='Setor', null=True, blank=True)
+    sector_num = models.CharField(max_length=10, verbose_name='Setor Numero', null=True, blank=True)
     address = models.ForeignKey(OfficialAddress, on_delete=models.PROTECT, verbose_name='Endereço', null=True, blank=True)
 
     class Meta:
@@ -43,4 +44,4 @@ class Schedule(models.Model):
         verbose_name_plural = "Contatos"
 
     def __str__(self):
-        return f"{self.person} - {self.internal_number}"
+        return f"{self.person} - {self.person_num}"
