@@ -1,4 +1,6 @@
 from django.contrib import admin
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 from .models import OfficialAddress, Schedule, Category
 
 
@@ -18,9 +20,17 @@ class OfficialAddressAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
 
 
+class ScheduleResource(resources.ModelResource):
+    class Meta:
+        model = Schedule
+        fields = ("person", "person_num")
+        import_id_fields = ("person",)
+
+
 @admin.register(Schedule)
-class ScheduleAdmin(admin.ModelAdmin):
-    list_display = ("person", "person_num","sector",)
+class ScheduleAdmin(ImportExportModelAdmin):
+    resource_class = ScheduleResource
+    list_display = ("person", "person_num", "sector",)
     search_fields = ("person", "person_num", "sector", "sector_num",)
     ordering = ("address", "person",)
     list_filter = ("address__category", "address")
