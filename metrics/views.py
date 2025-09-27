@@ -1,9 +1,11 @@
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
 from datetime import timedelta
 from .models import AnonymousVisit
 
-class VisitsChartView(TemplateView):
+
+class VisitsChartView(LoginRequiredMixin, TemplateView):
     template_name = "metrics/visits_chart.html"
 
     def get_context_data(self, **kwargs):
