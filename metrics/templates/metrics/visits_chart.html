@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="container mb-4">
+        <h1>Visitas Únicas Diárias</h1>
+        <hr>
+        <p>Últimos 30 dias</p>
+    </section>
+
+    <section class="container">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <canvas id="visitsChart" width="800" height="400"></canvas>
+    </section>
+
+    <script>
+        const ctx = document.getElementById('visitsChart').getContext('2d');
+        const visitsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ dates|safe }},
+                datasets: [{
+                    label: 'Visitas únicas',
+                    data: {{ visits|safe }},
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
+                }
+            }
+        });
+    </script>
+
+{% endblock content %}
