@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'identity',
     'events',
     'institutional',
+    'metrics',
 
 
 ]
@@ -74,6 +75,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #  Verifica visitas
+    'metrics.middleware.TrackAnonymousVisitsMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
