@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="container mb-4">
+        <h1>Visitas Únicas Diárias</h1>
+        <hr>
+        <p>Últimos 30 dias</p>
+    </section>
+
+    <section class="container">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <canvas id="visitsChart" class="w-100"  height="300"></canvas>
+
+        <p class="my-3">
+            Cada ponto do gráfico representa o número de visitantes únicos do sistema em cada dia dos últimos 30 dias.
+            Usuários não logados são identificados pela <strong>session key</strong> da sessão do navegador, 
+            garantindo que cada visitante seja contado apenas uma vez por dia, mesmo que acesse várias páginas.
+        </p>
+    </section>
+
+    <section class="container mb-4">
+        <h1>Dados Diversos</h1>
+        <hr>
+    </section>
+
+    <section class="container">
+    <div class="row">
+
+        <div class="col-md-3 col-sm-6 p-1">
+            <div class="card bg-primary bg-gradient text-white shadow-sm rounded-3">
+                <div class="card-body text-center p-2">
+                    <span class="d-block fs-5">
+                        Categorias
+                    </span>
+                    <span class="fw-bold fs-5">
+                        {{ button.category }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 p-1">
+            <div class="card bg-primary bg-gradient text-white shadow-sm rounded-3">
+                <div class="card-body text-center p-2">
+                    <span class="d-block fs-5">
+                        Botões
+                    </span>
+                    <span class="fw-bold fs-5">
+                        {{ button.button }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 p-1">
+            <div class="card bg-warning bg-gradient text-white shadow-sm rounded-3">
+                <div class="card-body text-center p-2">
+                    <span class="d-block fs-5 text-dark">
+                        Cursos
+                    </span>
+                    <span class="fw-bold fs-5 text-dark">
+                        {{ button.curso }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 p-1">
+            <div class="card bg-warning bg-gradient text-white shadow-sm rounded-3">
+                <div class="card-body text-center p-2">
+                    <span class="d-block fs-5 text-dark">
+                        Vídeos
+                    </span>
+                    <span class="fw-bold fs-5 text-dark">
+                        {{ button.video }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 p-1">
+            <div class="card bg-info bg-gradient text-white shadow-sm rounded-3">
+                <div class="card-body text-center p-2">
+                    <span class="d-block fs-5 text-dark">
+                        Aniversários
+                    </span>
+                    <span class="fw-bold fs-5 text-dark">
+                        {{ button.birthday }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 p-1">
+            <div class="card bg-danger bg-gradient text-white shadow-sm rounded-3">
+                <div class="card-body text-center p-2">
+                    <span class="d-block fs-5">
+                        Contatos
+                    </span>
+                    <span class="fw-bold fs-5">
+                        {{ button.schedule }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 p-1">
+            <div class="card bg-secondary bg-gradient text-white shadow-sm rounded-3">
+                <div class="card-body text-center p-2">
+                    <span class="d-block fs-5">
+                        Endereços Oficiais
+                    </span>
+                    <span class="fw-bold fs-5">
+                        {{ button.officialAddress }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 p-1">
+            <div class="card bg-success bg-gradient text-white shadow-sm rounded-3">
+                <div class="card-body text-center p-2">
+                    <span class="d-block fs-5">
+                        Total de Visitas Geral
+                    </span>
+                    <span class="fw-bold fs-5">
+                        {{ button.anonymousvisit }}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+    </section>
+
+
+    <script>
+        const ctx = document.getElementById('visitsChart').getContext('2d');
+        const visitsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ dates|safe }},
+                datasets: [{
+                    label: 'Visitas únicas',
+                    data: {{ visits|safe }},
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
+                }
+            }
+        });
+    </script>
+
+{% endblock content %}
