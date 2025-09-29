@@ -12,18 +12,23 @@
 
 <div class="container">
     {% for curso in cursos %}
-        <h3 class="pesquisa">{{ curso.curso }}</h3>
+        <hr class="pesquisa mt-5 mb-5">
+        <h2 class="pesquisa">{{ curso.curso }}</h2>
         <p>{{ curso.descricao }}</p>
+
         <div class="d-flex gap-2 flex-wrap">
             {% for video in curso.video_set.all %}
-                <a href="{% url 'video_player' video.pk %}" class="pesquisa btn elemento pesquisa" style="background-color: {{ video.curso.cor_botao }}; color:{{ video.curso.cor_texto }}">
+                <a 
+                    href="{% url 'video_player' video.pk %}" 
+                    class="pesquisa btn elemento pesquisa"
+                    style="background-color: {{ video.curso.cor_botao }}; color: {{ video.curso.cor_texto }}"
+                    title="{{ video.title }}">
                     {{ video.title }}
                 </a>
             {% empty %}
-                Curso sem Vídeos
+                <p class="text-muted">Curso sem vídeos disponíveis.</p>
             {% endfor %}
         </div>
-        <hr class="pesquisa mt-5 mb-5">
     {% endfor %}
 </div>
 
