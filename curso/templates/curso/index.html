@@ -14,7 +14,7 @@
     {% for curso in cursos %}
         <h3 class="pesquisa">{{ curso.curso }}</h3>
         <p>{{ curso.descricao }}</p>
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 flex-wrap">
             {% for video in curso.video_set.all %}
                 <a href="{% url 'video_player' video.pk %}" class="pesquisa btn elemento pesquisa" style="background-color: {{ video.curso.cor_botao }}; color:{{ video.curso.cor_texto }}">
                     {{ video.title }}
