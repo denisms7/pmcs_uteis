@@ -1,7 +1,7 @@
 {% for btn in legislation %}
     <a 
         href="{% if btn.url %}{{ btn.url }}{% elif btn.file %}{{ btn.file.url }}{% else %}#{% endif %}" 
-        class="pesquisa btn btn-warning m-1"
+        class="pesquisa btn btn-warning"
         target="_blank">
         {{ btn.title }}
         <span class="position-absolute invisible">{{ btn.description }}</span>

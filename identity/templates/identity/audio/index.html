@@ -2,20 +2,22 @@
     <h3 class="pesquisa">
         ÁUDIO
     </h3>
-    <a href="{% url 'hino_nacional' %}" class="pesquisa btn btn-info m-1">
-        Hino Nacional
-        <span class="position-absolute invisible">audio musica</span>
-    </a>
-    <a href="{% url 'hino_estadual' %}" class="pesquisa btn btn-info m-1">
-        Hino Estadual
-        <span class="position-absolute invisible">audio musica</span>
-    </a>
-    <a href="{% url 'hino_municipal' %}" class="pesquisa btn btn-info m-1">
-        Hino Municipal
-        <span class="position-absolute invisible">audio musica</span>
-    </a>
-    <a href="{% url 'hino_independencia' %}" class="pesquisa btn btn-info m-1">
-        Hino da Independência
-        <span class="position-absolute invisible">audio musica</span>
-    </a>
+    <div class="d-flex gap-2">
+        <a href="{% url 'hino_nacional' %}" class="pesquisa btn btn-info">
+            Hino Nacional
+            <span class="position-absolute invisible">audio musica</span>
+        </a>
+        <a href="{% url 'hino_estadual' %}" class="pesquisa btn btn-info">
+            Hino Estadual
+            <span class="position-absolute invisible">audio musica</span>
+        </a>
+        <a href="{% url 'hino_municipal' %}" class="pesquisa btn btn-info">
+            Hino Municipal
+            <span class="position-absolute invisible">audio musica</span>
+        </a>
+        <a href="{% url 'hino_independencia' %}" class="pesquisa btn btn-info">
+            Hino da Independência
+            <span class="position-absolute invisible">audio musica</span>
+        </a>
+    </div>
 </div>

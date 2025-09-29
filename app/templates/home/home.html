@@ -11,15 +11,17 @@
         <h3 class="pesquisa">
             LEGISLAÇÃO
         </h3>
-        <a href="{% url 'legislation_list' 1 %}" class="pesquisa btn btn-warning m-1">
-            Plano Diretor Municipal
-            <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
-        </a>
-        <a href="{% url 'legislation_list' 2 %}" class="pesquisa btn btn-warning m-1">
-            Licitação 
-            <span class="position-absolute invisible">Licitação Lei 2021</span>
-        </a>
-        {% include "generic/button.html" %}
+        <div class="d-flex gap-2">
+            <a href="{% url 'legislation_list' 1 %}" class="pesquisa btn btn-warning">
+                Plano Diretor Municipal
+                <span class="position-absolute invisible">PDM Plano Diretor Municipal LEGISLAÇÃO</span>
+            </a>
+            <a href="{% url 'legislation_list' 2 %}" class="pesquisa btn btn-warning">
+                Licitação 
+                <span class="position-absolute invisible">Licitação Lei 2021</span>
+            </a>
+            {% include "generic/button.html" %}
+        </div>
     </section>
 
     {% include "generic/index.html" %}

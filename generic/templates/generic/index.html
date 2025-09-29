@@ -3,16 +3,18 @@
     <hr class="pesquisa mt-5 mb-5">
         <h3 class="pesquisa text-uppercase">{{ item_category.name }}</h3>
 
-        {% for btn in item_category.button_set.all %}
-            <a 
-                href="{% if btn.url %}{{ btn.url }}{% elif btn.file %}{{ btn.file.url }}{% else %}#{% endif %}" 
-                class="pesquisa btn m-1 elemento pesquisa"
-                target="_blank"
-                style="background-color: {{ item_category.button_color }}; color: {{ item_category.text_color }}">
-                {{ btn.title }}
-                <span class="position-absolute invisible">{{ btn.description }}</span>
-            </a>
-        {% endfor %}
+        <div class="d-flex gap-2">
+            {% for btn in item_category.button_set.all %}
+                <a 
+                    href="{% if btn.url %}{{ btn.url }}{% elif btn.file %}{{ btn.file.url }}{% else %}#{% endif %}" 
+                    class="pesquisa btn elemento pesquisa"
+                    target="_blank"
+                    style="background-color: {{ item_category.button_color }}; color: {{ item_category.text_color }}">
+                    {{ btn.title }}
+                    <span class="position-absolute invisible">{{ btn.description }}</span>
+                </a>
+            {% endfor %}
+        <div>
 
     {% endfor %}
 </section>
