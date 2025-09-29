@@ -1,20 +1,20 @@
 <section>
     {% for item_category in category %}
-    <hr class="pesquisa mt-5 mb-5">
+        <hr class="pesquisa mt-5 mb-5">
         <h3 class="pesquisa text-uppercase">{{ item_category.name }}</h3>
 
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 flex-wrap">
             {% for btn in item_category.button_set.all %}
                 <a 
                     href="{% if btn.url %}{{ btn.url }}{% elif btn.file %}{{ btn.file.url }}{% else %}#{% endif %}" 
-                    class="pesquisa btn elemento pesquisa"
+                    class="pesquisa btn elemento pesquisa position-relative"
                     target="_blank"
                     style="background-color: {{ item_category.button_color }}; color: {{ item_category.text_color }}">
+                    
                     {{ btn.title }}
                     <span class="position-absolute invisible">{{ btn.description }}</span>
                 </a>
             {% endfor %}
-        <div>
-
+        </div>
     {% endfor %}
 </section>
