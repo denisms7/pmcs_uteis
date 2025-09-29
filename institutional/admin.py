@@ -23,7 +23,7 @@ class OfficialAddressAdmin(admin.ModelAdmin):
 class ScheduleResource(resources.ModelResource):
     class Meta:
         model = Schedule
-        fields = ("person", "person_num")
+        fields = ("person", "person_num", "sector", "sector_num",)
         import_id_fields = ("person",)
 
 

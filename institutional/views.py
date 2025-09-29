@@ -20,8 +20,10 @@ class ContactsListView(ListView):
             queryset = queryset.filter(
                 Q(person__icontains=query_normalized) | 
                 Q(person_num__icontains=query_normalized) | 
-                Q(address__phone__icontains=query_normalized) |
-                Q(address__name__icontains=query_normalized)
+                Q(sector__icontains=query_normalized) |
+                Q(sector_num=query_normalized) |
+                Q(address__name__icontains=query_normalized) |
+                Q(address__phone__icontains=query_normalized)
             )
         return queryset
 

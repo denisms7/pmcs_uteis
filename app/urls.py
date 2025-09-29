@@ -14,6 +14,7 @@ urlpatterns = [
     path('', include('events.urls')),
     path('', include('institutional.urls')),
     path('', include('generic.urls')),
+    path('', include('metrics.urls')),
 ]
 
 # Configuração das URLs de mídia
