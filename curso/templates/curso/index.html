@@ -1,25 +1,28 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
 
-<h2 class="mt-3">CURSOS</h2>
-<p>{{ curso.descricao }}</p>
+<section class="container mb-4">
+    <h1>Cursos</h1>
+    <hr>
+</section>
 
-<div class="">
-{% for curso in cursos %}
-    <h3 class="pesquisa">{{ curso.curso }}</h3>
-    {% for video in curso.video_set.all %}
-        <a href="{% url 'video_player' video.pk %}" class="pesquisa btn m-1 elemento pesquisa" style="background-color: {{ video.curso.cor_botao }}; color:{{ video.curso.cor_texto }}">
-            {{ video.title }}
-        </a>
-    {% empty %}
-        Curso sem Vídeos
+{% include "components/search.html" %}
+
+<div class="container">
+    {% for curso in cursos %}
+        <h3 class="pesquisa">{{ curso.curso }}</h3>
+        <p>{{ curso.descricao }}</p>
+        {% for video in curso.video_set.all %}
+            <a href="{% url 'video_player' video.pk %}" class="pesquisa btn m-1 elemento pesquisa" style="background-color: {{ video.curso.cor_botao }}; color:{{ video.curso.cor_texto }}">
+                {{ video.title }}
+            </a>
+        {% empty %}
+            Curso sem Vídeos
+        {% endfor %}
+        <hr class="pesquisa mt-5 mb-5">
     {% endfor %}
-    <hr class="pesquisa mt-5 mb-5">
-{% empty %}
-{% endfor %}
 </div>
 
 {% endblock content %}
