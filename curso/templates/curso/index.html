@@ -12,7 +12,6 @@
 
 <div class="container">
     {% for curso in cursos %}
-        <hr class="pesquisa mt-5 mb-5">
         <h2 class="pesquisa">{{ curso.curso }}</h2>
         <p>{{ curso.descricao }}</p>
 
@@ -29,6 +28,8 @@
                 <p class="text-muted">Curso sem vídeos disponíveis.</p>
             {% endfor %}
         </div>
+
+        <hr class="pesquisa mt-5 mb-5">
     {% endfor %}
 </div>
 
