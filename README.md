@@ -3,43 +3,22 @@
 
 Pagina web para auxilio dos servidores públicos do município de [Centenário do Sul](https://www.centenariodosul.pr.gov.br/), tem por objetivo reunir todos caminhos de informação em apenas um local
 
-
 <hr>
 
 ## 📟 Executar
 ### 📋 Pré-requisitos
-* Python 3.8.2
+* Docker
 
 ### 🛠️ Configuração e Implantação
-Crie um ambiente virtual:
+Instale o Docker na maquina e rode  os seguintes  comando na  pasta raiz do projeto: 
 ```
-python -m venv env
+docker compose build
 ```
-Efetue a atualização do pip
 ```
-python -m pip install --upgrade pip
-```
-Ative o ambiente virtual e apos isso instale as bibliotecas do arquivo requirements.txt
-```
-pip install -r requirements.txt
-```
-Execute o comando de migração no terminal do ambiente virtural para criação das tabelas e do banco de dados.
-```
-python manage.py migrate
+docker compose up
 ```
 
-Crie um super usuario executando o comando e informe os dados solicitados.
-```
-python manage.py createsuperuser
-```
-
-Execute o comando abaixo:
-```
-python manage.py runserver
-```
-Este comando ira executar o sistema e estará acessivel via IP http://127.0.0.1:8000/ para os testes das funcionalidades.
-
-Config Ngnix
+Após os container subirem configure o Ngnix na que esta na porta 81 com usuário e senha padrão e adicione os seguintes locais nas configurações:
 ```
 location /static/ {
     alias /var/www/staticfiles/;
@@ -47,17 +26,20 @@ location /static/ {
     expires 1y;
     add_header Cache-Control "public";
 }
-```
-```
 location /media/ {
     alias /var/www/media/;
     access_log off;
     expires 30d;
     add_header Cache-Control "public";
 }
-
 ```
 
+Crie um super usuario executando o comando abaixo dentro do container do Django e informe os dados solicitados.
+```
+python manage.py createsuperuser
+```
+
+O sistema esta pronto para ser utilizado.
 
 
 ## 🛠️ Construído com
@@ -68,6 +50,7 @@ location /media/ {
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![Postgress](https://img.shields.io/badge/postgress-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
 
 ## ✒️ Autor
 * **Desenvolvedor** - *Denis Muniz Silva* 
