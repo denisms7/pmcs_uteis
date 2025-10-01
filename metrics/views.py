@@ -8,6 +8,7 @@ from curso.models import Video, Curso
 from events.models import Birthday
 from institutional.models import OfficialAddress, Schedule
 
+
 def CountTable():
     data = {}
     # 14 = pdm, licitação, 4 botões de áudio, 8 imagens
@@ -32,6 +33,7 @@ def CountTable():
     data['anonymousvisit'] = anonymousvisit
     return data
 
+
 class VisitsChartView(LoginRequiredMixin, TemplateView):
     template_name = "metrics/metrics.html"
 
@@ -41,7 +43,7 @@ class VisitsChartView(LoginRequiredMixin, TemplateView):
         # Configura período (últimos 30 dias)
         days = 30
         today = timezone.now().date()
-        start_date = today - timedelta(days=days-1)
+        start_date = today - timedelta(days=days - 1)
 
         # Lista de datas
         date_list = [start_date + timedelta(days=i) for i in range(days)]

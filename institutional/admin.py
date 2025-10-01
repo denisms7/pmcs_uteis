@@ -5,7 +5,7 @@ from .models import OfficialAddress, Schedule, Category
 
 
 @admin.register(Category)
-class OfficialAddressAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     list_display = ("name",)
     search_fields = ("name",)
     ordering = ("name",)

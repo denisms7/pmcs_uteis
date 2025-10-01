@@ -12,6 +12,7 @@ class Category(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
 class OfficialAddress(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Cadastro')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Alterado')

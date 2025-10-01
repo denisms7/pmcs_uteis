@@ -21,6 +21,7 @@ class BirthdayAdmin(ImportExportModelAdmin):
     ordering = ("-name",)
     readonly_fields = ("created_at",)
 
+
 @admin.register(Holidays)
 class HolidaysAdmin(admin.ModelAdmin):
     list_display = ("name", "date")

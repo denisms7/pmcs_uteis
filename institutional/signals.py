@@ -11,7 +11,6 @@ OFFICIAL_ADDRESSES = [
         "phone": "(43) 3675-8044",
         "maps": "https://goo.gl/maps/VPcQBL5NH9eJBGQL6",
         "category": 2,
-        
     },
     {
         "name": "Academia de Saúde",
@@ -303,7 +302,7 @@ def create_default_categories(sender, **kwargs):
 def create_official_addresses(sender, **kwargs):
     if sender.name != "institutional":
         return
-    
+
     if OfficialAddress.objects.exists():
         return
 
