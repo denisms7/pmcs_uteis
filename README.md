@@ -10,6 +10,8 @@ Pagina web para auxilio dos servidores públicos do município de [Centenário d
 * Docker
 
 ### 🛠️ Configuração e Implantação
+Configure o arquivo .env conforme o modelo .env.exemplo
+
 Instale o Docker na maquina e rode  os seguintes  comando na  pasta raiz do projeto: 
 ```
 docker compose build
